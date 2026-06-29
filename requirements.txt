@@ -1,5 +1,6 @@
 pandas
 numpy
 xgboost
+scikit-learn
 yfinance
 requests
