@@ -9,11 +9,10 @@ import xgboost as xgb
 import requests
 
 def send_ntfy_message(topic, title, text):
-    """Send markdown notification via ntfy.sh."""
+    """Send plain-text notification via ntfy.sh."""
     url = f"https://ntfy.sh/{topic}"
     headers = {
         "Title": title,
-        "X-Markdown": "yes",
         "Tags": "chart_with_upwards_trend,bell"
     }
     try:
@@ -375,43 +374,43 @@ def main():
         json.dump(active_data, f, indent=2)
     print("Saved active_trades.json.")
     
-    # 8. Construct ntfy Markdown Alert
+    # 8. Construct clean plain-text ntfy Alert
     title = f"Daily Stock Signal Report - {active_data['last_updated']}"
     alert_text = ""
     
     if new_signals:
-        alert_text += "### 🚀 **NEW ENTRY SIGNALS:**\n"
+        alert_text += "🚀 NEW ENTRY SIGNALS:\n"
         for sig in new_signals:
             alert_text += (
-                f"*   **{sig['symbol']}** (Prob: {sig['prob']:.2%})\n"
-                f"    *   Est. Entry: {sig['close_price']:.2f}\n"
-                f"    *   Initial Stop: {sig['initial_stop']:.2f}\n"
+                f"- {sig['symbol']} (Prob: {sig['prob']:.2%})\n"
+                f"  Est. Entry: {sig['close_price']:.2f}\n"
+                f"  Initial Stop: {sig['initial_stop']:.2f}\n"
             )
         alert_text += "\n"
     else:
-        alert_text += "### 🚀 **NEW ENTRY SIGNALS:** None today.\n\n"
+        alert_text += "🚀 NEW ENTRY SIGNALS: None today.\n\n"
         
     if exited_trades_today:
-        alert_text += "### 🛑 **EXIT SIGNALS TRIGGERED:**\n"
+        alert_text += "🛑 EXIT SIGNALS TRIGGERED:\n"
         for ex in exited_trades_today:
             icon = "🟢" if ex['pnl_pct'] >= 0 else "🔴"
             alert_text += (
-                f"*   {icon} **{ex['symbol']}**\n"
-                f"    *   Exit Price: {ex['exit_price']:.2f}\n"
-                f"    *   P&L: {ex['pnl_pct']:.2f}%\n"
-                f"    *   Reason: {ex['reason']}\n"
+                f"- {icon} {ex['symbol']}\n"
+                f"  Exit Price: {ex['exit_price']:.2f}\n"
+                f"  P&L: {ex['pnl_pct']:.2f}%\n"
+                f"  Reason: {ex['reason']}\n"
             )
         alert_text += "\n"
         
     if active_positions_status:
-        alert_text += "### 📊 **ACTIVE POSITIONS STATUS:**\n"
+        alert_text += "📊 ACTIVE POSITIONS STATUS:\n"
         for act in active_positions_status:
             icon = "🟢" if act['pnl_pct'] >= 0 else "🔴"
             alert_text += (
-                f"*   **{act['symbol']}**: {act['price']:.2f} (Stop: {act['stop']:.2f} | P&L: {icon} {act['pnl_pct']:.2f}%)\n"
+                f"- {act['symbol']}: {act['price']:.2f} (Stop: {act['stop']:.2f} | P&L: {icon} {act['pnl_pct']:.2f}%)\n"
             )
     else:
-        alert_text += "### 📊 **ACTIVE POSITIONS STATUS:** None active.\n"
+        alert_text += "📊 ACTIVE POSITIONS STATUS: None active.\n"
         
     print("\n--- NTFY NOTIFICATION PREVIEW ---")
     print(f"Title: {title}")
