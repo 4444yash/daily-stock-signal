@@ -12,6 +12,17 @@
       "latest_date": "2026-06-29"
     },
     {
+      "symbol": "CNL",
+      "batch": "Batch 3 (data_batch3)",
+      "entry_date": "2026-05-12",
+      "signal_date": "2026-05-11",
+      "prob": 0.908342,
+      "entry_price": 688.0,
+      "current_stop": 643.4,
+      "latest_price": 738.1500244140625,
+      "latest_date": "2026-06-29"
+    },
+    {
       "symbol": "KSHINTL",
       "batch": "Batch 3 (data_batch3)",
       "signal_date": "2026-03-10",
