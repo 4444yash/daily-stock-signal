@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Ignore local data directories (downloaded dynamically in cloud)
+data/
+data_new/
+data_batch2/
+data_batch3/
+data_batch4/
+data_crash_2022/
+data_nifty500_10y/
+output/
+results/
+
+# Ignore local output files
+*.log
+*.png
+*.csv
+
+# Ignore local testing/experimental python scripts
+# We only want to push daily_scanner.py to the repository
+*.py
+!daily_scanner.py

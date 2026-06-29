@@ -1,0 +1,25 @@
+{
+  "last_updated": "2026-06-29",
+  "trades": [
+    {
+      "symbol": "KRISHANA",
+      "batch": "Batch 2 (data_batch2)",
+      "signal_date": "2026-04-02",
+      "prob": 0.9007490873336792,
+      "entry_price": 545.29911603599,
+      "current_stop": 630.4971532499676,
+      "latest_price": 677.0499877929688,
+      "latest_date": "2026-06-29"
+    },
+    {
+      "symbol": "KSHINTL",
+      "batch": "Batch 3 (data_batch3)",
+      "signal_date": "2026-03-10",
+      "prob": 0.9709178805351257,
+      "entry_price": 393.7000122070313,
+      "current_stop": 729.0199829101563,
+      "latest_price": 853.0,
+      "latest_date": "2026-06-29"
+    }
+  ]
+}

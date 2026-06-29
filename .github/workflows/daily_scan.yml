@@ -1,0 +1,42 @@
+name: Daily Stock Signal Scanner
+
+on:
+  schedule:
+    # 10:45 UTC is 4:15 PM IST. Market closes at 3:30 PM IST, and daily data updates.
+    - cron: '45 10 * * 1-5'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas numpy xgboost yfinance requests
+
+    - name: Run Daily Stock Scanner
+      env:
+        NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+      run: python daily_scanner.py
+
+    - name: Commit and Push Active Trades State
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add active_trades.json
+        if git diff --cached --quiet; then
+          echo "No changes in active trades."
+        else
+          git commit -m "Auto-update active trades [skip ci]"
+          git push
+        fi
