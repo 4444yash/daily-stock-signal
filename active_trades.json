@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-30",
+  "last_updated": "2026-07-01",
   "trades": [
     {
       "symbol": "KRISHANA",
@@ -8,8 +8,8 @@
       "prob": 0.9007490873336792,
       "entry_price": 545.29911603599,
       "current_stop": 630.4971532499676,
-      "latest_price": 688.0,
-      "latest_date": "2026-06-30"
+      "latest_price": 697.6500244140625,
+      "latest_date": "2026-07-01"
     },
     {
       "symbol": "CNL",
@@ -18,9 +18,9 @@
       "signal_date": "2026-05-11",
       "prob": 0.908342,
       "entry_price": 688.0,
-      "current_stop": 644.9450012207031,
-      "latest_price": 730.25,
-      "latest_date": "2026-06-30"
+      "current_stop": 656.0199829101563,
+      "latest_price": 742.7000122070312,
+      "latest_date": "2026-07-01"
     },
     {
       "symbol": "KSHINTL",
@@ -29,8 +29,8 @@
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
       "current_stop": 760.8200073242188,
-      "latest_price": 863.5999755859375,
-      "latest_date": "2026-06-30"
+      "latest_price": 855.0,
+      "latest_date": "2026-07-01"
     }
   ]
 }
