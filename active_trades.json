@@ -1,16 +1,6 @@
 {
-  "last_updated": "2026-07-02",
+  "last_updated": "2026-07-03",
   "trades": [
-    {
-      "symbol": "KRISHANA",
-      "batch": "Batch 2 (data_batch2)",
-      "signal_date": "2026-04-02",
-      "prob": 0.9007490873336792,
-      "entry_price": 545.29911603599,
-      "current_stop": 630.4971532499676,
-      "latest_price": 713.5,
-      "latest_date": "2026-07-02"
-    },
     {
       "symbol": "CNL",
       "batch": "Batch 3 (data_batch3)",
@@ -18,9 +8,9 @@
       "signal_date": "2026-05-11",
       "prob": 0.908342,
       "entry_price": 688.0,
-      "current_stop": 665.1849914550781,
-      "latest_price": 738.5499877929688,
-      "latest_date": "2026-07-02"
+      "current_stop": 670.6399658203125,
+      "latest_price": 764.5999755859375,
+      "latest_date": "2026-07-03"
     },
     {
       "symbol": "KSHINTL",
@@ -28,9 +18,9 @@
       "signal_date": "2026-03-10",
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
-      "current_stop": 760.8200073242188,
-      "latest_price": 841.7999877929688,
-      "latest_date": "2026-07-02"
+      "current_stop": 765.4100219726563,
+      "latest_price": 847.5499877929688,
+      "latest_date": "2026-07-03"
     },
     {
       "symbol": "NDRAUTO",
@@ -39,9 +29,9 @@
       "signal_date": "2026-07-02",
       "prob": 0.8475750684738159,
       "entry_price": 891.0999755859375,
-      "current_stop": 777.04501953125,
-      "latest_price": 891.0999755859375,
-      "latest_date": "2026-07-02"
+      "current_stop": 808.0200073242188,
+      "latest_price": 887.7999877929688,
+      "latest_date": "2026-07-03"
     }
   ]
 }
