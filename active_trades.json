@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-03",
+  "last_updated": "2026-07-06",
   "trades": [
     {
       "symbol": "CNL",
@@ -8,9 +8,9 @@
       "signal_date": "2026-05-11",
       "prob": 0.908342,
       "entry_price": 688.0,
-      "current_stop": 670.6399658203125,
-      "latest_price": 764.5999755859375,
-      "latest_date": "2026-07-03"
+      "current_stop": 694.6750061035157,
+      "latest_price": 784.5999755859375,
+      "latest_date": "2026-07-06"
     },
     {
       "symbol": "KSHINTL",
@@ -19,8 +19,8 @@
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
       "current_stop": 765.4100219726563,
-      "latest_price": 847.5499877929688,
-      "latest_date": "2026-07-03"
+      "latest_price": 857.9500122070312,
+      "latest_date": "2026-07-06"
     },
     {
       "symbol": "NDRAUTO",
@@ -29,9 +29,9 @@
       "signal_date": "2026-07-02",
       "prob": 0.8475750684738159,
       "entry_price": 891.0999755859375,
-      "current_stop": 808.0200073242188,
-      "latest_price": 887.7999877929688,
-      "latest_date": "2026-07-03"
+      "current_stop": 808.5699890136718,
+      "latest_price": 880.4000244140625,
+      "latest_date": "2026-07-06"
     }
   ]
 }
