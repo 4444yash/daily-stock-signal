@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-07",
+  "last_updated": "2026-07-08",
   "trades": [
     {
       "symbol": "CNL",
@@ -8,9 +8,9 @@
       "signal_date": "2026-05-11",
       "prob": 0.908342,
       "entry_price": 688.0,
-      "current_stop": 703.1399780273438,
-      "latest_price": 780.5999755859375,
-      "latest_date": "2026-07-07"
+      "current_stop": 710.6699768066406,
+      "latest_price": 785.25,
+      "latest_date": "2026-07-08"
     },
     {
       "symbol": "NDRAUTO",
@@ -20,8 +20,8 @@
       "prob": 0.8475750684738159,
       "entry_price": 891.0999755859375,
       "current_stop": 808.5699890136718,
-      "latest_price": 866.4500122070312,
-      "latest_date": "2026-07-07"
+      "latest_price": 842.7999877929688,
+      "latest_date": "2026-07-08"
     }
   ]
 }
