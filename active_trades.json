@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-21",
+  "last_updated": "2026-07-22",
   "trades": [
     {
       "symbol": "CNL",
@@ -9,8 +9,8 @@
       "prob": 0.908342,
       "entry_price": 688.0,
       "current_stop": 758.0949462890625,
-      "latest_price": 948.75,
-      "latest_date": "2026-07-21"
+      "latest_price": 909.5499877929688,
+      "latest_date": "2026-07-22"
     }
   ]
 }
