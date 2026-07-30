@@ -78,8 +78,31 @@ jobs:
         # The scan job just pushed a commit; grab that, not the triggering SHA.
         ref: main
 
+    # `enablement` needs a token with admin rights. If PAGES_TOKEN is not set this
+    # falls back to GITHUB_TOKEN, which cannot enable Pages, so the step is allowed
+    # to fail and the next step explains what to do.
     - name: Configure Pages
+      id: pages
+      continue-on-error: true
       uses: actions/configure-pages@v5
+      with:
+        enablement: true
+        token: ${{ secrets.PAGES_TOKEN || github.token }}
+
+    - name: Explain Pages setup if not enabled
+      if: steps.pages.outcome == 'failure'
+      run: |
+        {
+          echo "## GitHub Pages is not enabled"
+          echo
+          echo "The dashboard was built but could not be published."
+          echo
+          echo "**Fix it once:** open **Settings → Pages** and set **Source** to **GitHub Actions**."
+          echo "Re-run this workflow afterwards and the site goes live at"
+          echo "\`https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/\`."
+        } >> "$GITHUB_STEP_SUMMARY"
+        echo "::error::GitHub Pages is not enabled. Set Settings > Pages > Source to 'GitHub Actions'."
+        exit 1
 
     - name: Upload dashboard
       uses: actions/upload-pages-artifact@v3
@@ -89,3 +112,11 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
+
+    - name: Summarise deployment
+      run: |
+        {
+          echo "## Dashboard published"
+          echo
+          echo "${{ steps.deployment.outputs.page_url }}"
+        } >> "$GITHUB_STEP_SUMMARY"
