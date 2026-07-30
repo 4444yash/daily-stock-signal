@@ -244,10 +244,10 @@ def main():
                     tsl_level = (h_j + l_j)/2 - (3.0 * atr10_j)
                     new_stop = max(current_stop, tsl_level)
                     
-                    # Check low SL breach
-                    if l_j <= new_stop:
+                    # Check daily close SL breach
+                    if c_j <= new_stop:
                         is_exited = True
-                        exit_price = new_stop
+                        exit_price = c_j
                         exit_reason = "SL/TSL Hit"
                     else:
                         current_stop = new_stop
