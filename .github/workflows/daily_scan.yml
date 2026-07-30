@@ -5,9 +5,20 @@ on:
     # 10:45 UTC is 4:15 PM IST. Market closes at 3:30 PM IST, and daily data updates.
     - cron: '45 10 * * 1-5'
   workflow_dispatch: # Allows manual trigger
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'           # republish the dashboard when the UI changes
+      - 'build_dashboard.py'
+
+concurrency:
+  group: daily-scan
+  cancel-in-progress: false
 
 jobs:
   scan:
+    # Skip the market scan on a docs-only push; just rebuild and redeploy the site.
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -31,14 +42,50 @@ jobs:
         NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
       run: python daily_scanner.py
 
-    - name: Commit and Push Active Trades State
+    - name: Rebuild Dashboard Payload
+      run: python build_dashboard.py
+
+    - name: Commit State and Dashboard Data
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add active_trades.json
+        git add active_trades.json trade_history.json scan_log.json docs/data/dashboard_data.json
         if git diff --cached --quiet; then
-          echo "No changes in active trades."
+          echo "No changes to commit."
         else
-          git commit -m "Auto-update active trades [skip ci]"
-          git push
+          git commit -m "Auto-update trades and dashboard [skip ci]"
+          # Another run may have pushed in the meantime.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
         fi
+
+  deploy:
+    needs: [scan]
+    # Deploy after a scan, and also on a docs-only push where `scan` is skipped.
+    if: always() && (needs.scan.result == 'success' || needs.scan.result == 'skipped')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Checkout latest main
+      uses: actions/checkout@v4
+      with:
+        # The scan job just pushed a commit; grab that, not the triggering SHA.
+        ref: main
+
+    - name: Configure Pages
+      uses: actions/configure-pages@v5
+
+    - name: Upload dashboard
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: docs
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

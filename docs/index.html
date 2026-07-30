@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Squeeze Breakout Signals — Live Dashboard</title>
+<meta name="description" content="Live dashboard for an ML-gated Bollinger squeeze breakout strategy on Indian equities. Open positions, realised performance and model accuracy, updated daily.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo" aria-hidden="true"></span>
+    <div>
+      <h1>Squeeze Breakout Signals</h1>
+      <p class="sub">ML-gated volatility breakout system · NSE / BSE equities</p>
+    </div>
+  </div>
+  <div class="topmeta">
+    <div class="stamp">
+      <span class="dot" id="live-dot" aria-hidden="true"></span>
+      <div>
+        <strong id="as-of">—</strong>
+        <span id="built-at">loading…</span>
+      </div>
+    </div>
+    <a class="ghost-btn" href="https://github.com/4444yash/daily-stock-signal" target="_blank" rel="noopener">Source</a>
+  </div>
+</header>
+
+<div id="banner" class="banner" hidden role="status"></div>
+
+<nav class="tabs" role="tablist" aria-label="Dashboard sections">
+  <button role="tab" id="tab-overview"  aria-controls="panel-overview"  aria-selected="true"  data-panel="overview">Overview</button>
+  <button role="tab" id="tab-open"      aria-controls="panel-open"      aria-selected="false" data-panel="open">Open Positions</button>
+  <button role="tab" id="tab-history"   aria-controls="panel-history"   aria-selected="false" data-panel="history">Trade History</button>
+  <button role="tab" id="tab-model"     aria-controls="panel-model"     aria-selected="false" data-panel="model">Model &amp; Accuracy</button>
+  <button role="tab" id="tab-backtest"  aria-controls="panel-backtest"  aria-selected="false" data-panel="backtest">Backtest</button>
+  <button role="tab" id="tab-strategy"  aria-controls="panel-strategy"  aria-selected="false" data-panel="strategy">Strategy</button>
+</nav>
+
+<main id="main">
+
+  <!-- ================= OVERVIEW ================= -->
+  <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" class="panel active">
+    <div class="kpi-grid" id="kpis"></div>
+
+    <div class="row">
+      <div class="card grow">
+        <div class="card-head">
+          <h2>Equity curve</h2>
+          <p class="hint" id="equity-hint">Base 100, sequenced by exit date, net of assumed costs.</p>
+        </div>
+        <div class="chart-wrap"><canvas id="chart-equity" role="img" aria-label="Equity curve of closed trades"></canvas></div>
+        <p class="empty" id="equity-empty" hidden>No closed trades recorded yet. The curve appears once the first position exits.</p>
+      </div>
+      <div class="card side">
+        <div class="card-head"><h2>Realised vs open</h2></div>
+        <ul class="stat-list" id="split-stats"></ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card grow">
+        <div class="card-head">
+          <h2>Monthly returns</h2>
+          <p class="hint">Compounded within each calendar month of exit.</p>
+        </div>
+        <div class="chart-wrap short"><canvas id="chart-monthly" role="img" aria-label="Monthly returns"></canvas></div>
+        <p class="empty" id="monthly-empty" hidden>Not enough closed trades yet.</p>
+      </div>
+      <div class="card side">
+        <div class="card-head"><h2>Scan activity</h2></div>
+        <ul class="stat-list" id="activity-stats"></ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>Currently held</h2>
+        <p class="hint">Live positions with trailing stop status.</p>
+      </div>
+      <div id="overview-open"></div>
+    </div>
+  </section>
+
+  <!-- ================= OPEN POSITIONS ================= -->
+  <section id="panel-open" role="tabpanel" aria-labelledby="tab-open" class="panel">
+    <div class="kpi-grid slim" id="open-kpis"></div>
+    <div class="card">
+      <div class="card-head">
+        <h2>Open positions</h2>
+        <p class="hint">Stops ratchet up daily and never move down. "Locked" is the return guaranteed if the stop triggers at its current level.</p>
+      </div>
+      <div id="open-table"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h2>Position detail</h2></div>
+      <div id="open-cards" class="pos-grid"></div>
+    </div>
+  </section>
+
+  <!-- ================= TRADE HISTORY ================= -->
+  <section id="panel-history" role="tabpanel" aria-labelledby="tab-history" class="panel">
+    <div class="kpi-grid slim" id="hist-kpis"></div>
+
+    <div class="row">
+      <div class="card grow">
+        <div class="card-head"><h2>Return distribution</h2></div>
+        <div class="chart-wrap short"><canvas id="chart-dist" role="img" aria-label="Distribution of trade returns"></canvas></div>
+      </div>
+      <div class="card side">
+        <div class="card-head"><h2>Exit reasons</h2></div>
+        <ul class="stat-list" id="exit-reasons"></ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>Closed trades</h2>
+        <div class="filters">
+          <label class="sr-only" for="hist-search">Search symbol</label>
+          <input id="hist-search" type="search" placeholder="Search symbol…" autocomplete="off">
+          <label class="sr-only" for="hist-filter">Filter outcome</label>
+          <select id="hist-filter">
+            <option value="all">All outcomes</option>
+            <option value="win">Winners</option>
+            <option value="loss">Losers</option>
+          </select>
+          <label class="sr-only" for="hist-source">Data source</label>
+          <select id="hist-source">
+            <option value="live">Live ledger</option>
+            <option value="backtest">Backtest</option>
+          </select>
+        </div>
+      </div>
+      <div id="hist-table"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>Performance by batch</h2></div>
+      <div id="batch-table"></div>
+    </div>
+
+    <div class="card" id="integrity-card" hidden>
+      <div class="card-head">
+        <h2>Data integrity log</h2>
+        <p class="hint">Positions that left the portfolio without a genuine stop breach, plus corporate-action corrections. These are excluded from every statistic above.</p>
+      </div>
+      <div id="integrity-table"></div>
+    </div>
+  </section>
+
+  <!-- ================= MODEL ================= -->
+  <section id="panel-model" role="tabpanel" aria-labelledby="tab-model" class="panel">
+    <div class="kpi-grid slim" id="model-kpis"></div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>Does a higher score mean a better trade?</h2>
+        <p class="hint">Realised win rate and average return grouped by the model's predicted probability at entry. A well-calibrated model shows win rate rising with the score.</p>
+      </div>
+      <div class="chart-wrap short"><canvas id="chart-calib" role="img" aria-label="Win rate by predicted probability bucket"></canvas></div>
+      <div id="calib-table"></div>
+    </div>
+
+    <div class="row">
+      <div class="card grow">
+        <div class="card-head">
+          <h2>Daily scan funnel</h2>
+          <p class="hint">Technical triggers found versus signals that cleared the model gate.</p>
+        </div>
+        <div class="chart-wrap short"><canvas id="chart-funnel" role="img" aria-label="Triggers versus signals taken per day"></canvas></div>
+        <p class="empty" id="funnel-note" hidden></p>
+      </div>
+      <div class="card side">
+        <div class="card-head"><h2>Model card</h2></div>
+        <ul class="stat-list" id="model-card"></ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>Recent rejected triggers</h2>
+        <p class="hint">Setups that fired technically but scored below the threshold, so no position was taken.</p>
+      </div>
+      <div id="rejected-table"></div>
+    </div>
+  </section>
+
+  <!-- ================= BACKTEST ================= -->
+  <section id="panel-backtest" role="tabpanel" aria-labelledby="tab-backtest" class="panel">
+    <div class="notice" id="bt-notice"></div>
+    <div class="kpi-grid slim" id="bt-kpis"></div>
+    <div class="card">
+      <div class="card-head">
+        <h2>Backtest equity curve</h2>
+        <p class="hint" id="bt-equity-hint">Same indicators, same model, same trailing stop, applied to historical data.</p>
+      </div>
+      <div class="chart-wrap"><canvas id="chart-bt-equity" role="img" aria-label="Backtest equity curve"></canvas></div>
+    </div>
+    <div class="row">
+      <div class="card grow">
+        <div class="card-head"><h2>Backtest monthly returns</h2></div>
+        <div class="chart-wrap short"><canvas id="chart-bt-monthly" role="img" aria-label="Backtest monthly returns"></canvas></div>
+      </div>
+      <div class="card side">
+        <div class="card-head"><h2>Live vs backtest</h2></div>
+        <div id="compare-table"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STRATEGY ================= -->
+  <section id="panel-strategy" role="tabpanel" aria-labelledby="tab-strategy" class="panel">
+    <div class="row">
+      <div class="card grow">
+        <div class="card-head"><h2>How it works</h2></div>
+        <div class="prose" id="strategy-prose"></div>
+      </div>
+      <div class="card side">
+        <div class="card-head"><h2>Universe</h2></div>
+        <ul class="stat-list" id="universe-stats"></ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h2>Reading these numbers</h2></div>
+      <div class="prose">
+        <p><strong>Expectancy</strong> is the average net return per closed trade. It is the single most useful number here: positive expectancy with enough trades means the edge is real, and win rate alone tells you very little.</p>
+        <p><strong>Profit factor</strong> divides the sum of winning returns by the sum of losing returns. Above 1.0 is profitable; above 1.5 is healthy for a trend-following system.</p>
+        <p><strong>Max drawdown</strong> is the deepest peak-to-trough fall of the equity curve above, not the worst single trade.</p>
+        <p><strong>Position sizing matters to the headline.</strong> The equity curves assume each trade takes 20% of capital, five slots in parallel. Sizing every trade at full capital would compound the same trades into a far larger number, which would be meaningless because signals overlap in time. Per-trade figures like win rate, expectancy and payoff ratio are unaffected by sizing.</p>
+        <p><strong>Trailing-stop systems win less than half the time.</strong> Small losses are cut quickly and a few large winners carry the result, so a win rate near 40% alongside a payoff ratio above 2 is the expected shape, not a warning sign.</p>
+        <p class="warn"><strong>Caveats.</strong> The live ledger begins when trade logging was added, so early history is thin. Entry price uses the signal day's close as a proxy for the next open, which understates slippage on gap-up entries. The backtest uses today's watchlist, so it carries survivorship bias and should be read as a sanity check on the logic, not a forecast. Nothing here is investment advice.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Data regenerated by GitHub Actions on every trading day. Static site, no tracking.</p>
+  <p id="footer-stamp"></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
