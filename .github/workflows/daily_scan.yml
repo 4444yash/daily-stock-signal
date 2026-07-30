@@ -10,6 +10,7 @@ on:
     paths:
       - 'docs/**'           # republish the dashboard when the UI changes
       - 'build_dashboard.py'
+      - '.github/workflows/daily_scan.yml'
 
 concurrency:
   group: daily-scan
