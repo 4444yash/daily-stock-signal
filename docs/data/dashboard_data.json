@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-07-30T15:50:24Z",
- "as_of": "2026-07-30",
+ "generated_at_utc": "2026-07-30T20:53:24Z",
+ "as_of": "2026-07-29",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": -9.41,
   "profit_factor": 0.0,
   "realized_return_pct": -1.88,
-  "unrealized_pct": 155.99,
+  "unrealized_pct": 0.0,
   "max_drawdown_pct": -1.88,
   "best": -9.41,
   "worst": -9.41,
@@ -47,44 +47,44 @@
  },
  "open": [
   {
-   "symbol": "KSHINTL",
-   "batch": "Batch 3 (data_batch3)",
-   "signal_date": "2026-03-10",
-   "entry_date": "2026-03-11",
-   "entry_price": 393.7,
-   "latest_price": 830.95,
-   "latest_date": "2026-07-30",
-   "current_stop": 772.34,
-   "peak_price": 840.0,
-   "prob": 0.9709,
-   "unrealized_pct": 111.06,
-   "day_change_pct": 0.67,
-   "stop_distance_pct": 7.05,
-   "locked_pct": 96.17,
-   "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -1.08,
-   "r_multiple": null,
-   "days_held": 141
-  },
-  {
    "symbol": "CNL",
    "batch": "Batch 3 (data_batch3)",
    "signal_date": "2026-05-11",
    "entry_date": "2026-05-12",
    "entry_price": 688.0,
-   "latest_price": 997.15,
+   "latest_price": null,
    "latest_date": "2026-07-30",
    "current_stop": 853.85,
    "peak_price": 1018.0,
    "prob": 0.9083,
-   "unrealized_pct": 44.93,
-   "day_change_pct": 0.64,
-   "stop_distance_pct": 14.37,
+   "unrealized_pct": null,
+   "day_change_pct": null,
+   "stop_distance_pct": null,
    "locked_pct": 24.11,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -2.05,
+   "drawdown_from_peak_pct": null,
    "r_multiple": null,
    "days_held": 79
+  },
+  {
+   "symbol": "KSHINTL",
+   "batch": "Batch 3 (data_batch3)",
+   "signal_date": "2026-03-10",
+   "entry_date": "2026-03-11",
+   "entry_price": 393.7,
+   "latest_price": null,
+   "latest_date": "2026-07-30",
+   "current_stop": 772.34,
+   "peak_price": 840.0,
+   "prob": 0.9709,
+   "unrealized_pct": null,
+   "day_change_pct": null,
+   "stop_distance_pct": null,
+   "locked_pct": 96.17,
+   "risk_state": "Profit locked",
+   "drawdown_from_peak_pct": null,
+   "r_multiple": null,
+   "days_held": 141
   }
  ],
  "live": {
@@ -169,6 +169,15 @@
  "activity": {
   "runs": [
    {
+    "date": "2026-07-29",
+    "scanned": 158,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
+   },
+   {
     "date": "2026-07-30",
     "scanned": 158,
     "errors": 0,
@@ -179,7 +188,7 @@
    }
   ],
   "total_runs": 24,
-  "logged_runs": 1,
+  "logged_runs": 2,
   "first_run": "2026-06-29",
   "total_triggers": 1,
   "total_taken": 0,
