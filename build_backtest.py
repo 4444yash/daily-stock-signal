@@ -23,7 +23,7 @@ import pandas as pd
 import xgboost as xgb
 import yfinance as yf
 
-from daily_scanner import calculate_indicators, clean_multiindex
+from daily_scanner import calculate_indicators, clean_multiindex, drop_incomplete_bars
 
 FEATURE_COLS = [
     "bbw_width_pct", "days_in_squeeze", "volume_multiple", "close_high_ratio",
@@ -55,12 +55,12 @@ def download(tickers, period):
                     df = raw[tkr].copy()
                 else:
                     df = raw.copy()
-                df = df.dropna(how='all')
-                if df.empty:
-                    continue
                 df = df.reset_index()
                 df.columns = [str(c).lower() for c in df.columns]
                 if 'close' not in df.columns:
+                    continue
+                df = drop_incomplete_bars(df)
+                if df.empty:
                     continue
                 out[tkr] = df
             except Exception as e:
@@ -146,7 +146,8 @@ def main():
     model.load_model(model_path)
 
     print("Downloading Nifty 50...")
-    nifty = clean_multiindex(yf.download("^NSEI", period=period, progress=False))
+    nifty = drop_incomplete_bars(clean_multiindex(
+        yf.download("^NSEI", period=period, progress=False)))
     nifty = prepare(nifty)
     nifty['sma50'] = nifty['close'].rolling(window=50).mean()
     n_idx = {d: i for i, d in enumerate(nifty['date_parsed'])}

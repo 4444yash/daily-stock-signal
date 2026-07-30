@@ -9,10 +9,10 @@
       "prob": 0.908342,
       "entry_price": 688.0,
       "current_stop": 853.8549743652344,
-      "latest_price": NaN,
-      "latest_date": "2026-07-30",
-      "peak_price": 1018.0,
-      "prev_price": 990.8499755859375
+      "latest_price": 990.8499755859375,
+      "latest_date": "2026-07-29",
+      "peak_price": 1048.0,
+      "prev_price": 1033.4000244140625
     },
     {
       "symbol": "KSHINTL",
@@ -22,10 +22,10 @@
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
       "current_stop": 772.3399597167969,
-      "latest_price": NaN,
-      "latest_date": "2026-07-30",
-      "peak_price": 840.0,
-      "prev_price": 825.4000244140625
+      "latest_price": 825.4000244140625,
+      "latest_date": "2026-07-29",
+      "peak_price": 858.7000122070312,
+      "prev_price": 844.0499877929688
     }
   ]
 }

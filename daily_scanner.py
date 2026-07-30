@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import math
 import datetime
 import yfinance as yf
 import pandas as pd
@@ -146,6 +147,38 @@ def clean_multiindex(df):
     df.columns = [col.lower() for col in df.columns]
     return df
 
+
+def drop_incomplete_bars(df):
+    """
+    Yahoo can return a placeholder row for the current session with NaN prices.
+    Left in place it poisons everything downstream: NaN comparisons are always
+    False, so the stop checks silently no-op, the trailing stop stops ratcheting,
+    and NaN leaks into active_trades.json (which is not even valid strict JSON).
+    Keep only fully-formed OHLC bars.
+    """
+    cols = [c for c in ("open", "high", "low", "close") if c in df.columns]
+    if not cols:
+        return df
+    return df.dropna(subset=cols).reset_index(drop=True)
+
+
+def json_safe(obj):
+    """
+    Replace non-finite floats with None so the state files stay valid strict JSON.
+    Python's json module happily emits bare NaN/Infinity, which every other parser
+    rejects, including the browser reading the dashboard payload.
+    """
+    if isinstance(obj, dict):
+        return {k: json_safe(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [json_safe(v) for v in obj]
+    if isinstance(obj, float):
+        return obj if math.isfinite(obj) else None
+    if isinstance(obj, (np.floating, np.integer)):
+        value = obj.item()
+        return value if not isinstance(value, float) or math.isfinite(value) else None
+    return obj
+
 def main():
     # Reconfigure stdout to handle UTF-8 printing of emojis on Windows
     if hasattr(sys.stdout, 'reconfigure'):
@@ -220,7 +253,7 @@ def main():
     print("Downloading Nifty 50 (^NSEI) data...")
     try:
         nifty_df = yf.download("^NSEI", period="1y", progress=False)
-        nifty_df = clean_multiindex(nifty_df)
+        nifty_df = drop_incomplete_bars(clean_multiindex(nifty_df))
         nifty_df['date_parsed'] = pd.to_datetime(nifty_df['date']).dt.date
         nifty_df = nifty_df.sort_values('date_parsed').reset_index(drop=True)
         nifty_df['sma50'] = nifty_df['close'].rolling(window=50).mean()
@@ -256,13 +289,13 @@ def main():
         print(f"Scanning {symbol} ({ticker})...")
         try:
             df = yf.download(ticker, period="1y", progress=False)
+            df = drop_incomplete_bars(clean_multiindex(df))
             if df.empty or len(df) < 50:
                 print(f"  Skipping {symbol}: insufficient data.")
                 scan_stats["skipped"] += 1
                 continue
             scan_stats["scanned"] += 1
                 
-            df = clean_multiindex(df)
             df['date_parsed'] = pd.to_datetime(df['date']).dt.date
             df = df.sort_values('date_parsed').reset_index(drop=True)
             
@@ -464,7 +497,7 @@ def main():
     active_data["last_updated"] = run_date
     active_data["trades"] = updated_active_trades
     with open(active_path, 'w') as f:
-        json.dump(active_data, f, indent=2)
+        json.dump(json_safe(active_data), f, indent=2, allow_nan=False)
     print("Saved active_trades.json.")
     
     # 7b. Append newly closed trades to the permanent history ledger
@@ -477,7 +510,7 @@ def main():
     history_data["last_updated"] = run_date
     history_data["trades"] = closed_trades
     with open(history_path, 'w') as f:
-        json.dump(history_data, f, indent=2)
+        json.dump(json_safe(history_data), f, indent=2, allow_nan=False)
     print(f"Saved trade_history.json ({len(closed_trades)} closed trades).")
     
     # 7c. Append this run to the scan log (keeps a rolling 400-run window)
@@ -505,7 +538,7 @@ def main():
     scan_log["runs"] = runs[-400:]
     scan_log["last_updated"] = run_date
     with open(scanlog_path, 'w') as f:
-        json.dump(scan_log, f, indent=2)
+        json.dump(json_safe(scan_log), f, indent=2, allow_nan=False)
     print("Saved scan_log.json.")
     
     # 7d. Rebuild the dashboard payload

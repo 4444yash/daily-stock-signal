@@ -104,6 +104,18 @@ Regenerate the backtest whenever the watchlist or the model changes.
 
 Nothing here is investment advice.
 
+## Data hygiene
+
+Two Yahoo Finance quirks caused real damage before they were handled, so both are
+guarded explicitly.
+
+**Incomplete bars.** Yahoo can return a placeholder row for the current session with NaN
+prices. Because every NaN comparison is false, the stop checks silently did nothing, the
+trailing stop stopped ratcheting for that day, and NaN leaked into `active_trades.json` as
+a bare `NaN` token that is not valid strict JSON. `drop_incomplete_bars()` now keeps only
+fully-formed OHLC bars, and the state files are written with `allow_nan=False` so a stray
+NaN fails loudly instead of producing an unparseable payload.
+
 ## A note on corporate actions
 
 Yahoo Finance serves split-adjusted prices, but stored entry prices and stops are in the

@@ -415,7 +415,9 @@ def build(workspace=None):
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, "dashboard_data.json")
     with open(out_path, 'w', encoding='utf-8') as f:
-        json.dump(payload, f, indent=1)
+        # allow_nan=False turns a stray NaN into a loud failure here rather than a
+        # silently unparseable payload in the browser.
+        json.dump(payload, f, indent=1, allow_nan=False)
 
     print(f"Wrote {out_path}")
     print(f"  open positions : {len(positions)}")
