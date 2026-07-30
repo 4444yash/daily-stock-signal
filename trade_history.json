@@ -1,0 +1,39 @@
+{
+  "last_updated": "2026-07-30",
+  "note": "Backfilled from the git history of active_trades.json; later trades are logged directly by daily_scanner.py.",
+  "trades": [
+    {
+      "symbol": "KRISHANA",
+      "batch": "Batch 2 (data_batch2)",
+      "signal_date": "2026-04-02",
+      "entry_date": "2026-04-02",
+      "exit_date": "2026-07-03",
+      "entry_price": 109.06,
+      "exit_price": 151.85,
+      "peak_price": 713.5,
+      "pnl_pct": 39.24,
+      "hold_days": 92,
+      "prob": 0.9007490873336792,
+      "reason": "Closed in error",
+      "source": "reconstructed_from_git",
+      "split_factor": 5.0,
+      "excluded": true,
+      "exclude_reason": "Left the portfolio on 2026-07-03 without any stop breach (close 151.85, low 142.40, stop 127.67). Caused by an unadjusted 5:1 split. Excluded from performance statistics."
+    },
+    {
+      "symbol": "NDRAUTO",
+      "batch": "Batch 3",
+      "signal_date": "2026-07-02",
+      "entry_date": "2026-07-03",
+      "exit_date": "2026-07-17",
+      "entry_price": 891.1,
+      "exit_price": 808.57,
+      "peak_price": 829.15,
+      "pnl_pct": -9.26,
+      "hold_days": 14,
+      "prob": 0.8475750684738159,
+      "reason": "SL Hit (intraday, legacy rule)",
+      "source": "reconstructed_from_git"
+    }
+  ]
+}

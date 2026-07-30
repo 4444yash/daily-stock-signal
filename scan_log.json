@@ -1,0 +1,158 @@
+{
+  "last_updated": "2026-07-30",
+  "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
+  "runs": [
+    {
+      "date": "2026-06-29",
+      "seeded": true,
+      "open_positions": 2
+    },
+    {
+      "date": "2026-06-30",
+      "seeded": true,
+      "open_positions": 3
+    },
+    {
+      "date": "2026-07-01",
+      "seeded": true,
+      "open_positions": 3
+    },
+    {
+      "date": "2026-07-02",
+      "seeded": true,
+      "open_positions": 4
+    },
+    {
+      "date": "2026-07-03",
+      "seeded": true,
+      "open_positions": 3
+    },
+    {
+      "date": "2026-07-06",
+      "seeded": true,
+      "open_positions": 3
+    },
+    {
+      "date": "2026-07-07",
+      "seeded": true,
+      "open_positions": 2
+    },
+    {
+      "date": "2026-07-08",
+      "seeded": true,
+      "open_positions": 2
+    },
+    {
+      "date": "2026-07-09",
+      "seeded": true,
+      "open_positions": 2
+    },
+    {
+      "date": "2026-07-10",
+      "seeded": true,
+      "open_positions": 2
+    },
+    {
+      "date": "2026-07-13",
+      "seeded": true,
+      "open_positions": 2
+    },
+    {
+      "date": "2026-07-14",
+      "seeded": true,
+      "open_positions": 2
+    },
+    {
+      "date": "2026-07-15",
+      "seeded": true,
+      "open_positions": 2
+    },
+    {
+      "date": "2026-07-16",
+      "seeded": true,
+      "open_positions": 2
+    },
+    {
+      "date": "2026-07-17",
+      "seeded": true,
+      "open_positions": 1
+    },
+    {
+      "date": "2026-07-20",
+      "seeded": true,
+      "open_positions": 1
+    },
+    {
+      "date": "2026-07-21",
+      "seeded": true,
+      "open_positions": 1
+    },
+    {
+      "date": "2026-07-22",
+      "seeded": true,
+      "open_positions": 1
+    },
+    {
+      "date": "2026-07-23",
+      "seeded": true,
+      "open_positions": 1
+    },
+    {
+      "date": "2026-07-24",
+      "seeded": true,
+      "open_positions": 1
+    },
+    {
+      "date": "2026-07-27",
+      "seeded": true,
+      "open_positions": 1
+    },
+    {
+      "date": "2026-07-28",
+      "seeded": true,
+      "open_positions": 1
+    },
+    {
+      "date": "2026-07-29",
+      "seeded": true,
+      "open_positions": 1
+    },
+    {
+      "date": "2026-07-30",
+      "run_at_utc": "2026-07-30T15:50:24Z",
+      "universe": 166,
+      "scanned": 158,
+      "skipped": 8,
+      "errors": 0,
+      "triggers": 1,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 2,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "LTFOODS",
+          "batch": "Batch 3",
+          "signal_date": "2026-07-30",
+          "prob": 0.0051338872872292995,
+          "close_price": 397.1000061035156,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 4.634516032061579,
+            "days_in_squeeze": 33,
+            "volume_multiple": 9.792835942198268,
+            "close_high_ratio": 0.7781693962353765,
+            "rsi_absolute": 61.18956666505171,
+            "rsi_delta": 13.238274951728329,
+            "atr_pct": 2.5551326877861658,
+            "distance_from_50sma": 0.03544125537393195,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.01790604806695672,
+            "relative_strength_125": 1.1366096063972548,
+            "prior_runup_90": 4.927994000508021
+          }
+        }
+      ]
+    }
+  ]
+}

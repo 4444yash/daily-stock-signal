@@ -93,6 +93,51 @@ def calculate_indicators(df):
     
     return df
 
+def apply_split_adjustment(trade, ticker):
+    """
+    Yahoo always serves split-adjusted OHLC, but entry_price / current_stop were
+    stored in the price terms of the entry date. After a split or bonus issue the
+    two are no longer comparable, which made the scanner see a huge fake gap-down
+    and close a healthy position.
+
+    Rescale the stored levels into current price terms. `split_factor_applied`
+    records what has already been folded in, so repeat runs are idempotent and
+    multiple splits compound correctly.
+    """
+    entry_date = trade.get("entry_date") or trade.get("signal_date")
+    if not entry_date:
+        return trade, None
+    try:
+        entry_dt = pd.Timestamp(entry_date).date()
+        splits = yf.Ticker(ticker).splits
+        if splits is None or len(splits) == 0:
+            return trade, None
+        cum = 1.0
+        for ts, ratio in splits.items():
+            try:
+                if ts.date() > entry_dt and ratio and float(ratio) > 0:
+                    cum *= float(ratio)
+            except Exception:
+                continue
+    except Exception as e:
+        print(f"  Split check failed for {ticker}: {e}")
+        return trade, None
+
+    applied = float(trade.get("split_factor_applied", 1.0) or 1.0)
+    if abs(cum - applied) < 1e-9:
+        return trade, None
+
+    scale = applied / cum
+    for key in ("entry_price", "current_stop", "initial_stop",
+                "latest_price", "peak_price", "prev_price"):
+        if trade.get(key):
+            trade[key] = float(trade[key]) * scale
+    trade["split_factor_applied"] = cum
+    note = f"{cum / applied:g}:1 split adjustment applied"
+    print(f"  Corporate action: {trade['symbol']} rescaled by {scale:.6g} ({note})")
+    return trade, note
+
+
 def clean_multiindex(df):
     """Clean multi-index columns from yfinance response if present."""
     if isinstance(df.columns, pd.MultiIndex):
@@ -114,6 +159,8 @@ def main():
     workspace = os.path.dirname(os.path.abspath(__file__))
     watchlist_path = os.path.join(workspace, "watchlist.json")
     active_path = os.path.join(workspace, "active_trades.json")
+    history_path = os.path.join(workspace, "trade_history.json")
+    scanlog_path = os.path.join(workspace, "scan_log.json")
     
     # Try looking in results directory first, then fallback to current folder
     model_path = os.path.join(workspace, "results", "xgboost_live_model_asymmetric.json")
@@ -150,6 +197,15 @@ def main():
         active_data = {"last_updated": "", "trades": []}
     active_trades = active_data.get("trades", [])
     print(f"Loaded {len(active_trades)} active trades.")
+
+    # 3b. Load Closed Trade History (ledger used by the dashboard)
+    if os.path.exists(history_path):
+        with open(history_path, 'r') as f:
+            history_data = json.load(f)
+    else:
+        history_data = {"last_updated": "", "trades": []}
+    closed_trades = history_data.get("trades", [])
+    print(f"Loaded {len(closed_trades)} closed trades from history.")
     
     # 4. Load XGBoost Model
     model = xgb.XGBClassifier()
@@ -184,6 +240,9 @@ def main():
     exited_trades_today = []
     active_positions_status = []
     updated_active_trades = []
+    raw_triggers = []          # every technical trigger, before the ML probability gate
+    corporate_actions = []     # splits/bonuses rescaled this run
+    scan_stats = {"scanned": 0, "skipped": 0, "errors": 0}
     
     # Helper to check if a trade is already active
     active_symbols = {t["symbol"] for t in active_trades}
@@ -199,7 +258,9 @@ def main():
             df = yf.download(ticker, period="1y", progress=False)
             if df.empty or len(df) < 50:
                 print(f"  Skipping {symbol}: insufficient data.")
+                scan_stats["skipped"] += 1
                 continue
+            scan_stats["scanned"] += 1
                 
             df = clean_multiindex(df)
             df['date_parsed'] = pd.to_datetime(df['date']).dt.date
@@ -217,6 +278,9 @@ def main():
             if symbol in active_symbols:
                 # Find matching active trade
                 matching_trade = next(t for t in active_trades if t["symbol"] == symbol)
+                matching_trade, split_note = apply_split_adjustment(matching_trade, ticker)
+                if split_note:
+                    corporate_actions.append({"symbol": symbol, "note": split_note})
                 entry_date = matching_trade["entry_date"] if "entry_date" in matching_trade else matching_trade["signal_date"]
                 entry_price = matching_trade["entry_price"]
                 current_stop = matching_trade["current_stop"]
@@ -254,19 +318,32 @@ def main():
                         
                 if is_exited:
                     pnl_pct = (exit_price - entry_price) / entry_price * 100
+                    try:
+                        hold_days = (datetime.datetime.strptime(latest_date_str, '%Y-%m-%d').date()
+                                     - datetime.datetime.strptime(entry_date, '%Y-%m-%d').date()).days
+                    except Exception:
+                        hold_days = None
                     exited_trades_today.append({
                         "symbol": symbol,
+                        "batch": matching_trade.get("batch", ""),
+                        "signal_date": matching_trade.get("signal_date", entry_date),
+                        "entry_date": entry_date,
+                        "exit_date": latest_date_str,
                         "entry_price": entry_price,
                         "exit_price": exit_price,
+                        "peak_price": matching_trade.get("peak_price", max(entry_price, h_j)),
                         "pnl_pct": pnl_pct,
-                        "reason": exit_reason,
-                        "exit_date": latest_date_str
+                        "hold_days": hold_days,
+                        "prob": matching_trade.get("prob"),
+                        "reason": exit_reason
                     })
                 else:
                     pnl_pct = (c_j - entry_price) / entry_price * 100
                     matching_trade["current_stop"] = current_stop
                     matching_trade["latest_price"] = c_j
                     matching_trade["latest_date"] = latest_date_str
+                    matching_trade["peak_price"] = max(float(matching_trade.get("peak_price", entry_price)), h_j)
+                    matching_trade["prev_price"] = float(df.iloc[-2]['close']) if len(df) > 1 else c_j
                     updated_active_trades.append(matching_trade)
                     active_positions_status.append({
                         "symbol": symbol,
@@ -332,6 +409,17 @@ def main():
                     feat_df = pd.DataFrame([features])[feature_cols]
                     prob = float(model.predict_proba(feat_df)[:, 1][0])
                     
+                    raw_triggers.append({
+                        "symbol": symbol,
+                        "batch": batch,
+                        "signal_date": sig_date_str,
+                        "prob": prob,
+                        "close_price": float(latest_row['close']),
+                        "taken": bool(prob >= 0.65),
+                        "features": {k: (float(v) if not isinstance(v, (int, bool)) else v)
+                                     for k, v in features.items()}
+                    })
+                    
                     if prob >= 0.65:
                         atr10_0 = latest_row['atr10'] if not pd.isna(latest_row['atr10']) else latest_row['close'] * 0.03
                         initial_stop = (latest_row['high'] + latest_row['low'])/2 - (3.0 * atr10_0)
@@ -346,6 +434,7 @@ def main():
                         })
                         
         except Exception as e:
+            scan_stats["errors"] += 1
             print(f"  Error processing {symbol}: {e}")
             
     # Add new signals to active positions if they exist (simulate entering on next open bar)
@@ -363,16 +452,69 @@ def main():
             "prob": sig["prob"],
             "entry_price": sig["close_price"], # estimated entry price
             "current_stop": sig["initial_stop"],
+            "initial_stop": sig["initial_stop"],
             "latest_price": sig["close_price"],
-            "latest_date": sig["signal_date"]
+            "latest_date": sig["signal_date"],
+            "peak_price": sig["close_price"],
+            "prev_price": sig["close_price"]
         })
         
     # 7. Save updated active trades
-    active_data["last_updated"] = latest_nifty_date.strftime('%Y-%m-%d')
+    run_date = latest_nifty_date.strftime('%Y-%m-%d')
+    active_data["last_updated"] = run_date
     active_data["trades"] = updated_active_trades
     with open(active_path, 'w') as f:
         json.dump(active_data, f, indent=2)
     print("Saved active_trades.json.")
+    
+    # 7b. Append newly closed trades to the permanent history ledger
+    if exited_trades_today:
+        existing_keys = {(t.get("symbol"), t.get("entry_date")) for t in closed_trades}
+        for ex in exited_trades_today:
+            if (ex["symbol"], ex["entry_date"]) not in existing_keys:
+                closed_trades.append(ex)
+    closed_trades.sort(key=lambda t: (t.get("exit_date") or "", t.get("symbol") or ""))
+    history_data["last_updated"] = run_date
+    history_data["trades"] = closed_trades
+    with open(history_path, 'w') as f:
+        json.dump(history_data, f, indent=2)
+    print(f"Saved trade_history.json ({len(closed_trades)} closed trades).")
+    
+    # 7c. Append this run to the scan log (keeps a rolling 400-run window)
+    if os.path.exists(scanlog_path):
+        with open(scanlog_path, 'r') as f:
+            scan_log = json.load(f)
+    else:
+        scan_log = {"runs": []}
+    runs = [r for r in scan_log.get("runs", []) if r.get("date") != run_date]
+    runs.append({
+        "date": run_date,
+        "run_at_utc": datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        "universe": len(stocks),
+        "scanned": scan_stats["scanned"],
+        "skipped": scan_stats["skipped"],
+        "errors": scan_stats["errors"],
+        "triggers": len(raw_triggers),
+        "signals_taken": len(new_signals),
+        "exits": len(exited_trades_today),
+        "open_positions": len(updated_active_trades),
+        "corporate_actions": corporate_actions,
+        "triggers_detail": raw_triggers
+    })
+    runs.sort(key=lambda r: r.get("date") or "")
+    scan_log["runs"] = runs[-400:]
+    scan_log["last_updated"] = run_date
+    with open(scanlog_path, 'w') as f:
+        json.dump(scan_log, f, indent=2)
+    print("Saved scan_log.json.")
+    
+    # 7d. Rebuild the dashboard payload
+    try:
+        from build_dashboard import build
+        build(workspace)
+        print("Rebuilt dashboard_data.json.")
+    except Exception as e:
+        print(f"Warning: dashboard build failed: {e}")
     
     # 8. Construct clean plain-text ntfy Alert
     title = f"Daily Stock Signal Report - {active_data['last_updated']}"
@@ -411,6 +553,11 @@ def main():
             )
     else:
         alert_text += "📊 ACTIVE POSITIONS STATUS: None active.\n"
+        
+    if corporate_actions:
+        alert_text += "\n⚙️ CORPORATE ACTIONS ADJUSTED:\n"
+        for ca in corporate_actions:
+            alert_text += f"- {ca['symbol']}: {ca['note']}\n"
         
     print("\n--- NTFY NOTIFICATION PREVIEW ---")
     print(f"Title: {title}")
