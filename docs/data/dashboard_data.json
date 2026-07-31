@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-07-30T21:05:05Z",
- "as_of": "2026-07-29",
+ "generated_at_utc": "2026-07-31T12:31:47Z",
+ "as_of": "2026-07-31",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": -9.41,
   "profit_factor": 0.0,
   "realized_return_pct": -1.88,
-  "unrealized_pct": 153.67,
+  "unrealized_pct": 157.64,
   "max_drawdown_pct": -1.88,
   "best": -9.41,
   "worst": -9.41,
@@ -52,19 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 825.4,
-   "latest_date": "2026-07-29",
+   "latest_price": 839.7,
+   "latest_date": "2026-07-31",
    "current_stop": 772.34,
    "peak_price": 858.7,
    "prob": 0.9709,
-   "unrealized_pct": 109.65,
-   "day_change_pct": -2.21,
-   "stop_distance_pct": 6.43,
+   "unrealized_pct": 113.28,
+   "day_change_pct": 1.05,
+   "stop_distance_pct": 8.02,
    "locked_pct": 96.17,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -3.88,
+   "drawdown_from_peak_pct": -2.21,
    "r_multiple": null,
-   "days_held": 140
+   "days_held": 142
   },
   {
    "symbol": "CNL",
@@ -72,19 +72,19 @@
    "signal_date": "2026-05-11",
    "entry_date": "2026-05-12",
    "entry_price": 688.0,
-   "latest_price": 990.85,
-   "latest_date": "2026-07-29",
+   "latest_price": 993.2,
+   "latest_date": "2026-07-31",
    "current_stop": 853.85,
    "peak_price": 1048.0,
    "prob": 0.9083,
-   "unrealized_pct": 44.02,
-   "day_change_pct": -4.12,
-   "stop_distance_pct": 13.83,
+   "unrealized_pct": 44.36,
+   "day_change_pct": -0.4,
+   "stop_distance_pct": 14.03,
    "locked_pct": 24.11,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -5.45,
+   "drawdown_from_peak_pct": -5.23,
    "r_multiple": null,
-   "days_held": 78
+   "days_held": 80
   }
  ],
  "live": {
@@ -185,10 +185,19 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 2
+   },
+   {
+    "date": "2026-07-31",
+    "scanned": 158,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
    }
   ],
-  "total_runs": 24,
-  "logged_runs": 2,
+  "total_runs": 25,
+  "logged_runs": 3,
   "first_run": "2026-06-29",
   "total_triggers": 2,
   "total_taken": 0,
@@ -207,8 +216,8 @@
     "close_price": 4566.0
    }
   ],
-  "last_run": "2026-07-30",
-  "last_run_utc": "2026-07-30T15:50:24Z"
+  "last_run": "2026-07-31",
+  "last_run_utc": "2026-07-31T12:31:47Z"
  },
  "integrity": [
   {
