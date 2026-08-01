@@ -32,6 +32,10 @@ __pycache__/
 !/results/nifty500_10y_training_data.csv
 !/results/xgboost_oos_predictions_asymmetric.csv
 
+# Retraining reports and candidate models are reviewed in pull requests, so they
+# must be committed even though they contain csv.
+!/model_reports/**
+
 # ------------------------------------------------------ editor / scratch
 .vscode/
 .uitest/

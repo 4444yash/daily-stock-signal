@@ -75,6 +75,35 @@ def prepare(df):
     return df
 
 
+def compute_features(row, idx, closes, sma50, n_close, n_sma50, ni):
+    """
+    The 12 model features for one signal bar.
+
+    Shared by the backtest and by build_training_data.py so the two can never
+    drift apart. Returns None if any feature is NaN.
+    """
+    vol_avg = row['volume_avg20']
+    denom = row['high'] - row['low']
+    features = {
+        "bbw_width_pct": float(row['bbw']),
+        "days_in_squeeze": int(row['days_in_squeeze']),
+        "volume_multiple": float(row['volume'] / vol_avg) if vol_avg > 0 else 1.0,
+        "close_high_ratio": float((row['close'] - row['low']) / denom) if denom > 0 else 1.0,
+        "rsi_absolute": float(row['rsi_14']),
+        "rsi_delta": float(row['rsi_diff']),
+        "atr_pct": float(row['atr14'] / row['close'] * 100) if row['close'] > 0 else 0.0,
+        "distance_from_50sma": float((row['close'] - sma50[idx]) / sma50[idx]) if sma50[idx] > 0 else 0.0,
+        "nifty_trend": 1 if n_close[ni] > n_sma50[ni] else 0,
+        "nifty_distance_from_50sma": float((n_close[ni] - n_sma50[ni]) / n_sma50[ni]) if n_sma50[ni] > 0 else 0.0,
+        "relative_strength_125": float((closes[idx] / closes[idx - 125]) /
+                                       (n_close[ni] / n_close[ni - 125])),
+        "prior_runup_90": float((closes[idx] - closes[idx - 90]) / closes[idx - 90] * 100),
+    }
+    if any(pd.isna(v) for v in features.values()):
+        return None
+    return features
+
+
 def simulate(df, idx, closes, opens, highs, lows, atrs10):
     """Enter at next open, trail with (H+L)/2 - 3*ATR10, exit on close breach or gap-down."""
     entry_idx = idx + 1
@@ -187,24 +216,8 @@ def main():
             if ni is None or ni < 125:
                 continue
 
-            vol_avg = row['volume_avg20']
-            denom = row['high'] - row['low']
-            features = {
-                "bbw_width_pct": float(row['bbw']),
-                "days_in_squeeze": int(row['days_in_squeeze']),
-                "volume_multiple": float(row['volume'] / vol_avg) if vol_avg > 0 else 1.0,
-                "close_high_ratio": float((row['close'] - row['low']) / denom) if denom > 0 else 1.0,
-                "rsi_absolute": float(row['rsi_14']),
-                "rsi_delta": float(row['rsi_diff']),
-                "atr_pct": float(row['atr14'] / row['close'] * 100) if row['close'] > 0 else 0.0,
-                "distance_from_50sma": float((row['close'] - sma50[idx]) / sma50[idx]) if sma50[idx] > 0 else 0.0,
-                "nifty_trend": 1 if n_close[ni] > n_sma50[ni] else 0,
-                "nifty_distance_from_50sma": float((n_close[ni] - n_sma50[ni]) / n_sma50[ni]) if n_sma50[ni] > 0 else 0.0,
-                "relative_strength_125": float((closes[idx] / closes[idx - 125]) /
-                                               (n_close[ni] / n_close[ni - 125])),
-                "prior_runup_90": float((closes[idx] - closes[idx - 90]) / closes[idx - 90] * 100),
-            }
-            if any(pd.isna(v) for v in features.values()):
+            features = compute_features(row, idx, closes, sma50, n_close, n_sma50, ni)
+            if features is None:
                 continue
 
             prob = float(model.predict_proba(pd.DataFrame([features])[FEATURE_COLS])[:, 1][0])

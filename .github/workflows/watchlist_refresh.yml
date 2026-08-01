@@ -1,0 +1,120 @@
+name: Watchlist Refresh
+
+# Committing a Screener.in export rebuilds watchlist.json and opens a pull request
+# with the diff. Also runs a monthly advisory audit of the criteria that can be
+# checked from free data.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'screener/exports/*.csv'
+  schedule:
+    # 05:00 UTC on the 2nd of each month - advisory audit only
+    - cron: '0 5 2 * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'refresh = rebuild from newest export; audit = check criteria only'
+        type: choice
+        default: refresh
+        options: [refresh, audit]
+
+concurrency:
+  group: watchlist
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.event_name == 'push' || github.event.inputs.mode == 'refresh'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Rebuild watchlist from newest export
+        run: python build_watchlist.py | tee refresh.log
+
+      - name: Publish diff to run summary
+        run: cat screener/last_refresh.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open pull request with the new watchlist
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: watchlist/refresh-${{ github.run_number }}
+          delete-branch: true
+          add-paths: |
+            watchlist.json
+            watchlist_history/**
+            screener/last_refresh.md
+          title: "Watchlist refresh #${{ github.run_number }}"
+          commit-message: "Refresh watchlist from screener export #${{ github.run_number }}"
+          body: |
+            Rebuilt `watchlist.json` from the newest export in `screener/exports/`.
+
+            The diff summary is in `screener/last_refresh.md` and in the workflow run
+            summary. Check the added and removed names look sensible before merging.
+
+            **A stock leaving the screen does not close its trade.** Exits are the
+            trailing stop's job. If you hold a position in a removed name the summary
+            flags it, and the decision to exit early is yours.
+
+            Symbols with no Yahoo price history on either `.NS` or `.BO` are excluded
+            rather than added, so they cannot silently error out on every daily scan.
+
+            The previous list is archived in `watchlist_history/`. That archive is what
+            makes point-in-time, non-survivorship-biased retraining possible later.
+
+  audit:
+    if: github.event_name == 'schedule' || github.event.inputs.mode == 'audit'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Audit computable criteria
+        run: python build_watchlist.py --audit | tee audit.log
+
+      - name: Summarise
+        run: |
+          {
+            echo "## Watchlist audit"
+            echo
+            echo "Advisory only. Checks market capitalization and 3-year sales/profit"
+            echo "growth. Promoter holding and debt-to-equity cannot be verified from"
+            echo "free data, so a clean audit does not mean a stock still passes the"
+            echo "full screen."
+            echo
+            echo '```'
+            tail -n 40 audit.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: watchlist-audit-${{ github.run_number }}
+          path: screener/audit_latest.json
+          retention-days: 90

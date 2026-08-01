@@ -33,14 +33,77 @@ upward. There is no profit target and no time limit.
 |---|---|
 | `daily_scanner.py` | The daily job: scans, scores, manages stops, logs, alerts |
 | `build_dashboard.py` | Turns the JSON ledgers into `docs/data/dashboard_data.json` |
-| `build_backtest.py` | One-off historical simulation of the same logic |
+| `build_backtest.py` | Historical simulation, and the shared feature/exit functions |
+| `build_training_data.py` | Regenerates the labelled training set from yfinance |
+| `retrain.py` | Trains a candidate, compares it, writes the evidence report |
+| `build_watchlist.py` | Turns a Screener.in export into `watchlist.json` |
 | `rebuild_history_from_git.py` | One-off backfill of closed trades from git history |
-| `watchlist.json` | The scanned universe |
+| `train_xgboost_asymmetric.py` | The original trainer that produced the live model |
+| `watchlist.json` | The scanned universe, with provenance |
+| `watchlist_history/` | Every previous watchlist, for point-in-time work |
+| `screener/` | The fundamental screen, its exports, and the refresh process |
 | `active_trades.json` | Open positions, rewritten each run |
 | `trade_history.json` | Permanent ledger of closed trades |
 | `scan_log.json` | One record per scan: triggers found, signals taken, exits |
 | `backtest_history.json` | Historical backtest output |
+| `model_reports/` | Retrain reports, model cards, candidate models |
 | `docs/` | The static dashboard published to GitHub Pages |
+
+## Scheduled automation
+
+| Workflow | When | What it does |
+|---|---|---|
+| `daily_scan.yml` | Weekdays 10:45 UTC | Scans, manages stops, alerts, republishes the dashboard |
+| `retrain.yml` | 1st of Jan/Apr/Jul/Oct | Trains a candidate, opens a PR with the evidence |
+| `watchlist_refresh.yml` | On screener export, plus monthly | Rebuilds the watchlist, or audits criteria |
+
+Only the daily scan commits to `main` directly. Both quarterly jobs open pull
+requests, because a bad model or a wrong watchlist would quietly cost money for
+three months.
+
+## Retraining
+
+The model is trained on a rolling window of the most recent 300 resolved trades,
+with a 60-day resolution buffer so no signal is trained on before its outcome is
+settled. Target is `trade_pnl >= 25%` — a 25% move, not merely a profitable
+trade — because the strategy earns its return from a small number of large
+winners, not from a high win rate.
+
+```bash
+python build_training_data.py --years 10 --source history   # rebuild the dataset
+python retrain.py                                           # candidate + report
+```
+
+`retrain.py` never installs a model. It writes `model_reports/candidate_model.json`
+alongside a report covering walk-forward lift, a gate threshold sweep, recent-period
+decay, feature importance and feature drift, then gives a PROMOTE or HOLD verdict
+against fixed criteria. Promotion is a manual copy.
+
+Every figure is averaged over five random seeds. This matters more than it sounds:
+on 300 rows with 100 trees, the seed alone moves mean gated P&L from +1.7% to
++7.6%. Single-run numbers here are close to meaningless, and
+`results/xgboost_oos_predictions_asymmetric.csv` happens to be seed 42, near the
+top of that range.
+
+### On the training universe
+
+79% of the current training data comes from Nifty 50 large caps, while the live
+universe is ₹1,000–15,000cr small caps. That mismatch looks wrong, and removing the
+large-cap rows was tested directly. It made things clearly worse:
+
+| config | OOS trades | gated | lift | avg P&L | PF |
+|---|---:|---:|---:|---:|---:|
+| all data, window 300 (live) | 234 | 19.6 | 1.72 | +4.41% | 1.71 |
+| all data, window 150 | 244 | 14.8 | 1.00 | +2.09% | 1.34 |
+| small-cap only, window 150 | 49 | 0.8 | 0.00 | n/a | n/a |
+
+Only 248 small-cap trades exist, below the 300-trade window, so a small-cap-only
+model gates in roughly one trade and is not a functioning model. The large-cap rows
+supply volume the model needs, and that structure evidently transfers.
+
+The question is not settled, it is currently untestable. Answering it properly needs
+a much larger screener-profile pool, which is what `build_training_data.py` exists to
+produce. **Until then the live configuration stays as it is.**
 
 ## Data flow
 
@@ -59,6 +122,23 @@ yfinance ──> daily_scanner.py ──> active_trades.json
 
 The workflow commits the updated ledgers back to `main`, then deploys `docs/` to Pages, so
 the dashboard always reflects exactly what the automation recorded.
+
+## The watchlist
+
+Built quarterly from a fundamental screen on Screener.in — profitable, efficiently
+run small and mid caps with founder ownership, where leverage is tolerated only in
+proportion to return on capital. The full query and its intent live in
+[`screener/query.txt`](screener/query.txt).
+
+The screen stays manual on purpose. Two of its criteria cannot be computed reliably
+from free data: promoter holding is not exposed by yfinance, and its debt-to-equity
+values come back in inconsistent units across symbols (GARUDA `2.649`, PRECWIRE
+`39.377`, KSHINTL `39.74` — a mix of ratios and percentages). Since debt tiering is
+the core of the query, automating it would silently produce a wrong watchlist.
+
+So you export the CSV once a quarter and everything after that is automated:
+ticker validation against Yahoo, batch assignment, archiving, and a diff showing
+what was added, removed and retained. See [`screener/README.md`](screener/README.md).
 
 ## Setup
 

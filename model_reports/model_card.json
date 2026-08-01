@@ -1,0 +1,170 @@
+{
+  "generated_at_utc": "2026-08-01T18:45:13Z",
+  "git_sha": "ea777b7",
+  "verdict": "PROMOTE",
+  "training_data": "results/xgboost_training_data.csv",
+  "rows_total": 1206,
+  "rows_used_for_final_fit": 300,
+  "window": 300,
+  "buffer_days": 60,
+  "gate": 0.65,
+  "seeds": [
+    42,
+    7,
+    13,
+    99,
+    2024
+  ],
+  "excluded_nifty50": false,
+  "serving_universe": "small",
+  "final_fit_date_range": [
+    "2025-04-22",
+    "2026-05-25"
+  ],
+  "target_definition": "trade_pnl >= 25",
+  "target_base_rate_pct": 7.79,
+  "walkforward": {
+    "incumbent config: all data": {
+      "n_oos": 234.0,
+      "n_taken": 19.6,
+      "base_rate": 10.6838,
+      "rate": 18.4211,
+      "lift": 1.7242,
+      "avg": 4.4149,
+      "median": -7.5648,
+      "pf": 1.7124,
+      "win": 37.6942,
+      "total": 87.1511
+    }
+  },
+  "seed_spread_avg_pnl": [
+    1.681,
+    2.165,
+    4.881,
+    5.776,
+    7.57
+  ],
+  "threshold_sweep": [
+    {
+      "gate": 0.5,
+      "n_oos": 234.0,
+      "n_taken": 34.8,
+      "base_rate": 10.6838,
+      "rate": 16.6728,
+      "lift": 1.5606,
+      "avg": 3.5827,
+      "median": -7.264,
+      "pf": 1.543,
+      "win": 34.4556,
+      "total": 125.0647
+    },
+    {
+      "gate": 0.55,
+      "n_oos": 234.0,
+      "n_taken": 29.6,
+      "base_rate": 10.6838,
+      "rate": 17.5683,
+      "lift": 1.6444,
+      "avg": 4.0494,
+      "median": -7.4303,
+      "pf": 1.6134,
+      "win": 35.7863,
+      "total": 119.622
+    },
+    {
+      "gate": 0.6,
+      "n_oos": 234.0,
+      "n_taken": 24.2,
+      "base_rate": 10.6838,
+      "rate": 19.1751,
+      "lift": 1.7948,
+      "avg": 4.2134,
+      "median": -7.3995,
+      "pf": 1.6562,
+      "win": 38.0135,
+      "total": 100.2001
+    },
+    {
+      "gate": 0.65,
+      "n_oos": 234.0,
+      "n_taken": 19.6,
+      "base_rate": 10.6838,
+      "rate": 18.4211,
+      "lift": 1.7242,
+      "avg": 4.4149,
+      "median": -7.5648,
+      "pf": 1.7124,
+      "win": 37.6942,
+      "total": 87.1511
+    },
+    {
+      "gate": 0.7,
+      "n_oos": 234.0,
+      "n_taken": 14.6,
+      "base_rate": 10.6838,
+      "rate": 12.381,
+      "lift": 1.1589,
+      "avg": 1.7197,
+      "median": -7.8009,
+      "pf": 1.262,
+      "win": 34.2857,
+      "total": 24.7288
+    },
+    {
+      "gate": 0.75,
+      "n_oos": 234.0,
+      "n_taken": 10.8,
+      "base_rate": 10.6838,
+      "rate": 14.6061,
+      "lift": 1.3671,
+      "avg": 2.5391,
+      "median": -9.0767,
+      "pf": 1.3533,
+      "win": 35.2121,
+      "total": 27.9066
+    }
+  ],
+  "feature_importance_pct": {
+    "bbw_width_pct": 11.54,
+    "days_in_squeeze": 7.46,
+    "volume_multiple": 5.03,
+    "close_high_ratio": 12.92,
+    "rsi_absolute": 4.31,
+    "rsi_delta": 4.91,
+    "atr_pct": 14.96,
+    "distance_from_50sma": 17.02,
+    "nifty_trend": 0.0,
+    "nifty_distance_from_50sma": 9.27,
+    "relative_strength_125": 6.44,
+    "prior_runup_90": 6.14
+  },
+  "dead_features": [
+    "nifty_trend"
+  ],
+  "checks": [
+    {
+      "name": "lift above base rate",
+      "value": 1.724,
+      "threshold": 1.1,
+      "pass": true
+    },
+    {
+      "name": "gated trades profitable",
+      "value": 4.415,
+      "threshold": 0.0,
+      "pass": true
+    },
+    {
+      "name": "profit factor",
+      "value": 1.712,
+      "threshold": 1.2,
+      "pass": true
+    },
+    {
+      "name": "enough gated trades",
+      "value": 19.6,
+      "threshold": 15,
+      "pass": true
+    }
+  ]
+}

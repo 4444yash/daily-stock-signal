@@ -1,0 +1,122 @@
+name: Quarterly Model Retrain
+
+# Trains a candidate model, measures it against the live configuration, and opens
+# a pull request with the evidence. It never installs the model itself - a human
+# merges, or does not.
+
+on:
+  schedule:
+    # 06:00 UTC on the 1st of Jan / Apr / Jul / Oct
+    - cron: '0 6 1 1,4,7,10 *'
+  workflow_dispatch:
+    inputs:
+      data_source:
+        description: 'committed = use the tracked dataset; regenerate = rebuild from yfinance'
+        type: choice
+        default: committed
+        options: [committed, regenerate]
+      exclude_nifty50:
+        description: 'Train only on non-Nifty-50 rows'
+        type: boolean
+        default: false
+      years:
+        description: 'History window when regenerating'
+        default: '10'
+
+concurrency:
+  group: retrain
+  cancel-in-progress: false
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Off by default. The committed dataset is the continuity baseline, and
+      # regenerating from today's watchlist introduces survivorship bias. Turn it
+      # on deliberately, once the training-pool question has been settled.
+      - name: Regenerate training data from yfinance
+        if: github.event.inputs.data_source == 'regenerate'
+        run: |
+          python build_training_data.py \
+            --years "${{ github.event.inputs.years || '10' }}" \
+            --source history \
+            --out results/training_data_generated.csv
+
+      - name: Train candidate and build report
+        id: retrain
+        run: |
+          DATA=results/xgboost_training_data.csv
+          if [ "${{ github.event.inputs.data_source }}" = "regenerate" ]; then
+            DATA=results/training_data_generated.csv
+          fi
+          EXTRA=""
+          if [ "${{ github.event.inputs.exclude_nifty50 }}" = "true" ]; then
+            EXTRA="--exclude-nifty50"
+          fi
+          echo "Using $DATA $EXTRA"
+          python retrain.py --data "$DATA" $EXTRA
+          echo "verdict=$(python -c "import json;print(json.load(open('model_reports/model_card.json'))['verdict'])")" >> "$GITHUB_OUTPUT"
+
+      - name: Publish report to run summary
+        run: cat model_reports/report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: retrain-${{ github.run_number }}
+          path: model_reports/
+          retention-days: 90
+
+      - name: Open pull request with the candidate
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: retrain/candidate-${{ github.run_number }}
+          delete-branch: true
+          add-paths: |
+            model_reports/**
+          title: "Model retrain candidate #${{ github.run_number }} — ${{ steps.retrain.outputs.verdict }}"
+          commit-message: "Quarterly retrain candidate #${{ github.run_number }} (${{ steps.retrain.outputs.verdict }})"
+          body: |
+            Automated quarterly retrain. **Verdict: ${{ steps.retrain.outputs.verdict }}**
+
+            The live model has **not** been changed. This PR carries the candidate and the
+            evidence behind it. Read `model_reports/report.md` before deciding.
+
+            ### To promote
+
+            ```bash
+            cp model_reports/candidate_model.json xgboost_live_model_asymmetric.json
+            git commit -am "Promote retrain candidate #${{ github.run_number }}"
+            ```
+
+            Keep the previous model file in history so a rollback is one revert away.
+
+            ### To reject
+
+            Close this PR. Nothing changes, and the next scan uses the existing model.
+
+            ### Read the report critically
+
+            - Every figure is averaged over 5 seeds. On this sample size a single run is
+              close to meaningless — check the seed spread section.
+            - Check the threshold sweep. Raising the gate always flatters the numbers by
+              taking fewer trades.
+            - Check the recent-18-month block against the full period. That is where edge
+              decay shows up first.
+            - Labels come from replaying the strategy on adjusted prices, so real fills
+              differ, especially on gap-up entries in thin names.

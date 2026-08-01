@@ -1,6 +1,6 @@
 {
  "label": "Historical backtest (4y, signal-level)",
- "generated_at_utc": "2026-07-30T15:05:32Z",
+ "generated_at_utc": "2026-08-01T18:07:54Z",
  "meta": {
   "years": 4,
   "symbols_scanned": 160,
@@ -486,6 +486,20 @@
    "hold_days": 18,
    "prob": 0.709,
    "reason": "SL/TSL Hit"
+  },
+  {
+   "symbol": "GKENERGY",
+   "batch": "Batch 1",
+   "signal_date": "2026-06-04",
+   "entry_date": "2026-06-05",
+   "exit_date": "2026-07-31",
+   "entry_price": 142.99,
+   "exit_price": 128.0,
+   "peak_price": 154.9,
+   "pnl_pct": -10.48,
+   "hold_days": 56,
+   "prob": 0.9574,
+   "reason": "SL Hit (Open Gap)"
   }
  ]
 }
