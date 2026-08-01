@@ -1,9 +1,10 @@
-# Python cache
+# ---------------------------------------------------------------- caches
 __pycache__/
 *.pyc
 
-# Local data directories (downloaded dynamically in the cloud).
-# Anchored with a leading slash so they cannot swallow docs/data/.
+# ------------------------------------------- bulk price data (regenerable)
+# Hundreds of MB of downloaded OHLCV. build_training_data.py regenerates
+# whatever is needed from yfinance, so none of this belongs in the repo.
 /data/
 /data_new/
 /data_batch2/
@@ -12,23 +13,41 @@ __pycache__/
 /data_crash_2022/
 /data_nifty500_10y/
 /output/
-/results/
 /rsi,bbw/
 
-# Ignore local output files
+# ------------------------------------------------ generic local artefacts
 *.log
 *.png
 *.csv
 
-# Editor and local scratch
+# --------------------------------------------------- experiment output
+# results/ is a scratch directory of one-off experiments. Ignore the contents,
+# but keep the handful of artifacts the model cannot be reproduced or audited
+# without.
+#
+# Note "/results/*" and not "/results/": git cannot re-include a file whose
+# parent directory is itself excluded, so the directory must stay visible.
+/results/*
+!/results/xgboost_training_data.csv
+!/results/nifty500_10y_training_data.csv
+!/results/xgboost_oos_predictions_asymmetric.csv
+
+# ------------------------------------------------------ editor / scratch
 .vscode/
 .uitest/
 .vercel/
 
-# Ignore local testing/experimental python scripts.
-# Only the scripts the automation and dashboard need are tracked.
+# --------------------------------------------------------------- python
+# Only the scripts the live pipeline, the dashboard and the retraining
+# workflow depend on. Everything else in the workspace is exploratory.
 *.py
 !daily_scanner.py
 !build_dashboard.py
 !build_backtest.py
+!build_training_data.py
+!build_watchlist.py
+!retrain.py
 !rebuild_history_from_git.py
+!extract_ml_features.py
+!extract_nifty500_features.py
+!train_xgboost_asymmetric.py

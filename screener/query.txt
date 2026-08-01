@@ -1,0 +1,63 @@
+Screener.in query used to build the trading watchlist.
+Run quarterly. Source of record for watchlist.json.
+
+--------------------------------------------------------------------------
+Market Capitalization < 15000 AND
+Market Capitalization > 1000 AND
+Sales growth 3Years > 15 AND
+Profit growth 3Years > 15 AND
+Return on capital employed > 15 AND
+Promoter holding > 45 AND
+(
+    (Return on capital employed > 20 AND Debt to equity < 1.5)
+ OR (Return on capital employed >= 15 AND Return on capital employed <= 20 AND Debt to equity < 1.0)
+ OR (Return on capital employed < 15 AND Debt to equity < 0.5)
+)
+--------------------------------------------------------------------------
+
+Intent
+------
+Profitable, efficiently run small and mid caps with founder skin in the game,
+growing both top and bottom line, where leverage is tolerated only in
+proportion to returns on capital. The debt tiering is the core idea: the more
+efficient the business, the more debt it is allowed to carry.
+
+Units: Market Capitalization in Rs crore. Growth and ROCE in percent.
+Debt to equity as a ratio.
+
+
+NOTE: the third debt tier is unreachable
+----------------------------------------
+The global filter requires "Return on capital employed > 15", so the branch
+
+    (Return on capital employed < 15 AND Debt to equity < 0.5)
+
+can never be satisfied. ROCE cannot be both above and below 15 at once. The
+query therefore behaves as:
+
+    (ROCE > 20 AND D/E < 1.5)  OR  (15 < ROCE <= 20 AND D/E < 1.0)
+
+This has been left exactly as originally run so the current watchlist stays
+reproducible. If the intent was to also admit low-ROCE, very low-debt
+businesses, the global ROCE floor needs relaxing. Decide deliberately, then
+record the change here with the date.
+
+
+Why this is not fully automated
+-------------------------------
+Two of the criteria cannot be computed reliably from free data sources:
+
+  Promoter holding   Not exposed by yfinance. Only `heldPercentInsiders` is
+                     available, which is an insider-holding proxy and does not
+                     match the SEBI-disclosed promoter figure.
+
+  Debt to equity     yfinance returns inconsistent units across symbols. Real
+                     examples: GARUDA 2.649, PRECWIRE 39.377, KSHINTL 39.74 -
+                     a mix of ratios and percentages. Unusable for a threshold
+                     test, and this field is the core of the query.
+
+Market capitalization and 3-year sales/profit growth ARE computable, so
+build_watchlist.py cross-checks those and flags drift between quarters.
+
+The quarterly run therefore stays manual by design: export from Screener.in,
+commit the CSV, and let the workflow do everything after that. See README.md.
