@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-08-03T13:30:28Z",
- "as_of": "2026-08-03",
+ "generated_at_utc": "2026-08-04T12:29:26Z",
+ "as_of": "2026-08-04",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": -9.41,
   "profit_factor": 0.0,
   "realized_return_pct": -1.88,
-  "unrealized_pct": 170.72,
+  "unrealized_pct": 184.66,
   "max_drawdown_pct": -1.88,
   "best": -9.41,
   "worst": -9.41,
@@ -52,19 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 878.2,
-   "latest_date": "2026-08-03",
+   "latest_price": 910.25,
+   "latest_date": "2026-08-04",
    "current_stop": 772.34,
-   "peak_price": 885.6,
+   "peak_price": 914.45,
    "prob": 0.9709,
-   "unrealized_pct": 123.06,
-   "day_change_pct": 5.69,
-   "stop_distance_pct": 12.05,
+   "unrealized_pct": 131.2,
+   "day_change_pct": 9.54,
+   "stop_distance_pct": 15.15,
    "locked_pct": 96.17,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -0.84,
+   "drawdown_from_peak_pct": -0.46,
    "r_multiple": null,
-   "days_held": 145
+   "days_held": 146
   },
   {
    "symbol": "CNL",
@@ -72,19 +72,19 @@
    "signal_date": "2026-05-11",
    "entry_date": "2026-05-12",
    "entry_price": 688.0,
-   "latest_price": 1015.9,
-   "latest_date": "2026-08-03",
+   "latest_price": 1055.8,
+   "latest_date": "2026-08-04",
    "current_stop": 853.85,
-   "peak_price": 1048.0,
+   "peak_price": 1084.9,
    "prob": 0.9083,
-   "unrealized_pct": 47.66,
-   "day_change_pct": 1.88,
-   "stop_distance_pct": 15.95,
+   "unrealized_pct": 53.46,
+   "day_change_pct": 3.93,
+   "stop_distance_pct": 19.13,
    "locked_pct": 24.11,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -3.06,
+   "drawdown_from_peak_pct": -2.68,
    "r_multiple": null,
-   "days_held": 83
+   "days_held": 84
   }
  ],
  "live": {
@@ -203,15 +203,42 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 2
+   },
+   {
+    "date": "2026-08-04",
+    "scanned": 158,
+    "errors": 0,
+    "triggers": 3,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
    }
   ],
-  "total_runs": 26,
-  "logged_runs": 4,
+  "total_runs": 27,
+  "logged_runs": 5,
   "first_run": "2026-06-29",
-  "total_triggers": 2,
+  "total_triggers": 5,
   "total_taken": 0,
   "gate_pass_rate": 0.0,
   "recent_rejected": [
+   {
+    "symbol": "ROBU",
+    "date": "2026-08-04",
+    "prob": 0.0428,
+    "close_price": 1251.65
+   },
+   {
+    "symbol": "SEAMECLTD",
+    "date": "2026-08-04",
+    "prob": 0.0101,
+    "close_price": 1480.5
+   },
+   {
+    "symbol": "DIFFNKG",
+    "date": "2026-08-04",
+    "prob": 0.0376,
+    "close_price": 423.7
+   },
    {
     "symbol": "LTFOODS",
     "date": "2026-07-30",
@@ -225,8 +252,8 @@
     "close_price": 4566.0
    }
   ],
-  "last_run": "2026-08-03",
-  "last_run_utc": "2026-08-03T13:30:27Z"
+  "last_run": "2026-08-04",
+  "last_run_utc": "2026-08-04T12:29:26Z"
  },
  "integrity": [
   {

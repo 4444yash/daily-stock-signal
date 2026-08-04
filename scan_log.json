@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-03",
+  "last_updated": "2026-08-04",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -213,6 +213,87 @@
       "open_positions": 2,
       "corporate_actions": [],
       "triggers_detail": []
+    },
+    {
+      "date": "2026-08-04",
+      "run_at_utc": "2026-08-04T12:29:26Z",
+      "universe": 166,
+      "scanned": 158,
+      "skipped": 8,
+      "errors": 0,
+      "triggers": 3,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 2,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "ROBU",
+          "batch": "Batch 1",
+          "signal_date": "2026-08-04",
+          "prob": 0.042818158864974976,
+          "close_price": 1251.6500244140625,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 9.54953114491299,
+            "days_in_squeeze": 8,
+            "volume_multiple": 3.0472103004291844,
+            "close_high_ratio": 0.634268716011752,
+            "rsi_absolute": 60.52738937716519,
+            "rsi_delta": 16.826681857326818,
+            "atr_pct": 4.035245383887025,
+            "distance_from_50sma": 0.08949313286928097,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.028011751621740875,
+            "relative_strength_125": 1.693913267777022,
+            "prior_runup_90": 50.25810617215636
+          }
+        },
+        {
+          "symbol": "SEAMECLTD",
+          "batch": "Batch 3",
+          "signal_date": "2026-08-04",
+          "prob": 0.010058928281068802,
+          "close_price": 1480.5,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 6.48745357537395,
+            "days_in_squeeze": 14,
+            "volume_multiple": 2.2067299640727933,
+            "close_high_ratio": 0.5754716981132075,
+            "rsi_absolute": 58.34885919317045,
+            "rsi_delta": 9.103046665325216,
+            "atr_pct": 3.5475463248796855,
+            "distance_from_50sma": -0.0019011390416330892,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.028011751621740875,
+            "relative_strength_125": 1.1836013318258736,
+            "prior_runup_90": 7.337051228110669
+          }
+        },
+        {
+          "symbol": "DIFFNKG",
+          "batch": "Batch 4",
+          "signal_date": "2026-08-04",
+          "prob": 0.03764623403549194,
+          "close_price": 423.70001220703125,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 8.065427349092163,
+            "days_in_squeeze": 5,
+            "volume_multiple": 3.8758159179419667,
+            "close_high_ratio": 0.6791214156936813,
+            "rsi_absolute": 62.73447713156281,
+            "rsi_delta": 16.458989812893265,
+            "atr_pct": 3.9355677110018457,
+            "distance_from_50sma": 0.12783659701546532,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.028011751621740875,
+            "relative_strength_125": 1.8265054499050122,
+            "prior_runup_90": 66.22205663100057
+          }
+        }
+      ]
     }
   ]
 }
