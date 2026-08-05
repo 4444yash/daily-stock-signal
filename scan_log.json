@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-04",
+  "last_updated": "2026-08-05",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -291,6 +291,65 @@
             "nifty_distance_from_50sma": 0.028011751621740875,
             "relative_strength_125": 1.8265054499050122,
             "prior_runup_90": 66.22205663100057
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "run_at_utc": "2026-08-05T12:26:38Z",
+      "universe": 166,
+      "scanned": 158,
+      "skipped": 8,
+      "errors": 0,
+      "triggers": 2,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 2,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "PRECWIRE",
+          "batch": "Batch 1",
+          "signal_date": "2026-08-05",
+          "prob": 0.14143259823322296,
+          "close_price": 409.5,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 10.12654367840188,
+            "days_in_squeeze": 0,
+            "volume_multiple": 5.140496045115299,
+            "close_high_ratio": 0.8494472273693688,
+            "rsi_absolute": 61.931078940346985,
+            "rsi_delta": 10.942188321605244,
+            "atr_pct": 3.957508261976453,
+            "distance_from_50sma": 0.03276997462196677,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.027909847660945467,
+            "relative_strength_125": 1.6367796627954558,
+            "prior_runup_90": 36.077195043395434
+          }
+        },
+        {
+          "symbol": "SANGHVIMOV",
+          "batch": "Batch 4",
+          "signal_date": "2026-08-05",
+          "prob": 0.07313484698534012,
+          "close_price": 474.20001220703125,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 10.026631457521479,
+            "days_in_squeeze": 0,
+            "volume_multiple": 1.8784080459254904,
+            "close_high_ratio": 0.8998686015635932,
+            "rsi_absolute": 62.17635464364384,
+            "rsi_delta": 9.432562427356352,
+            "atr_pct": 5.084503368398054,
+            "distance_from_50sma": 0.1297389377925611,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.027909847660945467,
+            "relative_strength_125": 1.5538654918725239,
+            "prior_runup_90": 92.84262870159058
           }
         }
       ]

@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-08-04T12:29:26Z",
- "as_of": "2026-08-04",
+ "generated_at_utc": "2026-08-05T12:26:38Z",
+ "as_of": "2026-08-05",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": -9.41,
   "profit_factor": 0.0,
   "realized_return_pct": -1.88,
-  "unrealized_pct": 184.66,
+  "unrealized_pct": 194.01,
   "max_drawdown_pct": -1.88,
   "best": -9.41,
   "worst": -9.41,
@@ -52,19 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 910.25,
-   "latest_date": "2026-08-04",
-   "current_stop": 772.34,
-   "peak_price": 914.45,
+   "latest_price": 903.65,
+   "latest_date": "2026-08-05",
+   "current_stop": 796.29,
+   "peak_price": 924.05,
    "prob": 0.9709,
-   "unrealized_pct": 131.2,
-   "day_change_pct": 9.54,
-   "stop_distance_pct": 15.15,
-   "locked_pct": 96.17,
+   "unrealized_pct": 129.53,
+   "day_change_pct": -0.73,
+   "stop_distance_pct": 11.88,
+   "locked_pct": 102.26,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -0.46,
+   "drawdown_from_peak_pct": -2.21,
    "r_multiple": null,
-   "days_held": 146
+   "days_held": 147
   },
   {
    "symbol": "CNL",
@@ -72,19 +72,19 @@
    "signal_date": "2026-05-11",
    "entry_date": "2026-05-12",
    "entry_price": 688.0,
-   "latest_price": 1055.8,
-   "latest_date": "2026-08-04",
-   "current_stop": 853.85,
-   "peak_price": 1084.9,
+   "latest_price": 1131.65,
+   "latest_date": "2026-08-05",
+   "current_stop": 875.37,
+   "peak_price": 1145.0,
    "prob": 0.9083,
-   "unrealized_pct": 53.46,
-   "day_change_pct": 3.93,
-   "stop_distance_pct": 19.13,
-   "locked_pct": 24.11,
+   "unrealized_pct": 64.48,
+   "day_change_pct": 7.18,
+   "stop_distance_pct": 22.65,
+   "locked_pct": 27.23,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -2.68,
+   "drawdown_from_peak_pct": -1.17,
    "r_multiple": null,
-   "days_held": 84
+   "days_held": 85
   }
  ],
  "live": {
@@ -212,15 +212,36 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 2
+   },
+   {
+    "date": "2026-08-05",
+    "scanned": 158,
+    "errors": 0,
+    "triggers": 2,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
    }
   ],
-  "total_runs": 27,
-  "logged_runs": 5,
+  "total_runs": 28,
+  "logged_runs": 6,
   "first_run": "2026-06-29",
-  "total_triggers": 5,
+  "total_triggers": 7,
   "total_taken": 0,
   "gate_pass_rate": 0.0,
   "recent_rejected": [
+   {
+    "symbol": "PRECWIRE",
+    "date": "2026-08-05",
+    "prob": 0.1414,
+    "close_price": 409.5
+   },
+   {
+    "symbol": "SANGHVIMOV",
+    "date": "2026-08-05",
+    "prob": 0.0731,
+    "close_price": 474.2
+   },
    {
     "symbol": "ROBU",
     "date": "2026-08-04",
@@ -252,8 +273,8 @@
     "close_price": 4566.0
    }
   ],
-  "last_run": "2026-08-04",
-  "last_run_utc": "2026-08-04T12:29:26Z"
+  "last_run": "2026-08-05",
+  "last_run_utc": "2026-08-05T12:26:38Z"
  },
  "integrity": [
   {
