@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-06",
+  "last_updated": "2026-08-07",
   "trades": [
     {
       "symbol": "CNL",
@@ -8,11 +8,11 @@
       "signal_date": "2026-05-11",
       "prob": 0.908342,
       "entry_price": 688.0,
-      "current_stop": 875.3699645996094,
-      "latest_price": 1089.449951171875,
-      "latest_date": "2026-08-06",
+      "current_stop": 879.4050231933594,
+      "latest_price": 1116.8499755859375,
+      "latest_date": "2026-08-07",
       "peak_price": 1145.0,
-      "prev_price": 1131.6500244140625
+      "prev_price": 1089.449951171875
     },
     {
       "symbol": "KSHINTL",
@@ -22,10 +22,10 @@
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
       "current_stop": 796.2899963378907,
-      "latest_price": 899.3499755859375,
-      "latest_date": "2026-08-06",
+      "latest_price": 899.9000244140625,
+      "latest_date": "2026-08-07",
       "peak_price": 924.0499877929688,
-      "prev_price": 903.6500244140625
+      "prev_price": 899.3499755859375
     }
   ]
 }
