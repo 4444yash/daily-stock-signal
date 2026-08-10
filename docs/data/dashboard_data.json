@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-08-07T11:30:22Z",
- "as_of": "2026-08-07",
+ "generated_at_utc": "2026-08-10T11:33:18Z",
+ "as_of": "2026-08-10",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": -9.41,
   "profit_factor": 0.0,
   "realized_return_pct": -1.88,
-  "unrealized_pct": 190.91,
+  "unrealized_pct": 186.26,
   "max_drawdown_pct": -1.88,
   "best": -9.41,
   "worst": -9.41,
@@ -52,19 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 899.9,
-   "latest_date": "2026-08-07",
-   "current_stop": 796.29,
+   "latest_price": 900.6,
+   "latest_date": "2026-08-10",
+   "current_stop": 802.87,
    "peak_price": 924.05,
    "prob": 0.9709,
-   "unrealized_pct": 128.58,
-   "day_change_pct": 0.06,
-   "stop_distance_pct": 11.51,
-   "locked_pct": 102.26,
+   "unrealized_pct": 128.75,
+   "day_change_pct": 0.08,
+   "stop_distance_pct": 10.85,
+   "locked_pct": 103.93,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -2.61,
+   "drawdown_from_peak_pct": -2.54,
    "r_multiple": null,
-   "days_held": 149
+   "days_held": 152
   },
   {
    "symbol": "CNL",
@@ -72,19 +72,19 @@
    "signal_date": "2026-05-11",
    "entry_date": "2026-05-12",
    "entry_price": 688.0,
-   "latest_price": 1116.85,
-   "latest_date": "2026-08-07",
-   "current_stop": 879.41,
+   "latest_price": 1083.65,
+   "latest_date": "2026-08-10",
+   "current_stop": 924.98,
    "peak_price": 1145.0,
    "prob": 0.9083,
-   "unrealized_pct": 62.33,
-   "day_change_pct": 2.52,
-   "stop_distance_pct": 21.26,
-   "locked_pct": 27.82,
+   "unrealized_pct": 57.51,
+   "day_change_pct": -2.97,
+   "stop_distance_pct": 14.64,
+   "locked_pct": 34.45,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -2.46,
+   "drawdown_from_peak_pct": -5.36,
    "r_multiple": null,
-   "days_held": 87
+   "days_held": 90
   }
  ],
  "live": {
@@ -239,15 +239,42 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 2
+   },
+   {
+    "date": "2026-08-10",
+    "scanned": 158,
+    "errors": 0,
+    "triggers": 3,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
    }
   ],
-  "total_runs": 30,
-  "logged_runs": 8,
+  "total_runs": 31,
+  "logged_runs": 9,
   "first_run": "2026-06-29",
-  "total_triggers": 9,
+  "total_triggers": 12,
   "total_taken": 0,
   "gate_pass_rate": 0.0,
   "recent_rejected": [
+   {
+    "symbol": "SYNCOMF",
+    "date": "2026-08-10",
+    "prob": 0.0068,
+    "close_price": 14.34
+   },
+   {
+    "symbol": "KOVAI",
+    "date": "2026-08-10",
+    "prob": 0.0066,
+    "close_price": 6159.95
+   },
+   {
+    "symbol": "SURAKSHA",
+    "date": "2026-08-10",
+    "prob": 0.0071,
+    "close_price": 265.5
+   },
    {
     "symbol": "JSLL",
     "date": "2026-08-06",
@@ -303,8 +330,8 @@
     "close_price": 4566.0
    }
   ],
-  "last_run": "2026-08-07",
-  "last_run_utc": "2026-08-07T11:30:21Z"
+  "last_run": "2026-08-10",
+  "last_run_utc": "2026-08-10T11:33:18Z"
  },
  "integrity": [
   {

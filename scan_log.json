@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-07",
+  "last_updated": "2026-08-10",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -426,6 +426,87 @@
       "open_positions": 2,
       "corporate_actions": [],
       "triggers_detail": []
+    },
+    {
+      "date": "2026-08-10",
+      "run_at_utc": "2026-08-10T11:33:18Z",
+      "universe": 166,
+      "scanned": 158,
+      "skipped": 8,
+      "errors": 0,
+      "triggers": 3,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 2,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "SYNCOMF",
+          "batch": "Batch 2",
+          "signal_date": "2026-08-10",
+          "prob": 0.006789462640881538,
+          "close_price": 14.34000015258789,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 7.387520661391641,
+            "days_in_squeeze": 34,
+            "volume_multiple": 8.501852018067819,
+            "close_high_ratio": 0.5849057961800249,
+            "rsi_absolute": 64.65986254638943,
+            "rsi_delta": 15.449994667554854,
+            "atr_pct": 3.2028298418162335,
+            "distance_from_50sma": 0.03542393075197617,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.024133947559875475,
+            "relative_strength_125": 1.0492270125459147,
+            "prior_runup_90": 26.902654075577757
+          }
+        },
+        {
+          "symbol": "KOVAI",
+          "batch": "Batch 3",
+          "signal_date": "2026-08-10",
+          "prob": 0.006604587193578482,
+          "close_price": 6159.9501953125,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 4.3487448903245465,
+            "days_in_squeeze": 28,
+            "volume_multiple": 9.314304934890203,
+            "close_high_ratio": 0.7005394329742473,
+            "rsi_absolute": 65.26568843434956,
+            "rsi_delta": 18.23684587166099,
+            "atr_pct": 2.482915510150568,
+            "distance_from_50sma": 0.04965401311245433,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.024133947559875475,
+            "relative_strength_125": 1.199684052937787,
+            "prior_runup_90": 21.818799289572567
+          }
+        },
+        {
+          "symbol": "SURAKSHA",
+          "batch": "Batch 4",
+          "signal_date": "2026-08-10",
+          "prob": 0.007075601257383823,
+          "close_price": 265.5,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 6.238866611383546,
+            "days_in_squeeze": 35,
+            "volume_multiple": 9.084436274849057,
+            "close_high_ratio": 0.4866561076824754,
+            "rsi_absolute": 59.33107282269662,
+            "rsi_delta": 23.919362940420406,
+            "atr_pct": 3.9131031133873924,
+            "distance_from_50sma": 0.0028821109548514386,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.024133947559875475,
+            "relative_strength_125": 0.965408360827247,
+            "prior_runup_90": 8.248051280280627
+          }
+        }
+      ]
     }
   ]
 }
