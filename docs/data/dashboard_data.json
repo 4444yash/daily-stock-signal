@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-08-10T11:33:18Z",
- "as_of": "2026-08-10",
+ "generated_at_utc": "2026-08-11T11:27:38Z",
+ "as_of": "2026-08-11",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": -9.41,
   "profit_factor": 0.0,
   "realized_return_pct": -1.88,
-  "unrealized_pct": 186.26,
+  "unrealized_pct": 213.34,
   "max_drawdown_pct": -1.88,
   "best": -9.41,
   "worst": -9.41,
@@ -52,19 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 900.6,
-   "latest_date": "2026-08-10",
-   "current_stop": 802.87,
-   "peak_price": 924.05,
+   "latest_price": 988.95,
+   "latest_date": "2026-08-11",
+   "current_stop": 860.16,
+   "peak_price": 1045.5,
    "prob": 0.9709,
-   "unrealized_pct": 128.75,
-   "day_change_pct": 0.08,
-   "stop_distance_pct": 10.85,
-   "locked_pct": 103.93,
+   "unrealized_pct": 151.19,
+   "day_change_pct": 9.81,
+   "stop_distance_pct": 13.02,
+   "locked_pct": 118.48,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -2.54,
+   "drawdown_from_peak_pct": -5.41,
    "r_multiple": null,
-   "days_held": 152
+   "days_held": 153
   },
   {
    "symbol": "CNL",
@@ -72,19 +72,19 @@
    "signal_date": "2026-05-11",
    "entry_date": "2026-05-12",
    "entry_price": 688.0,
-   "latest_price": 1083.65,
-   "latest_date": "2026-08-10",
-   "current_stop": 924.98,
+   "latest_price": 1115.6,
+   "latest_date": "2026-08-11",
+   "current_stop": 927.77,
    "peak_price": 1145.0,
    "prob": 0.9083,
-   "unrealized_pct": 57.51,
-   "day_change_pct": -2.97,
-   "stop_distance_pct": 14.64,
-   "locked_pct": 34.45,
+   "unrealized_pct": 62.15,
+   "day_change_pct": 2.95,
+   "stop_distance_pct": 16.84,
+   "locked_pct": 34.85,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -5.36,
+   "drawdown_from_peak_pct": -2.57,
    "r_multiple": null,
-   "days_held": 90
+   "days_held": 91
   }
  ],
  "live": {
@@ -248,15 +248,36 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 2
+   },
+   {
+    "date": "2026-08-11",
+    "scanned": 158,
+    "errors": 0,
+    "triggers": 2,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
    }
   ],
-  "total_runs": 31,
-  "logged_runs": 9,
+  "total_runs": 32,
+  "logged_runs": 10,
   "first_run": "2026-06-29",
-  "total_triggers": 12,
+  "total_triggers": 14,
   "total_taken": 0,
   "gate_pass_rate": 0.0,
   "recent_rejected": [
+   {
+    "symbol": "FRONTSP",
+    "date": "2026-08-11",
+    "prob": 0.0197,
+    "close_price": 1481.7
+   },
+   {
+    "symbol": "WINDLAS",
+    "date": "2026-08-11",
+    "prob": 0.3885,
+    "close_price": 943.1
+   },
    {
     "symbol": "SYNCOMF",
     "date": "2026-08-10",
@@ -330,8 +351,8 @@
     "close_price": 4566.0
    }
   ],
-  "last_run": "2026-08-10",
-  "last_run_utc": "2026-08-10T11:33:18Z"
+  "last_run": "2026-08-11",
+  "last_run_utc": "2026-08-11T11:27:38Z"
  },
  "integrity": [
   {

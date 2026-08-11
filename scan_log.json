@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-10",
+  "last_updated": "2026-08-11",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -504,6 +504,65 @@
             "nifty_distance_from_50sma": 0.024133947559875475,
             "relative_strength_125": 0.965408360827247,
             "prior_runup_90": 8.248051280280627
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "run_at_utc": "2026-08-11T11:27:38Z",
+      "universe": 166,
+      "scanned": 158,
+      "skipped": 8,
+      "errors": 0,
+      "triggers": 2,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 2,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "FRONTSP",
+          "batch": "Batch 1",
+          "signal_date": "2026-08-11",
+          "prob": 0.019672518596053123,
+          "close_price": 1481.699951171875,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 8.405835328510943,
+            "days_in_squeeze": 33,
+            "volume_multiple": 5.0161993991296425,
+            "close_high_ratio": 0.7222682064423384,
+            "rsi_absolute": 61.55077486936053,
+            "rsi_delta": 10.197110822696246,
+            "atr_pct": 4.05277829046288,
+            "distance_from_50sma": 0.03787247643668243,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.018539683601888398,
+            "relative_strength_125": 1.0,
+            "prior_runup_90": 0.0
+          }
+        },
+        {
+          "symbol": "WINDLAS",
+          "batch": "Batch 4",
+          "signal_date": "2026-08-11",
+          "prob": 0.3885303735733032,
+          "close_price": 943.0999755859375,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 7.614767106606971,
+            "days_in_squeeze": 50,
+            "volume_multiple": 14.915270102814437,
+            "close_high_ratio": 0.8772327189643491,
+            "rsi_absolute": 67.96967958005958,
+            "rsi_delta": 23.05640199077525,
+            "atr_pct": 3.716846681721211,
+            "distance_from_50sma": 0.11684675666270722,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.018539683601888398,
+            "relative_strength_125": 1.1426426002953194,
+            "prior_runup_90": 24.293707597620042
           }
         }
       ]
