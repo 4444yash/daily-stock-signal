@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-13",
+  "last_updated": "2026-08-14",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -636,6 +636,65 @@
             "nifty_distance_from_50sma": 0.013743408587104195,
             "relative_strength_125": 1.2114189464208618,
             "prior_runup_90": 46.67503057094594
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "run_at_utc": "2026-08-14T11:25:57Z",
+      "universe": 166,
+      "scanned": 158,
+      "skipped": 8,
+      "errors": 0,
+      "triggers": 2,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 3,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "MANORAMA",
+          "batch": "Batch 1",
+          "signal_date": "2026-08-14",
+          "prob": 0.04619041085243225,
+          "close_price": 1737.0999755859375,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 6.624150378288224,
+            "days_in_squeeze": 42,
+            "volume_multiple": 15.137817589650867,
+            "close_high_ratio": 0.29204971806316893,
+            "rsi_absolute": 64.24133018334933,
+            "rsi_delta": 13.177095663749022,
+            "atr_pct": 3.671966144810226,
+            "distance_from_50sma": 0.09429272885378326,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.011704737296967785,
+            "relative_strength_125": 1.3110456806992434,
+            "prior_runup_90": 35.98715691137843
+          }
+        },
+        {
+          "symbol": "BALUFORGE",
+          "batch": "Batch 3",
+          "signal_date": "2026-08-14",
+          "prob": 0.045745477080345154,
+          "close_price": 493.75,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 10.119469417708032,
+            "days_in_squeeze": 0,
+            "volume_multiple": 9.177163908526747,
+            "close_high_ratio": 0.7722944779829546,
+            "rsi_absolute": 64.71489043206911,
+            "rsi_delta": 17.300285304846867,
+            "atr_pct": 3.806871079622513,
+            "distance_from_50sma": 0.09261623452438046,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.011704737296967785,
+            "relative_strength_125": 1.0482638638358133,
+            "prior_runup_90": 5.198677656159001
           }
         }
       ]
