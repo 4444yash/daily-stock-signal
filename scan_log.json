@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-17",
+  "last_updated": "2026-08-18",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -732,6 +732,43 @@
             "nifty_distance_from_50sma": 0.00967382875353918,
             "relative_strength_125": 2.1695298186745258,
             "prior_runup_90": 39.96555927858125
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "run_at_utc": "2026-08-18T11:00:44Z",
+      "universe": 166,
+      "scanned": 155,
+      "skipped": 11,
+      "errors": 0,
+      "triggers": 1,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 3,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "JINDRILL",
+          "batch": "Batch 4",
+          "signal_date": "2026-08-18",
+          "prob": 0.0387415774166584,
+          "close_price": 651.1500244140625,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 8.770659012409338,
+            "days_in_squeeze": 12,
+            "volume_multiple": 15.94265436424102,
+            "close_high_ratio": 0.7408911484562591,
+            "rsi_absolute": 63.45069556887361,
+            "rsi_delta": 18.02463958746919,
+            "atr_pct": 4.100438069053168,
+            "distance_from_50sma": 0.10105383246944233,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.004266056544630779,
+            "relative_strength_125": 1.4930628144697333,
+            "prior_runup_90": 18.942370973555594
           }
         }
       ]
