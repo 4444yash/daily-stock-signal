@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-18",
+  "last_updated": "2026-08-19",
   "trades": [
     {
       "symbol": "RPEL",
@@ -8,12 +8,12 @@
       "signal_date": "2026-08-13",
       "prob": 0.7481203675270081,
       "entry_price": 1388.800048828125,
-      "current_stop": 1295.5500610351562,
+      "current_stop": 1372.8000366210938,
       "initial_stop": 1196.3499877929687,
-      "latest_price": 1495.199951171875,
-      "latest_date": "2026-08-18",
-      "peak_price": 1518.0,
-      "prev_price": 1430.0999755859375
+      "latest_price": 1637.4000244140625,
+      "latest_date": "2026-08-19",
+      "peak_price": 1665.0,
+      "prev_price": 1495.199951171875
     },
     {
       "symbol": "CNL",
@@ -23,10 +23,10 @@
       "prob": 0.908342,
       "entry_price": 688.0,
       "current_stop": 1079.4699340820312,
-      "latest_price": 1264.1500244140625,
-      "latest_date": "2026-08-18",
+      "latest_price": 1226.3499755859375,
+      "latest_date": "2026-08-19",
       "peak_price": 1275.0,
-      "prev_price": 1252.0999755859375
+      "prev_price": 1264.1500244140625
     },
     {
       "symbol": "KSHINTL",
@@ -36,10 +36,10 @@
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
       "current_stop": 880.5799682617187,
-      "latest_price": 999.4500122070312,
-      "latest_date": "2026-08-18",
+      "latest_price": 1006.0499877929688,
+      "latest_date": "2026-08-19",
       "peak_price": 1059.9000244140625,
-      "prev_price": 1022.3499755859375
+      "prev_price": 999.4500122070312
     }
   ]
 }
