@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-08-19T11:00:30Z",
- "as_of": "2026-08-19",
+ "generated_at_utc": "2026-08-20T11:02:48Z",
+ "as_of": "2026-08-20",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": -9.41,
   "profit_factor": 0.0,
   "realized_return_pct": -1.88,
-  "unrealized_pct": 251.69,
+  "unrealized_pct": 254.56,
   "max_drawdown_pct": -1.88,
   "best": -9.41,
   "worst": -9.41,
@@ -52,19 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 1006.05,
-   "latest_date": "2026-08-19",
+   "latest_price": 1011.3,
+   "latest_date": "2026-08-20",
    "current_stop": 880.58,
    "peak_price": 1059.9,
    "prob": 0.9709,
-   "unrealized_pct": 155.54,
-   "day_change_pct": 0.66,
-   "stop_distance_pct": 12.47,
+   "unrealized_pct": 156.87,
+   "day_change_pct": 0.52,
+   "stop_distance_pct": 12.93,
    "locked_pct": 123.67,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -5.08,
+   "drawdown_from_peak_pct": -4.59,
    "r_multiple": null,
-   "days_held": 161
+   "days_held": 162
   },
   {
    "symbol": "CNL",
@@ -72,19 +72,19 @@
    "signal_date": "2026-05-11",
    "entry_date": "2026-05-12",
    "entry_price": 688.0,
-   "latest_price": 1226.35,
-   "latest_date": "2026-08-19",
-   "current_stop": 1079.47,
+   "latest_price": 1248.15,
+   "latest_date": "2026-08-20",
+   "current_stop": 1090.55,
    "peak_price": 1275.0,
    "prob": 0.9083,
-   "unrealized_pct": 78.25,
-   "day_change_pct": -2.99,
-   "stop_distance_pct": 11.98,
-   "locked_pct": 56.9,
+   "unrealized_pct": 81.42,
+   "day_change_pct": 1.78,
+   "stop_distance_pct": 12.63,
+   "locked_pct": 58.51,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -3.82,
+   "drawdown_from_peak_pct": -2.11,
    "r_multiple": null,
-   "days_held": 99
+   "days_held": 100
   },
   {
    "symbol": "RPEL",
@@ -92,19 +92,19 @@
    "signal_date": "2026-08-13",
    "entry_date": "2026-08-14",
    "entry_price": 1388.8,
-   "latest_price": 1637.4,
-   "latest_date": "2026-08-19",
-   "current_stop": 1372.8,
+   "latest_price": 1614.7,
+   "latest_date": "2026-08-20",
+   "current_stop": 1404.46,
    "peak_price": 1665.0,
    "prob": 0.7481,
-   "unrealized_pct": 17.9,
-   "day_change_pct": 9.51,
-   "stop_distance_pct": 16.16,
-   "locked_pct": -1.15,
-   "risk_state": "At risk",
-   "drawdown_from_peak_pct": -1.66,
-   "r_multiple": 1.29,
-   "days_held": 5
+   "unrealized_pct": 16.27,
+   "day_change_pct": -1.39,
+   "stop_distance_pct": 13.02,
+   "locked_pct": 1.13,
+   "risk_state": "Profit locked",
+   "drawdown_from_peak_pct": -3.02,
+   "r_multiple": 1.17,
+   "days_held": 6
   }
  ],
  "live": {
@@ -331,15 +331,30 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 3
+   },
+   {
+    "date": "2026-08-20",
+    "scanned": 153,
+    "errors": 0,
+    "triggers": 1,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 3
    }
   ],
-  "total_runs": 38,
-  "logged_runs": 16,
+  "total_runs": 39,
+  "logged_runs": 17,
   "first_run": "2026-06-29",
-  "total_triggers": 20,
+  "total_triggers": 21,
   "total_taken": 1,
-  "gate_pass_rate": 5.0,
+  "gate_pass_rate": 4.8,
   "recent_rejected": [
+   {
+    "symbol": "SAMBHV",
+    "date": "2026-08-20",
+    "prob": 0.6231,
+    "close_price": 131.38
+   },
    {
     "symbol": "JINDRILL",
     "date": "2026-08-18",
@@ -455,8 +470,8 @@
     "close_price": 4566.0
    }
   ],
-  "last_run": "2026-08-19",
-  "last_run_utc": "2026-08-19T11:00:29Z"
+  "last_run": "2026-08-20",
+  "last_run_utc": "2026-08-20T11:02:48Z"
  },
  "integrity": [
   {

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-19",
+  "last_updated": "2026-08-20",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -786,6 +786,43 @@
       "open_positions": 3,
       "corporate_actions": [],
       "triggers_detail": []
+    },
+    {
+      "date": "2026-08-20",
+      "run_at_utc": "2026-08-20T11:02:48Z",
+      "universe": 166,
+      "scanned": 153,
+      "skipped": 13,
+      "errors": 0,
+      "triggers": 1,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 3,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "SAMBHV",
+          "batch": "Batch 3",
+          "signal_date": "2026-08-20",
+          "prob": 0.6230735778808594,
+          "close_price": 131.3800048828125,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 9.490108666387185,
+            "days_in_squeeze": 17,
+            "volume_multiple": 2.6664478729985017,
+            "close_high_ratio": 0.7955476138444205,
+            "rsi_absolute": 65.84490663699614,
+            "rsi_delta": 9.228901187965768,
+            "atr_pct": 4.264619507542951,
+            "distance_from_50sma": 0.13404682332676043,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.005451289020047094,
+            "relative_strength_125": 1.4469545256284055,
+            "prior_runup_90": 13.837623008365163
+          }
+        }
+      ]
     }
   ]
 }
