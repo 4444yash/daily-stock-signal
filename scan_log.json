@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-20",
+  "last_updated": "2026-08-21",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -820,6 +820,43 @@
             "nifty_distance_from_50sma": 0.005451289020047094,
             "relative_strength_125": 1.4469545256284055,
             "prior_runup_90": 13.837623008365163
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "run_at_utc": "2026-08-21T11:02:35Z",
+      "universe": 166,
+      "scanned": 153,
+      "skipped": 13,
+      "errors": 0,
+      "triggers": 1,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 3,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "MARSONS",
+          "batch": "Batch 2",
+          "signal_date": "2026-08-21",
+          "prob": 0.030418798327445984,
+          "close_price": 119.55999755859375,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 11.799987568317134,
+            "days_in_squeeze": 0,
+            "volume_multiple": 1.7558703455679794,
+            "close_high_ratio": 0.9117979408508039,
+            "rsi_absolute": 65.43204123771505,
+            "rsi_delta": 9.411079235158233,
+            "atr_pct": 4.73402518228977,
+            "distance_from_50sma": 0.07036511438240987,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.002893513016224215,
+            "relative_strength_125": 1.0,
+            "prior_runup_90": -28.497103786864265
           }
         }
       ]

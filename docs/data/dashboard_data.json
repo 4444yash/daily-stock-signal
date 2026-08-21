@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-08-20T11:02:48Z",
- "as_of": "2026-08-20",
+ "generated_at_utc": "2026-08-21T11:02:36Z",
+ "as_of": "2026-08-21",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": -9.41,
   "profit_factor": 0.0,
   "realized_return_pct": -1.88,
-  "unrealized_pct": 254.56,
+  "unrealized_pct": 259.37,
   "max_drawdown_pct": -1.88,
   "best": -9.41,
   "worst": -9.41,
@@ -52,19 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 1011.3,
-   "latest_date": "2026-08-20",
+   "latest_price": 1009.25,
+   "latest_date": "2026-08-21",
    "current_stop": 880.58,
    "peak_price": 1059.9,
    "prob": 0.9709,
-   "unrealized_pct": 156.87,
-   "day_change_pct": 0.52,
-   "stop_distance_pct": 12.93,
+   "unrealized_pct": 156.35,
+   "day_change_pct": -0.2,
+   "stop_distance_pct": 12.75,
    "locked_pct": 123.67,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -4.59,
+   "drawdown_from_peak_pct": -4.78,
    "r_multiple": null,
-   "days_held": 162
+   "days_held": 163
   },
   {
    "symbol": "CNL",
@@ -72,19 +72,19 @@
    "signal_date": "2026-05-11",
    "entry_date": "2026-05-12",
    "entry_price": 688.0,
-   "latest_price": 1248.15,
-   "latest_date": "2026-08-20",
-   "current_stop": 1090.55,
+   "latest_price": 1247.7,
+   "latest_date": "2026-08-21",
+   "current_stop": 1096.28,
    "peak_price": 1275.0,
    "prob": 0.9083,
-   "unrealized_pct": 81.42,
-   "day_change_pct": 1.78,
-   "stop_distance_pct": 12.63,
-   "locked_pct": 58.51,
+   "unrealized_pct": 81.35,
+   "day_change_pct": -0.04,
+   "stop_distance_pct": 12.14,
+   "locked_pct": 59.34,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -2.11,
+   "drawdown_from_peak_pct": -2.14,
    "r_multiple": null,
-   "days_held": 100
+   "days_held": 101
   },
   {
    "symbol": "RPEL",
@@ -92,19 +92,19 @@
    "signal_date": "2026-08-13",
    "entry_date": "2026-08-14",
    "entry_price": 1388.8,
-   "latest_price": 1614.7,
-   "latest_date": "2026-08-20",
+   "latest_price": 1689.8,
+   "latest_date": "2026-08-21",
    "current_stop": 1404.46,
-   "peak_price": 1665.0,
+   "peak_price": 1700.0,
    "prob": 0.7481,
-   "unrealized_pct": 16.27,
-   "day_change_pct": -1.39,
-   "stop_distance_pct": 13.02,
+   "unrealized_pct": 21.67,
+   "day_change_pct": 4.65,
+   "stop_distance_pct": 16.89,
    "locked_pct": 1.13,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -3.02,
-   "r_multiple": 1.17,
-   "days_held": 6
+   "drawdown_from_peak_pct": -0.6,
+   "r_multiple": 1.56,
+   "days_held": 7
   }
  ],
  "live": {
@@ -340,15 +340,30 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 3
+   },
+   {
+    "date": "2026-08-21",
+    "scanned": 153,
+    "errors": 0,
+    "triggers": 1,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 3
    }
   ],
-  "total_runs": 39,
-  "logged_runs": 17,
+  "total_runs": 40,
+  "logged_runs": 18,
   "first_run": "2026-06-29",
-  "total_triggers": 21,
+  "total_triggers": 22,
   "total_taken": 1,
-  "gate_pass_rate": 4.8,
+  "gate_pass_rate": 4.5,
   "recent_rejected": [
+   {
+    "symbol": "MARSONS",
+    "date": "2026-08-21",
+    "prob": 0.0304,
+    "close_price": 119.56
+   },
    {
     "symbol": "SAMBHV",
     "date": "2026-08-20",
@@ -470,8 +485,8 @@
     "close_price": 4566.0
    }
   ],
-  "last_run": "2026-08-20",
-  "last_run_utc": "2026-08-20T11:02:48Z"
+  "last_run": "2026-08-21",
+  "last_run_utc": "2026-08-21T11:02:35Z"
  },
  "integrity": [
   {
