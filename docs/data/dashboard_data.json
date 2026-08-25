@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-08-24T11:06:46Z",
- "as_of": "2026-08-24",
+ "generated_at_utc": "2026-08-25T11:04:35Z",
+ "as_of": "2026-08-25",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": -9.41,
   "profit_factor": 0.0,
   "realized_return_pct": -1.88,
-  "unrealized_pct": 243.09,
+  "unrealized_pct": 234.37,
   "max_drawdown_pct": -1.88,
   "best": -9.41,
   "worst": -9.41,
@@ -52,19 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 978.95,
-   "latest_date": "2026-08-24",
+   "latest_price": 970.2,
+   "latest_date": "2026-08-25",
    "current_stop": 880.58,
    "peak_price": 1059.9,
    "prob": 0.9709,
-   "unrealized_pct": 148.65,
-   "day_change_pct": -3.0,
-   "stop_distance_pct": 10.05,
+   "unrealized_pct": 146.43,
+   "day_change_pct": -0.89,
+   "stop_distance_pct": 9.24,
    "locked_pct": 123.67,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -7.64,
+   "drawdown_from_peak_pct": -8.46,
    "r_multiple": null,
-   "days_held": 166
+   "days_held": 167
   },
   {
    "symbol": "CNL",
@@ -72,19 +72,19 @@
    "signal_date": "2026-05-11",
    "entry_date": "2026-05-12",
    "entry_price": 688.0,
-   "latest_price": 1202.2,
-   "latest_date": "2026-08-24",
+   "latest_price": 1186.9,
+   "latest_date": "2026-08-25",
    "current_stop": 1096.28,
    "peak_price": 1275.0,
    "prob": 0.9083,
-   "unrealized_pct": 74.74,
-   "day_change_pct": -3.65,
-   "stop_distance_pct": 8.81,
+   "unrealized_pct": 72.51,
+   "day_change_pct": -4.87,
+   "stop_distance_pct": 7.64,
    "locked_pct": 59.34,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -5.71,
+   "drawdown_from_peak_pct": -6.91,
    "r_multiple": null,
-   "days_held": 104
+   "days_held": 105
   },
   {
    "symbol": "RPEL",
@@ -92,19 +92,19 @@
    "signal_date": "2026-08-13",
    "entry_date": "2026-08-14",
    "entry_price": 1388.8,
-   "latest_price": 1662.4,
-   "latest_date": "2026-08-24",
+   "latest_price": 1603.1,
+   "latest_date": "2026-08-25",
    "current_stop": 1420.44,
    "peak_price": 1700.0,
    "prob": 0.7481,
-   "unrealized_pct": 19.7,
-   "day_change_pct": -1.62,
-   "stop_distance_pct": 14.55,
+   "unrealized_pct": 15.43,
+   "day_change_pct": -5.13,
+   "stop_distance_pct": 11.39,
    "locked_pct": 2.28,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -2.21,
-   "r_multiple": 1.42,
-   "days_held": 10
+   "drawdown_from_peak_pct": -5.7,
+   "r_multiple": 1.11,
+   "days_held": 11
   }
  ],
  "live": {
@@ -358,10 +358,19 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 3
+   },
+   {
+    "date": "2026-08-25",
+    "scanned": 154,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 3
    }
   ],
-  "total_runs": 41,
-  "logged_runs": 19,
+  "total_runs": 42,
+  "logged_runs": 20,
   "first_run": "2026-06-29",
   "total_triggers": 22,
   "total_taken": 1,
@@ -494,8 +503,8 @@
     "close_price": 4566.0
    }
   ],
-  "last_run": "2026-08-24",
-  "last_run_utc": "2026-08-24T11:06:46Z"
+  "last_run": "2026-08-25",
+  "last_run_utc": "2026-08-25T11:04:35Z"
  },
  "integrity": [
   {

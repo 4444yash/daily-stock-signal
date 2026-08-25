@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-24",
+  "last_updated": "2026-08-25",
   "trades": [
     {
       "symbol": "RPEL",
@@ -10,8 +10,8 @@
       "entry_price": 1388.800048828125,
       "current_stop": 1420.4400024414062,
       "initial_stop": 1196.3499877929687,
-      "latest_price": 1662.4000244140625,
-      "latest_date": "2026-08-24",
+      "latest_price": 1603.0999755859375,
+      "latest_date": "2026-08-25",
       "peak_price": 1700.0,
       "prev_price": 1689.800048828125
     },
@@ -23,8 +23,8 @@
       "prob": 0.908342,
       "entry_price": 688.0,
       "current_stop": 1096.2799438476563,
-      "latest_price": 1202.199951171875,
-      "latest_date": "2026-08-24",
+      "latest_price": 1186.9000244140625,
+      "latest_date": "2026-08-25",
       "peak_price": 1275.0,
       "prev_price": 1247.699951171875
     },
@@ -36,10 +36,10 @@
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
       "current_stop": 880.5799682617187,
-      "latest_price": 978.9500122070312,
-      "latest_date": "2026-08-24",
+      "latest_price": 970.2000122070312,
+      "latest_date": "2026-08-25",
       "peak_price": 1059.9000244140625,
-      "prev_price": 1009.25
+      "prev_price": 978.9500122070312
     }
   ]
 }
