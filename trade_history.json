@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-02",
+  "last_updated": "2026-09-03",
   "note": "Backfilled from the git history of active_trades.json; later trades are logged directly by daily_scanner.py.",
   "trades": [
     {
