@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-08",
+  "last_updated": "2026-09-09",
   "trades": [
     {
       "symbol": "RAJOOENG",
@@ -10,10 +10,10 @@
       "entry_price": 54.15999984741211,
       "current_stop": 47.23299865722656,
       "initial_stop": 46.98099822998047,
-      "latest_price": 53.70000076293945,
-      "latest_date": "2026-09-08",
+      "latest_price": 55.900001525878906,
+      "latest_date": "2026-09-09",
       "peak_price": 56.79999923706055,
-      "prev_price": 54.15999984741211
+      "prev_price": 53.70000076293945
     },
     {
       "symbol": "RPEL",
@@ -24,10 +24,10 @@
       "entry_price": 1388.800048828125,
       "current_stop": 1554.9899658203126,
       "initial_stop": 1196.3499877929687,
-      "latest_price": 1692.5999755859375,
-      "latest_date": "2026-09-08",
+      "latest_price": 1670.800048828125,
+      "latest_date": "2026-09-09",
       "peak_price": 1943.699951171875,
-      "prev_price": 1681.199951171875
+      "prev_price": 1692.5999755859375
     },
     {
       "symbol": "CNL",
@@ -37,10 +37,10 @@
       "prob": 0.908342,
       "entry_price": 688.0,
       "current_stop": 1115.9949584960937,
-      "latest_price": 1149.199951171875,
-      "latest_date": "2026-09-08",
+      "latest_price": 1141.4000244140625,
+      "latest_date": "2026-09-09",
       "peak_price": 1328.0,
-      "prev_price": 1215.5
+      "prev_price": 1149.199951171875
     },
     {
       "symbol": "KSHINTL",
@@ -49,11 +49,25 @@
       "signal_date": "2026-03-10",
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
-      "current_stop": 1001.2050354003907,
-      "latest_price": 1176.75,
-      "latest_date": "2026-09-08",
-      "peak_price": 1197.0,
-      "prev_price": 1105.6500244140625
+      "current_stop": 1003.3200073242188,
+      "latest_price": 1152.050048828125,
+      "latest_date": "2026-09-09",
+      "peak_price": 1198.0,
+      "prev_price": 1176.75
+    },
+    {
+      "symbol": "ELLEN",
+      "batch": "Batch 4",
+      "entry_date": "2026-09-10",
+      "signal_date": "2026-09-09",
+      "prob": 0.7673406600952148,
+      "entry_price": 356.75,
+      "current_stop": 293.7599853515625,
+      "initial_stop": 293.7599853515625,
+      "latest_price": 356.75,
+      "latest_date": "2026-09-09",
+      "peak_price": 356.75,
+      "prev_price": 356.75
     }
   ]
 }

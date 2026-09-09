@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-08",
+  "last_updated": "2026-09-09",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -1080,6 +1080,87 @@
             "nifty_distance_from_50sma": -0.023194411321921043,
             "relative_strength_125": 1.013154723747081,
             "prior_runup_90": -19.462688086810275
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "run_at_utc": "2026-09-09T14:48:29Z",
+      "universe": 166,
+      "scanned": 154,
+      "skipped": 12,
+      "errors": 0,
+      "triggers": 3,
+      "signals_taken": 1,
+      "exits": 0,
+      "open_positions": 5,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "CORONA",
+          "batch": "Batch 1",
+          "signal_date": "2026-09-09",
+          "prob": 0.0054581668227910995,
+          "close_price": 2197.199951171875,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 5.582670011205932,
+            "days_in_squeeze": 40,
+            "volume_multiple": 8.71139820726936,
+            "close_high_ratio": 0.4871000901985881,
+            "rsi_absolute": 62.526309224449456,
+            "rsi_delta": 11.36106954672605,
+            "atr_pct": 2.652401499555931,
+            "distance_from_50sma": 0.05532125355414968,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.03114894461250969,
+            "relative_strength_125": 1.4014713335987503,
+            "prior_runup_90": 26.545577208854038
+          }
+        },
+        {
+          "symbol": "EPACKPEB",
+          "batch": "Batch 3",
+          "signal_date": "2026-09-09",
+          "prob": 0.2231758087873459,
+          "close_price": 248.13999938964844,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 8.33394175685175,
+            "days_in_squeeze": 3,
+            "volume_multiple": 2.9408382554842514,
+            "close_high_ratio": 0.8598275112503613,
+            "rsi_absolute": 59.59428078476411,
+            "rsi_delta": 9.821110370232383,
+            "atr_pct": 3.535734497034521,
+            "distance_from_50sma": 0.014678362018401815,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.03114894461250969,
+            "relative_strength_125": 1.5730557081740264,
+            "prior_runup_90": 19.80494652351262
+          }
+        },
+        {
+          "symbol": "ELLEN",
+          "batch": "Batch 4",
+          "signal_date": "2026-09-09",
+          "prob": 0.7673406600952148,
+          "close_price": 356.75,
+          "taken": true,
+          "features": {
+            "bbw_width_pct": 8.466413345499065,
+            "days_in_squeeze": 4,
+            "volume_multiple": 5.934371957156768,
+            "close_high_ratio": 1.0,
+            "rsi_absolute": 68.93761575063625,
+            "rsi_delta": 12.496833458930382,
+            "atr_pct": 4.122535888109733,
+            "distance_from_50sma": 0.19356296054714708,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.03114894461250969,
+            "relative_strength_125": 1.5985694283870424,
+            "prior_runup_90": 28.651285865309294
           }
         }
       ]
