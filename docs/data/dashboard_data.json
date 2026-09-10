@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-09-09T14:48:29Z",
- "as_of": "2026-09-09",
+ "generated_at_utc": "2026-09-10T14:39:17Z",
+ "as_of": "2026-09-10",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -33,17 +33,17 @@
   ]
  },
  "headline": {
-  "open_positions": 5,
-  "closed_trades": 1,
-  "win_rate": 0.0,
-  "expectancy": -9.41,
-  "profit_factor": 0.0,
-  "realized_return_pct": -1.88,
-  "unrealized_pct": 282.04,
+  "open_positions": 4,
+  "closed_trades": 2,
+  "win_rate": 50.0,
+  "expectancy": 24.16,
+  "profit_factor": 6.14,
+  "realized_return_pct": 9.45,
+  "unrealized_pct": 230.02,
   "max_drawdown_pct": -1.88,
-  "best": -9.41,
+  "best": 57.74,
   "worst": -9.41,
-  "avg_hold_days": 14.0
+  "avg_hold_days": 67.5
  },
  "open": [
   {
@@ -52,39 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 1152.05,
-   "latest_date": "2026-09-09",
-   "current_stop": 1003.32,
+   "latest_price": 1174.3,
+   "latest_date": "2026-09-10",
+   "current_stop": 1011.79,
    "peak_price": 1198.0,
    "prob": 0.9709,
-   "unrealized_pct": 192.62,
-   "day_change_pct": -2.1,
-   "stop_distance_pct": 12.91,
-   "locked_pct": 154.84,
+   "unrealized_pct": 198.27,
+   "day_change_pct": 1.93,
+   "stop_distance_pct": 13.84,
+   "locked_pct": 156.99,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -3.84,
+   "drawdown_from_peak_pct": -1.98,
    "r_multiple": null,
-   "days_held": 182
-  },
-  {
-   "symbol": "CNL",
-   "batch": "Batch 3 (data_batch3)",
-   "signal_date": "2026-05-11",
-   "entry_date": "2026-05-12",
-   "entry_price": 688.0,
-   "latest_price": 1141.4,
-   "latest_date": "2026-09-09",
-   "current_stop": 1115.99,
-   "peak_price": 1328.0,
-   "prob": 0.9083,
-   "unrealized_pct": 65.9,
-   "day_change_pct": -0.68,
-   "stop_distance_pct": 2.23,
-   "locked_pct": 62.21,
-   "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -14.05,
-   "r_multiple": null,
-   "days_held": 120
+   "days_held": 183
   },
   {
    "symbol": "RPEL",
@@ -92,39 +72,19 @@
    "signal_date": "2026-08-13",
    "entry_date": "2026-08-14",
    "entry_price": 1388.8,
-   "latest_price": 1670.8,
-   "latest_date": "2026-09-09",
+   "latest_price": 1743.5,
+   "latest_date": "2026-09-10",
    "current_stop": 1554.99,
    "peak_price": 1943.7,
    "prob": 0.7481,
-   "unrealized_pct": 20.31,
-   "day_change_pct": -1.29,
-   "stop_distance_pct": 6.93,
+   "unrealized_pct": 25.54,
+   "day_change_pct": 4.35,
+   "stop_distance_pct": 10.81,
    "locked_pct": 11.97,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -14.04,
-   "r_multiple": 1.47,
-   "days_held": 26
-  },
-  {
-   "symbol": "RAJOOENG",
-   "batch": "Batch 2",
-   "signal_date": "2026-09-07",
-   "entry_date": "2026-09-08",
-   "entry_price": 54.16,
-   "latest_price": 55.9,
-   "latest_date": "2026-09-09",
-   "current_stop": 47.23,
-   "peak_price": 56.8,
-   "prob": 0.704,
-   "unrealized_pct": 3.21,
-   "day_change_pct": 4.1,
-   "stop_distance_pct": 15.5,
-   "locked_pct": -12.79,
-   "risk_state": "At risk",
-   "drawdown_from_peak_pct": -1.58,
-   "r_multiple": 0.24,
-   "days_held": 1
+   "drawdown_from_peak_pct": -10.3,
+   "r_multiple": 1.84,
+   "days_held": 27
   },
   {
    "symbol": "ELLEN",
@@ -132,19 +92,39 @@
    "signal_date": "2026-09-09",
    "entry_date": "2026-09-10",
    "entry_price": 356.75,
-   "latest_price": 356.75,
-   "latest_date": "2026-09-09",
-   "current_stop": 293.76,
-   "peak_price": 356.75,
+   "latest_price": 374.1,
+   "latest_date": "2026-09-10",
+   "current_stop": 311.54,
+   "peak_price": 378.8,
    "prob": 0.7673,
-   "unrealized_pct": 0.0,
-   "day_change_pct": 0.0,
-   "stop_distance_pct": 17.66,
-   "locked_pct": -17.66,
+   "unrealized_pct": 4.86,
+   "day_change_pct": 4.86,
+   "stop_distance_pct": 16.72,
+   "locked_pct": -12.67,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": 0.0,
-   "r_multiple": 0.0,
-   "days_held": -1
+   "drawdown_from_peak_pct": -1.24,
+   "r_multiple": 0.28,
+   "days_held": 0
+  },
+  {
+   "symbol": "RAJOOENG",
+   "batch": "Batch 2",
+   "signal_date": "2026-09-07",
+   "entry_date": "2026-09-08",
+   "entry_price": 54.16,
+   "latest_price": 54.89,
+   "latest_date": "2026-09-10",
+   "current_stop": 47.23,
+   "peak_price": 57.0,
+   "prob": 0.704,
+   "unrealized_pct": 1.35,
+   "day_change_pct": -1.81,
+   "stop_distance_pct": 13.95,
+   "locked_pct": -12.79,
+   "risk_state": "At risk",
+   "drawdown_from_peak_pct": -3.7,
+   "r_multiple": 0.1,
+   "days_held": 2
   }
  ],
  "live": {
@@ -163,22 +143,36 @@
     "hold_days": 14,
     "prob": 0.8476,
     "reason": "SL Hit (intraday, legacy rule)"
+   },
+   {
+    "symbol": "CNL",
+    "batch": "Batch 3 (data_batch3)",
+    "signal_date": "2026-05-11",
+    "entry_date": "2026-05-12",
+    "exit_date": "2026-09-10",
+    "entry_price": 688.0,
+    "exit_price": 1086.3,
+    "pnl_pct": 57.89,
+    "net_pnl_pct": 57.74,
+    "hold_days": 121,
+    "prob": 0.9083,
+    "reason": "SL/TSL Hit"
    }
   ],
-  "count": 1,
-  "wins": 0,
+  "count": 2,
+  "wins": 1,
   "losses": 1,
-  "win_rate": 0.0,
-  "avg_win": null,
+  "win_rate": 50.0,
+  "avg_win": 57.74,
   "avg_loss": -9.41,
-  "expectancy": -9.41,
-  "profit_factor": 0.0,
-  "payoff_ratio": null,
-  "best": -9.41,
+  "expectancy": 24.16,
+  "profit_factor": 6.14,
+  "payoff_ratio": 6.14,
+  "best": 57.74,
   "worst": -9.41,
-  "avg_hold_days": 14.0,
-  "total_return_pct": -1.88,
-  "cumulative_pnl_pct": -9.41,
+  "avg_hold_days": 67.5,
+  "total_return_pct": 9.45,
+  "cumulative_pnl_pct": 48.33,
   "max_drawdown_pct": -1.88,
   "equity_curve": [
    {
@@ -186,6 +180,12 @@
     "symbol": "NDRAUTO",
     "equity": 98.12,
     "pnl": -9.41
+   },
+   {
+    "date": "2026-09-10",
+    "symbol": "CNL",
+    "equity": 109.45,
+    "pnl": 57.74
    }
   ],
   "monthly": [
@@ -194,6 +194,12 @@
     "return_pct": -1.88,
     "trades": 1,
     "wins": 0
+   },
+   {
+    "month": "2026-09",
+    "return_pct": 11.55,
+    "trades": 1,
+    "wins": 1
    }
   ],
   "prob_buckets": [
@@ -203,11 +209,22 @@
     "win_rate": 0.0,
     "avg_prob": 84.8,
     "avg_pnl": -9.41
+   },
+   {
+    "range": "0.85-0.95",
+    "trades": 1,
+    "win_rate": 100.0,
+    "avg_prob": 90.8,
+    "avg_pnl": 57.74
    }
   ],
   "exit_reasons": [
    {
     "reason": "SL Hit (intraday, legacy rule)",
+    "count": 1
+   },
+   {
+    "reason": "SL/TSL Hit",
     "count": 1
    }
   ],
@@ -218,13 +235,20 @@
     "win_rate": 0.0,
     "avg_pnl": -9.41,
     "total_pnl": -9.41
+   },
+   {
+    "batch": "Batch 3 (data_batch3)",
+    "trades": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 57.74,
+    "total_pnl": 57.74
    }
   ],
-  "max_win_streak": 0,
+  "max_win_streak": 1,
   "max_loss_streak": 1,
-  "current_streak": -1,
+  "current_streak": 1,
   "first_exit": "2026-07-17",
-  "last_exit": "2026-07-17"
+  "last_exit": "2026-09-10"
  },
  "activity": {
   "runs": [
@@ -497,10 +521,19 @@
     "signals_taken": 1,
     "exits": 0,
     "open_positions": 5
+   },
+   {
+    "date": "2026-09-10",
+    "scanned": 154,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 1,
+    "open_positions": 4
    }
   ],
-  "total_runs": 52,
-  "logged_runs": 30,
+  "total_runs": 53,
+  "logged_runs": 31,
   "first_run": "2026-06-29",
   "total_triggers": 28,
   "total_taken": 3,
@@ -657,8 +690,8 @@
     "close_price": 4566.0
    }
   ],
-  "last_run": "2026-09-09",
-  "last_run_utc": "2026-09-09T14:48:29Z"
+  "last_run": "2026-09-10",
+  "last_run_utc": "2026-09-10T14:39:17Z"
  },
  "integrity": [
   {

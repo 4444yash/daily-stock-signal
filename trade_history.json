@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-09",
+  "last_updated": "2026-09-10",
   "note": "Backfilled from the git history of active_trades.json; later trades are logged directly by daily_scanner.py.",
   "trades": [
     {
@@ -34,6 +34,20 @@
       "prob": 0.8475750684738159,
       "reason": "SL Hit (intraday, legacy rule)",
       "source": "reconstructed_from_git"
+    },
+    {
+      "symbol": "CNL",
+      "batch": "Batch 3 (data_batch3)",
+      "signal_date": "2026-05-11",
+      "entry_date": "2026-05-12",
+      "exit_date": "2026-09-10",
+      "entry_price": 688.0,
+      "exit_price": 1086.300048828125,
+      "peak_price": 1328.0,
+      "pnl_pct": 57.892448957576306,
+      "hold_days": 121,
+      "prob": 0.908342,
+      "reason": "SL/TSL Hit"
     }
   ]
 }
