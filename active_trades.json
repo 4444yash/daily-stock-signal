@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-11",
   "trades": [
     {
       "symbol": "RAJOOENG",
@@ -10,10 +10,10 @@
       "entry_price": 54.15999984741211,
       "current_stop": 47.23299865722656,
       "initial_stop": 46.98099822998047,
-      "latest_price": 54.88999938964844,
-      "latest_date": "2026-09-10",
+      "latest_price": 55.189998626708984,
+      "latest_date": "2026-09-11",
       "peak_price": 57.0,
-      "prev_price": 55.900001525878906
+      "prev_price": 54.88999938964844
     },
     {
       "symbol": "RPEL",
@@ -24,10 +24,10 @@
       "entry_price": 1388.800048828125,
       "current_stop": 1554.9899658203126,
       "initial_stop": 1196.3499877929687,
-      "latest_price": 1743.5,
-      "latest_date": "2026-09-10",
+      "latest_price": 1845.199951171875,
+      "latest_date": "2026-09-11",
       "peak_price": 1943.699951171875,
-      "prev_price": 1670.800048828125
+      "prev_price": 1743.5
     },
     {
       "symbol": "KSHINTL",
@@ -37,10 +37,10 @@
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
       "current_stop": 1011.7850463867187,
-      "latest_price": 1174.300048828125,
-      "latest_date": "2026-09-10",
+      "latest_price": 1170.9000244140625,
+      "latest_date": "2026-09-11",
       "peak_price": 1198.0,
-      "prev_price": 1152.050048828125
+      "prev_price": 1174.300048828125
     },
     {
       "symbol": "ELLEN",
@@ -49,12 +49,12 @@
       "signal_date": "2026-09-09",
       "prob": 0.7673406600952148,
       "entry_price": 356.75,
-      "current_stop": 311.5399963378906,
+      "current_stop": 322.9049987792969,
       "initial_stop": 293.7599853515625,
-      "latest_price": 374.1000061035156,
-      "latest_date": "2026-09-10",
-      "peak_price": 378.79998779296875,
-      "prev_price": 356.75
+      "latest_price": 380.25,
+      "latest_date": "2026-09-11",
+      "peak_price": 384.0,
+      "prev_price": 374.1000061035156
     }
   ]
 }

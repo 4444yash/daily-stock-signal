@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-11",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -1175,6 +1175,20 @@
       "triggers": 0,
       "signals_taken": 0,
       "exits": 1,
+      "open_positions": 4,
+      "corporate_actions": [],
+      "triggers_detail": []
+    },
+    {
+      "date": "2026-09-11",
+      "run_at_utc": "2026-09-11T14:37:51Z",
+      "universe": 166,
+      "scanned": 154,
+      "skipped": 12,
+      "errors": 0,
+      "triggers": 0,
+      "signals_taken": 0,
+      "exits": 0,
       "open_positions": 4,
       "corporate_actions": [],
       "triggers_detail": []
