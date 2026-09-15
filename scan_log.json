@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-11",
+  "last_updated": "2026-09-15",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -1192,6 +1192,43 @@
       "open_positions": 4,
       "corporate_actions": [],
       "triggers_detail": []
+    },
+    {
+      "date": "2026-09-15",
+      "run_at_utc": "2026-09-15T15:17:07Z",
+      "universe": 166,
+      "scanned": 154,
+      "skipped": 12,
+      "errors": 0,
+      "triggers": 1,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 4,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "EMUDHRA",
+          "batch": "Batch 4",
+          "signal_date": "2026-09-15",
+          "prob": 0.16179607808589935,
+          "close_price": 592.8499755859375,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 13.187090000571338,
+            "days_in_squeeze": 0,
+            "volume_multiple": 6.8394083841722635,
+            "close_high_ratio": 1.0,
+            "rsi_absolute": 67.9471845312097,
+            "rsi_delta": 28.869024890292934,
+            "atr_pct": 3.9873981174883015,
+            "distance_from_50sma": 0.18555531979058934,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.04180282344938172,
+            "relative_strength_125": 1.4624160587395423,
+            "prior_runup_90": 14.441778958179357
+          }
+        }
+      ]
     }
   ]
 }
