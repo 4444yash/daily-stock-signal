@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-15",
+  "last_updated": "2026-09-16",
   "note": "Backfilled from the git history of active_trades.json; later trades are logged directly by daily_scanner.py.",
   "trades": [
     {
@@ -47,6 +47,20 @@
       "pnl_pct": 57.892448957576306,
       "hold_days": 121,
       "prob": 0.908342,
+      "reason": "SL/TSL Hit"
+    },
+    {
+      "symbol": "RPEL",
+      "batch": "Batch 2",
+      "signal_date": "2026-08-13",
+      "entry_date": "2026-08-14",
+      "exit_date": "2026-09-16",
+      "entry_price": 1388.800048828125,
+      "exit_price": 1547.0,
+      "peak_price": 1943.699951171875,
+      "pnl_pct": 11.391125115913175,
+      "hold_days": 33,
+      "prob": 0.7481203675270081,
       "reason": "SL/TSL Hit"
     }
   ]

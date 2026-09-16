@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-09-15T15:17:07Z",
- "as_of": "2026-09-15",
+ "generated_at_utc": "2026-09-16T15:10:06Z",
+ "as_of": "2026-09-16",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -33,17 +33,17 @@
   ]
  },
  "headline": {
-  "open_positions": 4,
-  "closed_trades": 2,
-  "win_rate": 50.0,
-  "expectancy": 24.16,
-  "profit_factor": 6.14,
-  "realized_return_pct": 9.45,
-  "unrealized_pct": 185.04,
+  "open_positions": 3,
+  "closed_trades": 3,
+  "win_rate": 66.7,
+  "expectancy": 19.86,
+  "profit_factor": 7.33,
+  "realized_return_pct": 11.91,
+  "unrealized_pct": 171.16,
   "max_drawdown_pct": -1.88,
   "best": 57.74,
   "worst": -9.41,
-  "avg_hold_days": 67.5
+  "avg_hold_days": 56.0
  },
  "open": [
   {
@@ -52,39 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 1058.85,
-   "latest_date": "2026-09-15",
+   "latest_price": 1060.35,
+   "latest_date": "2026-09-16",
    "current_stop": 1011.79,
    "peak_price": 1198.0,
    "prob": 0.9709,
-   "unrealized_pct": 168.95,
-   "day_change_pct": -9.57,
-   "stop_distance_pct": 4.44,
+   "unrealized_pct": 169.33,
+   "day_change_pct": 0.14,
+   "stop_distance_pct": 4.58,
    "locked_pct": 156.99,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -11.62,
+   "drawdown_from_peak_pct": -11.49,
    "r_multiple": null,
-   "days_held": 188
-  },
-  {
-   "symbol": "RPEL",
-   "batch": "Batch 2",
-   "signal_date": "2026-08-13",
-   "entry_date": "2026-08-14",
-   "entry_price": 1388.8,
-   "latest_price": 1622.4,
-   "latest_date": "2026-09-15",
-   "current_stop": 1554.99,
-   "peak_price": 1943.7,
-   "prob": 0.7481,
-   "unrealized_pct": 16.82,
-   "day_change_pct": -12.07,
-   "stop_distance_pct": 4.15,
-   "locked_pct": 11.97,
-   "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -16.53,
-   "r_multiple": 1.21,
-   "days_held": 32
+   "days_held": 189
   },
   {
    "symbol": "ELLEN",
@@ -92,19 +72,19 @@
    "signal_date": "2026-09-09",
    "entry_date": "2026-09-10",
    "entry_price": 356.75,
-   "latest_price": 355.45,
-   "latest_date": "2026-09-15",
+   "latest_price": 375.8,
+   "latest_date": "2026-09-16",
    "current_stop": 322.9,
-   "peak_price": 384.0,
+   "peak_price": 390.95,
    "prob": 0.7673,
-   "unrealized_pct": -0.36,
-   "day_change_pct": -6.52,
-   "stop_distance_pct": 9.16,
+   "unrealized_pct": 5.34,
+   "day_change_pct": 5.73,
+   "stop_distance_pct": 14.08,
    "locked_pct": -9.49,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -7.43,
-   "r_multiple": -0.02,
-   "days_held": 5
+   "drawdown_from_peak_pct": -3.88,
+   "r_multiple": 0.3,
+   "days_held": 6
   },
   {
    "symbol": "RAJOOENG",
@@ -112,19 +92,19 @@
    "signal_date": "2026-09-07",
    "entry_date": "2026-09-08",
    "entry_price": 54.16,
-   "latest_price": 53.96,
-   "latest_date": "2026-09-15",
+   "latest_price": 52.26,
+   "latest_date": "2026-09-16",
    "current_stop": 47.23,
    "peak_price": 57.0,
    "prob": 0.704,
-   "unrealized_pct": -0.37,
-   "day_change_pct": -2.23,
-   "stop_distance_pct": 12.47,
+   "unrealized_pct": -3.51,
+   "day_change_pct": -3.15,
+   "stop_distance_pct": 9.62,
    "locked_pct": -12.79,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -5.33,
-   "r_multiple": -0.03,
-   "days_held": 7
+   "drawdown_from_peak_pct": -8.32,
+   "r_multiple": -0.26,
+   "days_held": 8
   }
  ],
  "live": {
@@ -157,22 +137,36 @@
     "hold_days": 121,
     "prob": 0.9083,
     "reason": "SL/TSL Hit"
+   },
+   {
+    "symbol": "RPEL",
+    "batch": "Batch 2",
+    "signal_date": "2026-08-13",
+    "entry_date": "2026-08-14",
+    "exit_date": "2026-09-16",
+    "entry_price": 1388.8,
+    "exit_price": 1547.0,
+    "pnl_pct": 11.39,
+    "net_pnl_pct": 11.24,
+    "hold_days": 33,
+    "prob": 0.7481,
+    "reason": "SL/TSL Hit"
    }
   ],
-  "count": 2,
-  "wins": 1,
+  "count": 3,
+  "wins": 2,
   "losses": 1,
-  "win_rate": 50.0,
-  "avg_win": 57.74,
+  "win_rate": 66.7,
+  "avg_win": 34.49,
   "avg_loss": -9.41,
-  "expectancy": 24.16,
-  "profit_factor": 6.14,
-  "payoff_ratio": 6.14,
+  "expectancy": 19.86,
+  "profit_factor": 7.33,
+  "payoff_ratio": 3.67,
   "best": 57.74,
   "worst": -9.41,
-  "avg_hold_days": 67.5,
-  "total_return_pct": 9.45,
-  "cumulative_pnl_pct": 48.33,
+  "avg_hold_days": 56.0,
+  "total_return_pct": 11.91,
+  "cumulative_pnl_pct": 59.57,
   "max_drawdown_pct": -1.88,
   "equity_curve": [
    {
@@ -186,6 +180,12 @@
     "symbol": "CNL",
     "equity": 109.45,
     "pnl": 57.74
+   },
+   {
+    "date": "2026-09-16",
+    "symbol": "RPEL",
+    "equity": 111.91,
+    "pnl": 11.24
    }
   ],
   "monthly": [
@@ -197,12 +197,19 @@
    },
    {
     "month": "2026-09",
-    "return_pct": 11.55,
-    "trades": 1,
-    "wins": 1
+    "return_pct": 14.06,
+    "trades": 2,
+    "wins": 2
    }
   ],
   "prob_buckets": [
+   {
+    "range": "0.65-0.75",
+    "trades": 1,
+    "win_rate": 100.0,
+    "avg_prob": 74.8,
+    "avg_pnl": 11.24
+   },
    {
     "range": "0.75-0.85",
     "trades": 1,
@@ -220,15 +227,22 @@
   ],
   "exit_reasons": [
    {
-    "reason": "SL Hit (intraday, legacy rule)",
-    "count": 1
+    "reason": "SL/TSL Hit",
+    "count": 2
    },
    {
-    "reason": "SL/TSL Hit",
+    "reason": "SL Hit (intraday, legacy rule)",
     "count": 1
    }
   ],
   "batches": [
+   {
+    "batch": "Batch 2",
+    "trades": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 11.24,
+    "total_pnl": 11.24
+   },
    {
     "batch": "Batch 3",
     "trades": 1,
@@ -244,11 +258,11 @@
     "total_pnl": 57.74
    }
   ],
-  "max_win_streak": 1,
+  "max_win_streak": 2,
   "max_loss_streak": 1,
-  "current_streak": 1,
+  "current_streak": 2,
   "first_exit": "2026-07-17",
-  "last_exit": "2026-09-10"
+  "last_exit": "2026-09-16"
  },
  "activity": {
   "runs": [
@@ -548,15 +562,36 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 4
+   },
+   {
+    "date": "2026-09-16",
+    "scanned": 154,
+    "errors": 0,
+    "triggers": 2,
+    "signals_taken": 0,
+    "exits": 1,
+    "open_positions": 3
    }
   ],
-  "total_runs": 55,
-  "logged_runs": 33,
+  "total_runs": 56,
+  "logged_runs": 34,
   "first_run": "2026-06-29",
-  "total_triggers": 29,
+  "total_triggers": 31,
   "total_taken": 3,
-  "gate_pass_rate": 10.3,
+  "gate_pass_rate": 9.7,
   "recent_rejected": [
+   {
+    "symbol": "KMCSHIL",
+    "date": "2026-09-16",
+    "prob": 0.0437,
+    "close_price": 148.3
+   },
+   {
+    "symbol": "NPST",
+    "date": "2026-09-16",
+    "prob": 0.0213,
+    "close_price": 1834.6
+   },
    {
     "symbol": "EMUDHRA",
     "date": "2026-09-15",
@@ -694,22 +729,10 @@
     "date": "2026-08-04",
     "prob": 0.0101,
     "close_price": 1480.5
-   },
-   {
-    "symbol": "DIFFNKG",
-    "date": "2026-08-04",
-    "prob": 0.0376,
-    "close_price": 423.7
-   },
-   {
-    "symbol": "LTFOODS",
-    "date": "2026-07-30",
-    "prob": 0.0051,
-    "close_price": 397.1
    }
   ],
-  "last_run": "2026-09-15",
-  "last_run_utc": "2026-09-15T15:17:07Z"
+  "last_run": "2026-09-16",
+  "last_run_utc": "2026-09-16T15:10:06Z"
  },
  "integrity": [
   {
