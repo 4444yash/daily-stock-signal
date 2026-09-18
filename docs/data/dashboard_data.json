@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-09-17T15:19:14Z",
- "as_of": "2026-09-17",
+ "generated_at_utc": "2026-09-18T14:39:00Z",
+ "as_of": "2026-09-18",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -39,7 +39,7 @@
   "expectancy": 19.86,
   "profit_factor": 7.33,
   "realized_return_pct": 11.91,
-  "unrealized_pct": 167.96,
+  "unrealized_pct": 168.38,
   "max_drawdown_pct": -1.88,
   "best": 57.74,
   "worst": -9.41,
@@ -52,19 +52,19 @@
    "signal_date": "2026-03-10",
    "entry_date": "2026-03-11",
    "entry_price": 393.7,
-   "latest_price": 1045.55,
-   "latest_date": "2026-09-17",
+   "latest_price": 1046.95,
+   "latest_date": "2026-09-18",
    "current_stop": 1011.79,
    "peak_price": 1198.0,
    "prob": 0.9709,
-   "unrealized_pct": 165.57,
-   "day_change_pct": -1.4,
-   "stop_distance_pct": 3.23,
+   "unrealized_pct": 165.93,
+   "day_change_pct": 0.13,
+   "stop_distance_pct": 3.36,
    "locked_pct": 156.99,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -12.73,
+   "drawdown_from_peak_pct": -12.61,
    "r_multiple": null,
-   "days_held": 190
+   "days_held": 191
   },
   {
    "symbol": "ELLEN",
@@ -72,19 +72,19 @@
    "signal_date": "2026-09-09",
    "entry_date": "2026-09-10",
    "entry_price": 356.75,
-   "latest_price": 370.95,
-   "latest_date": "2026-09-17",
+   "latest_price": 373.2,
+   "latest_date": "2026-09-18",
    "current_stop": 322.9,
    "peak_price": 390.95,
    "prob": 0.7673,
-   "unrealized_pct": 3.98,
-   "day_change_pct": -1.29,
-   "stop_distance_pct": 12.95,
+   "unrealized_pct": 4.61,
+   "day_change_pct": 0.61,
+   "stop_distance_pct": 13.48,
    "locked_pct": -9.49,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -5.12,
-   "r_multiple": 0.23,
-   "days_held": 7
+   "drawdown_from_peak_pct": -4.54,
+   "r_multiple": 0.26,
+   "days_held": 8
   },
   {
    "symbol": "RAJOOENG",
@@ -92,19 +92,19 @@
    "signal_date": "2026-09-07",
    "entry_date": "2026-09-08",
    "entry_price": 54.16,
-   "latest_price": 53.3,
-   "latest_date": "2026-09-17",
+   "latest_price": 52.99,
+   "latest_date": "2026-09-18",
    "current_stop": 47.23,
    "peak_price": 57.0,
    "prob": 0.704,
-   "unrealized_pct": -1.59,
-   "day_change_pct": 1.99,
-   "stop_distance_pct": 11.38,
+   "unrealized_pct": -2.16,
+   "day_change_pct": -0.58,
+   "stop_distance_pct": 10.86,
    "locked_pct": -12.79,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -6.49,
-   "r_multiple": -0.12,
-   "days_held": 9
+   "drawdown_from_peak_pct": -7.04,
+   "r_multiple": -0.16,
+   "days_held": 10
   }
  ],
  "live": {
@@ -580,15 +580,42 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 3
+   },
+   {
+    "date": "2026-09-18",
+    "scanned": 154,
+    "errors": 0,
+    "triggers": 3,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 3
    }
   ],
-  "total_runs": 57,
-  "logged_runs": 35,
+  "total_runs": 58,
+  "logged_runs": 36,
   "first_run": "2026-06-29",
-  "total_triggers": 32,
+  "total_triggers": 35,
   "total_taken": 3,
-  "gate_pass_rate": 9.4,
+  "gate_pass_rate": 8.6,
   "recent_rejected": [
+   {
+    "symbol": "CFF",
+    "date": "2026-09-18",
+    "prob": 0.032,
+    "close_price": 1087.2
+   },
+   {
+    "symbol": "MACPOWER",
+    "date": "2026-09-18",
+    "prob": 0.1282,
+    "close_price": 2104.5
+   },
+   {
+    "symbol": "GPTINFRA",
+    "date": "2026-09-18",
+    "prob": 0.0128,
+    "close_price": 118.96
+   },
    {
     "symbol": "CFF",
     "date": "2026-09-17",
@@ -720,28 +747,10 @@
     "date": "2026-08-06",
     "prob": 0.0061,
     "close_price": 529.05
-   },
-   {
-    "symbol": "PRECWIRE",
-    "date": "2026-08-05",
-    "prob": 0.1414,
-    "close_price": 409.5
-   },
-   {
-    "symbol": "SANGHVIMOV",
-    "date": "2026-08-05",
-    "prob": 0.0731,
-    "close_price": 474.2
-   },
-   {
-    "symbol": "ROBU",
-    "date": "2026-08-04",
-    "prob": 0.0428,
-    "close_price": 1251.65
    }
   ],
-  "last_run": "2026-09-17",
-  "last_run_utc": "2026-09-17T15:19:13Z"
+  "last_run": "2026-09-18",
+  "last_run_utc": "2026-09-18T14:38:59Z"
  },
  "integrity": [
   {
