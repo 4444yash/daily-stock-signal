@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-09-23",
   "trades": [
     {
       "symbol": "RAJOOENG",
@@ -10,10 +10,10 @@
       "entry_price": 54.15999984741211,
       "current_stop": 47.23299865722656,
       "initial_stop": 46.98099822998047,
-      "latest_price": 54.310001373291016,
-      "latest_date": "2026-09-22",
+      "latest_price": 55.25,
+      "latest_date": "2026-09-23",
       "peak_price": 57.0,
-      "prev_price": 55.07999801635742
+      "prev_price": 54.310001373291016
     },
     {
       "symbol": "KSHINTL",
@@ -23,10 +23,10 @@
       "prob": 0.9709178805351257,
       "entry_price": 393.7000122070313,
       "current_stop": 1011.7850463867187,
-      "latest_price": 1040.949951171875,
-      "latest_date": "2026-09-22",
+      "latest_price": 1046.800048828125,
+      "latest_date": "2026-09-23",
       "peak_price": 1198.0,
-      "prev_price": 1032.1500244140625
+      "prev_price": 1040.949951171875
     },
     {
       "symbol": "ELLEN",
@@ -37,10 +37,24 @@
       "entry_price": 356.75,
       "current_stop": 322.9049987792969,
       "initial_stop": 293.7599853515625,
-      "latest_price": 355.3500061035156,
-      "latest_date": "2026-09-22",
+      "latest_price": 370.95001220703125,
+      "latest_date": "2026-09-23",
       "peak_price": 390.95001220703125,
-      "prev_price": 373.8999938964844
+      "prev_price": 355.3500061035156
+    },
+    {
+      "symbol": "PGIL",
+      "batch": "Batch 3",
+      "entry_date": "2026-09-24",
+      "signal_date": "2026-09-23",
+      "prob": 0.8423338532447815,
+      "entry_price": 1300.800048828125,
+      "current_stop": 1054.4800170898438,
+      "initial_stop": 1054.4800170898438,
+      "latest_price": 1300.800048828125,
+      "latest_date": "2026-09-23",
+      "peak_price": 1300.800048828125,
+      "prev_price": 1300.800048828125
     }
   ]
 }

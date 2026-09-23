@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-09-23",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -1476,6 +1476,65 @@
             "nifty_distance_from_50sma": -0.02979820008746338,
             "relative_strength_125": 2.4217843301288395,
             "prior_runup_90": 63.015501473617455
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "run_at_utc": "2026-09-23T15:11:47Z",
+      "universe": 166,
+      "scanned": 152,
+      "skipped": 14,
+      "errors": 0,
+      "triggers": 2,
+      "signals_taken": 1,
+      "exits": 0,
+      "open_positions": 4,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "PGIL",
+          "batch": "Batch 3",
+          "signal_date": "2026-09-23",
+          "prob": 0.8423338532447815,
+          "close_price": 1300.800048828125,
+          "taken": true,
+          "features": {
+            "bbw_width_pct": 9.950494512865735,
+            "days_in_squeeze": 16,
+            "volume_multiple": 3.378512155198572,
+            "close_high_ratio": 0.9248748219384105,
+            "rsi_absolute": 65.95943677486795,
+            "rsi_delta": 10.386324390499354,
+            "atr_pct": 4.721819496441747,
+            "distance_from_50sma": 0.14669663329633284,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.024994657181544307,
+            "relative_strength_125": 1.8432343004885292,
+            "prior_runup_90": 64.33580555727978
+          }
+        },
+        {
+          "symbol": "GALAPREC",
+          "batch": "Batch 4",
+          "signal_date": "2026-09-23",
+          "prob": 0.4281986653804779,
+          "close_price": 1164.199951171875,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 9.999910555265835,
+            "days_in_squeeze": 15,
+            "volume_multiple": 4.6581761715536505,
+            "close_high_ratio": 0.9027022628096847,
+            "rsi_absolute": 68.99315094738276,
+            "rsi_delta": 14.526169891910442,
+            "atr_pct": 3.7051821781230827,
+            "distance_from_50sma": 0.08963411649456557,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.024994657181544307,
+            "relative_strength_125": 1.5436163865492303,
+            "prior_runup_90": 40.612347847971705
           }
         }
       ]
