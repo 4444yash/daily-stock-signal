@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-23",
+  "last_updated": "2026-09-24",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -1535,6 +1535,43 @@
             "nifty_distance_from_50sma": -0.024994657181544307,
             "relative_strength_125": 1.5436163865492303,
             "prior_runup_90": 40.612347847971705
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "run_at_utc": "2026-09-24T15:30:40Z",
+      "universe": 166,
+      "scanned": 152,
+      "skipped": 14,
+      "errors": 0,
+      "triggers": 1,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 4,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "VIKRAN",
+          "batch": "Batch 4",
+          "signal_date": "2026-09-24",
+          "prob": 0.007605178747326136,
+          "close_price": 60.9900016784668,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 8.885162373681222,
+            "days_in_squeeze": 12,
+            "volume_multiple": 13.720524535522758,
+            "close_high_ratio": 0.6797647928184766,
+            "rsi_absolute": 55.89347735645668,
+            "rsi_delta": 21.042476170851636,
+            "atr_pct": 2.9501312046561305,
+            "distance_from_50sma": -0.04368853843723557,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.04016092792331809,
+            "relative_strength_125": 1.1813390855447659,
+            "prior_runup_90": -4.592703373515818
           }
         }
       ]
