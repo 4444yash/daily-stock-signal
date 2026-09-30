@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-29",
+  "last_updated": "2026-09-30",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -1660,6 +1660,87 @@
             "nifty_distance_from_50sma": -0.050839109681386274,
             "relative_strength_125": 1.666549682777877,
             "prior_runup_90": 74.155781372517
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "run_at_utc": "2026-09-30T16:31:31Z",
+      "universe": 166,
+      "scanned": 152,
+      "skipped": 14,
+      "errors": 0,
+      "triggers": 3,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 3,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "SHRINGARMS",
+          "batch": "Batch 2",
+          "signal_date": "2026-09-30",
+          "prob": 0.00925638247281313,
+          "close_price": 224.60000610351562,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 6.038698071749969,
+            "days_in_squeeze": 55,
+            "volume_multiple": 4.846003048236635,
+            "close_high_ratio": 0.5496135909465277,
+            "rsi_absolute": 62.436140215456234,
+            "rsi_delta": 12.546990915422022,
+            "atr_pct": 3.2623075640325134,
+            "distance_from_50sma": 0.017265459298936296,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.053600372480559655,
+            "relative_strength_125": 1.2247571172319083,
+            "prior_runup_90": 5.460865293774497
+          }
+        },
+        {
+          "symbol": "POWERMECH",
+          "batch": "Batch 3",
+          "signal_date": "2026-09-30",
+          "prob": 0.008079945109784603,
+          "close_price": 2490.5,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 6.200919375340139,
+            "days_in_squeeze": 28,
+            "volume_multiple": 4.632023841264382,
+            "close_high_ratio": 0.521505376344086,
+            "rsi_absolute": 55.836237807727336,
+            "rsi_delta": 8.885297949002144,
+            "atr_pct": 2.85570799618909,
+            "distance_from_50sma": 0.005170013517602074,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.053600372480559655,
+            "relative_strength_125": 1.2629334765336677,
+            "prior_runup_90": 0.39230506164365025
+          }
+        },
+        {
+          "symbol": "VESUVIUS",
+          "batch": "Batch 3",
+          "signal_date": "2026-09-30",
+          "prob": 0.015703832730650902,
+          "close_price": 424.20001220703125,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 9.09477831593873,
+            "days_in_squeeze": 18,
+            "volume_multiple": 13.491883872435546,
+            "close_high_ratio": 0.4085917521423284,
+            "rsi_absolute": 57.721849686631764,
+            "rsi_delta": 14.205841148293658,
+            "atr_pct": 3.683403948695363,
+            "distance_from_50sma": -0.004662241456116755,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.053600372480559655,
+            "relative_strength_125": 0.9281785398956852,
+            "prior_runup_90": -10.675928056656153
           }
         }
       ]
