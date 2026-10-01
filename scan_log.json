@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-30",
+  "last_updated": "2026-10-01",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -1741,6 +1741,43 @@
             "nifty_distance_from_50sma": -0.053600372480559655,
             "relative_strength_125": 0.9281785398956852,
             "prior_runup_90": -10.675928056656153
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "run_at_utc": "2026-10-01T17:09:12Z",
+      "universe": 166,
+      "scanned": 152,
+      "skipped": 14,
+      "errors": 0,
+      "triggers": 1,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 3,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "OMNI",
+          "batch": "Batch 3",
+          "signal_date": "2026-10-01",
+          "prob": 0.3198848068714142,
+          "close_price": 608.6500244140625,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 10.814271611367401,
+            "days_in_squeeze": 0,
+            "volume_multiple": 2.781382598504092,
+            "close_high_ratio": 0.9009263780381944,
+            "rsi_absolute": 63.07234168363799,
+            "rsi_delta": 9.720902226763002,
+            "atr_pct": 4.62381813734615,
+            "distance_from_50sma": 0.06664872140214935,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.060667861434279345,
+            "relative_strength_125": 1.867155785309365,
+            "prior_runup_90": 39.935626470186655
           }
         }
       ]
