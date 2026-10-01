@@ -1,11 +1,11 @@
 {
-  "watchlist_updated": "2026-06-29",
+  "watchlist_updated": "2026-10-01",
   "source": {
-    "method": "Screener.in fundamental screen, exported manually",
+    "method": "Quarterly watchlist refresh with user tickers",
     "query_file": "screener/query.txt",
     "export_file": null,
-    "generated_by": "manual (pre-automation)",
-    "note": "This list predates build_watchlist.py. Later refreshes record the export file they came from."
+    "generated_by": "manual_quarterly_refresh",
+    "note": "Normalized user provided tickers to verified Yahoo Finance tickers and balanced across 4 batches."
   },
   "criteria_summary": {
     "market_cap_cr": {
@@ -35,17 +35,110 @@
   },
   "refresh": {
     "cadence": "quarterly",
-    "last_run": "2026-06-29",
+    "last_run": "2026-10-01",
     "process": "screener/README.md"
   },
   "counts": {
-    "total": 166,
+    "total": 132,
     "by_batch": {
-      "Batch 1": 44,
-      "Batch 2": 49,
-      "Batch 3": 49,
-      "Batch 4": 24
+      "Batch 1": 33,
+      "Batch 2": 38,
+      "Batch 3": 31,
+      "Batch 4": 30
     }
+  },
+  "diff_vs_previous": {
+    "previous_updated": "2026-06-29",
+    "added": [
+      "ADSL",
+      "ARDEE",
+      "ARROWGREEN",
+      "ASMS",
+      "AUGMONT",
+      "CMPDI",
+      "DYNAMIC",
+      "EPACK",
+      "IGIL",
+      "IRIS",
+      "KNACK",
+      "MASTERTR",
+      "NEPHROPLUS",
+      "RAMBHAJO",
+      "SOBME",
+      "SSEGL-SM",
+      "SUNSHINE",
+      "TECHNOE",
+      "TINNARUBR",
+      "XTRANET",
+      "ZENTEC"
+    ],
+    "removed": [
+      "523229",
+      "530475",
+      "ACGL",
+      "ALLDIGI",
+      "AMIRCHAND",
+      "ANANDRATHI",
+      "ANTELOPUS",
+      "ARKADE",
+      "ASMTEC",
+      "BONDADA",
+      "CEIGALL",
+      "CFF",
+      "CNCRD",
+      "CNL",
+      "DANISH-SM",
+      "DYCL",
+      "EBGNG",
+      "EIEL",
+      "ELLEN",
+      "EPACKPEB",
+      "GULPOLY",
+      "INDNIPPON",
+      "INDOTHAI",
+      "JARO",
+      "JINDRILL",
+      "KPGEL",
+      "KPL",
+      "LTFOODS",
+      "MARINE",
+      "MCLOUD",
+      "MODINSU",
+      "MPSLTD",
+      "MWL",
+      "NEPHROCARE",
+      "NPST",
+      "OMNI",
+      "ORIANA",
+      "PACEDIGITK",
+      "PGIL",
+      "PICCADIL",
+      "RAJESH",
+      "RAJOOENG",
+      "SAMBHV",
+      "SEAMECLTD",
+      "SERVOTECH",
+      "SIGMAADV",
+      "SOLEX",
+      "SRM",
+      "SUNSHIEL",
+      "SURAKSHA",
+      "VIKRAN",
+      "VIYASH",
+      "WEALTH",
+      "YASHHV",
+      "ZELIO"
+    ],
+    "retained_count": 111,
+    "excluded_no_price_data": [
+      "DEEPEE.BO",
+      "KPHARMA.NS",
+      "PDL01.NS",
+      "ACIC.NS"
+    ],
+    "open_positions_in_removed": [
+      "CNL"
+    ]
   },
   "stocks": [
     {
@@ -61,11 +154,6 @@
     {
       "symbol": "ATLANTAELE",
       "ticker": "ATLANTAELE.NS",
-      "batch": "Batch 1"
-    },
-    {
-      "symbol": "BONDADA",
-      "ticker": "BONDADA.NS",
       "batch": "Batch 1"
     },
     {
@@ -114,18 +202,13 @@
       "batch": "Batch 1"
     },
     {
-      "symbol": "INDOTHAI",
-      "ticker": "INDOTHAI.NS",
-      "batch": "Batch 1"
-    },
-    {
       "symbol": "JSLL",
       "ticker": "JSLL.NS",
       "batch": "Batch 1"
     },
     {
       "symbol": "KHAZANCHI",
-      "ticker": "KHAZANCHI.NS",
+      "ticker": "KHAZANCHI.BO",
       "batch": "Batch 1"
     },
     {
@@ -134,28 +217,13 @@
       "batch": "Batch 1"
     },
     {
-      "symbol": "KPGEL",
-      "ticker": "KPGEL.NS",
-      "batch": "Batch 1"
-    },
-    {
       "symbol": "MANORAMA",
       "ticker": "MANORAMA.NS",
       "batch": "Batch 1"
     },
     {
-      "symbol": "MPSLTD",
-      "ticker": "MPSLTD.NS",
-      "batch": "Batch 1"
-    },
-    {
       "symbol": "ONEGLOBAL",
       "ticker": "ONEGLOBAL.NS",
-      "batch": "Batch 1"
-    },
-    {
-      "symbol": "ORIANA",
-      "ticker": "ORIANA.NS",
       "batch": "Batch 1"
     },
     {
@@ -179,11 +247,6 @@
       "batch": "Batch 1"
     },
     {
-      "symbol": "RAJESH",
-      "ticker": "RAJESH.NS",
-      "batch": "Batch 1"
-    },
-    {
       "symbol": "ROBU",
       "ticker": "ROBU.BO",
       "batch": "Batch 1"
@@ -204,28 +267,13 @@
       "batch": "Batch 1"
     },
     {
-      "symbol": "SIGMAADV",
-      "ticker": "SIGMAADV.NS",
-      "batch": "Batch 1"
-    },
-    {
       "symbol": "SIKA",
       "ticker": "SIKA.NS",
       "batch": "Batch 1"
     },
     {
-      "symbol": "SOLEX",
-      "ticker": "SOLEX.NS",
-      "batch": "Batch 1"
-    },
-    {
       "symbol": "SPARC",
       "ticker": "SPARC.NS",
-      "batch": "Batch 1"
-    },
-    {
-      "symbol": "SRM",
-      "ticker": "SRM.NS",
       "batch": "Batch 1"
     },
     {
@@ -235,7 +283,7 @@
     },
     {
       "symbol": "TIMEX",
-      "ticker": "TIMEX.NS",
+      "ticker": "TIMEX.BO",
       "batch": "Batch 1"
     },
     {
@@ -259,21 +307,6 @@
       "batch": "Batch 1"
     },
     {
-      "symbol": "WEALTH",
-      "ticker": "WEALTH.NS",
-      "batch": "Batch 1"
-    },
-    {
-      "symbol": "ZELIO",
-      "ticker": "ZELIO.NS",
-      "batch": "Batch 1"
-    },
-    {
-      "symbol": "ACGL",
-      "ticker": "ACGL.BO",
-      "batch": "Batch 2"
-    },
-    {
       "symbol": "ADVAIT",
       "ticker": "ADVAIT.NS",
       "batch": "Batch 2"
@@ -284,18 +317,8 @@
       "batch": "Batch 2"
     },
     {
-      "symbol": "ALLDIGI",
-      "ticker": "ALLDIGI.NS",
-      "batch": "Batch 2"
-    },
-    {
       "symbol": "ASKAUTOLTD",
       "ticker": "ASKAUTOLTD.NS",
-      "batch": "Batch 2"
-    },
-    {
-      "symbol": "ASMTEC",
-      "ticker": "ASMTEC.BO",
       "batch": "Batch 2"
     },
     {
@@ -319,21 +342,6 @@
       "batch": "Batch 2"
     },
     {
-      "symbol": "CFF",
-      "ticker": "CFF.BO",
-      "batch": "Batch 2"
-    },
-    {
-      "symbol": "CNCRD",
-      "ticker": "CNCRD.BO",
-      "batch": "Batch 2"
-    },
-    {
-      "symbol": "DANISH-SM",
-      "ticker": "DANISH-SM.NS",
-      "batch": "Batch 2"
-    },
-    {
       "symbol": "DISAQ",
       "ticker": "DISAQ.NS",
       "batch": "Batch 2"
@@ -346,11 +354,6 @@
     {
       "symbol": "DSSL",
       "ticker": "DSSL.NS",
-      "batch": "Batch 2"
-    },
-    {
-      "symbol": "DYCL",
-      "ticker": "DYCL.NS",
       "batch": "Batch 2"
     },
     {
@@ -370,12 +373,7 @@
     },
     {
       "symbol": "JAINREC",
-      "ticker": "JAINREC.BO",
-      "batch": "Batch 2"
-    },
-    {
-      "symbol": "JARO",
-      "ticker": "JARO.BO",
+      "ticker": "JAINREC.NS",
       "batch": "Batch 2"
     },
     {
@@ -385,12 +383,7 @@
     },
     {
       "symbol": "KMCSHIL",
-      "ticker": "KMCSHIL.BO",
-      "batch": "Batch 2"
-    },
-    {
-      "symbol": "KPL",
-      "ticker": "KPL.NS",
+      "ticker": "KMCSHIL.NS",
       "batch": "Batch 2"
     },
     {
@@ -426,11 +419,6 @@
     {
       "symbol": "NEWGEN",
       "ticker": "NEWGEN.NS",
-      "batch": "Batch 2"
-    },
-    {
-      "symbol": "RAJOOENG",
-      "ticker": "RAJOOENG.NS",
       "batch": "Batch 2"
     },
     {
@@ -509,38 +497,8 @@
       "batch": "Batch 2"
     },
     {
-      "symbol": "YASHHV",
-      "ticker": "YASHHV.BO",
-      "batch": "Batch 2"
-    },
-    {
-      "symbol": "523229",
-      "ticker": "523229.BO",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "530475",
-      "ticker": "530475.BO",
-      "batch": "Batch 3"
-    },
-    {
       "symbol": "AEROFLEX",
       "ticker": "AEROFLEX.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "ANANDRATHI",
-      "ticker": "ANANDRATHI.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "ANTELOPUS",
-      "ticker": "ANTELOPUS.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "ARKADE",
-      "ticker": "ARKADE.NS",
       "batch": "Batch 3"
     },
     {
@@ -559,38 +517,13 @@
       "batch": "Batch 3"
     },
     {
-      "symbol": "CNL",
-      "ticker": "CNL.NS",
-      "batch": "Batch 3"
-    },
-    {
       "symbol": "DRAGARWQ",
       "ticker": "DRAGARWQ.NS",
       "batch": "Batch 3"
     },
     {
-      "symbol": "EBGNG",
-      "ticker": "EBGNG.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "EIEL",
-      "ticker": "EIEL.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "EPACKPEB",
-      "ticker": "EPACKPEB.NS",
-      "batch": "Batch 3"
-    },
-    {
       "symbol": "GPTINFRA",
       "ticker": "GPTINFRA.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "GULPOLY",
-      "ticker": "GULPOLY.NS",
       "batch": "Batch 3"
     },
     {
@@ -604,8 +537,13 @@
       "batch": "Batch 3"
     },
     {
+      "symbol": "KNACK",
+      "ticker": "KNACK.NS",
+      "batch": "Batch 3"
+    },
+    {
       "symbol": "KOVAI",
-      "ticker": "KOVAI.BO",
+      "ticker": "KOVAI.NS",
       "batch": "Batch 3"
     },
     {
@@ -619,33 +557,8 @@
       "batch": "Batch 3"
     },
     {
-      "symbol": "LTFOODS",
-      "ticker": "LTFOODS.NS",
-      "batch": "Batch 3"
-    },
-    {
       "symbol": "LUMAXTECH",
       "ticker": "LUMAXTECH.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "MARINE",
-      "ticker": "MARINE.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "MCLOUD",
-      "ticker": "MCLOUD.BO",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "MODINSU",
-      "ticker": "MODINSU.BO",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "MWL",
-      "ticker": "MWL.NS",
       "batch": "Batch 3"
     },
     {
@@ -654,33 +567,13 @@
       "batch": "Batch 3"
     },
     {
-      "symbol": "NPST",
-      "ticker": "NPST.NS",
+      "symbol": "NEPHROPLUS",
+      "ticker": "NEPHROPLUS.NS",
       "batch": "Batch 3"
     },
     {
       "symbol": "OLECTRA",
       "ticker": "OLECTRA.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "OMNI",
-      "ticker": "OMNI.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "PACEDIGITK",
-      "ticker": "PACEDIGITK.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "PGIL",
-      "ticker": "PGIL.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "PICCADIL",
-      "ticker": "PICCADIL.NS",
       "batch": "Batch 3"
     },
     {
@@ -704,16 +597,6 @@
       "batch": "Batch 3"
     },
     {
-      "symbol": "SAMBHV",
-      "ticker": "SAMBHV.NS",
-      "batch": "Batch 3"
-    },
-    {
-      "symbol": "SEAMECLTD",
-      "ticker": "SEAMECLTD.NS",
-      "batch": "Batch 3"
-    },
-    {
       "symbol": "SENCO",
       "ticker": "SENCO.NS",
       "batch": "Batch 3"
@@ -724,13 +607,23 @@
       "batch": "Batch 3"
     },
     {
-      "symbol": "SUNSHIEL",
-      "ticker": "SUNSHIEL.BO",
+      "symbol": "SOBME",
+      "ticker": "SOBME.BO",
+      "batch": "Batch 3"
+    },
+    {
+      "symbol": "SUNSHINE",
+      "ticker": "SUNSHINE.NS",
       "batch": "Batch 3"
     },
     {
       "symbol": "TARIL",
       "ticker": "TARIL.NS",
+      "batch": "Batch 3"
+    },
+    {
+      "symbol": "TINNARUBR",
+      "ticker": "TINNARUBR.NS",
       "batch": "Batch 3"
     },
     {
@@ -754,18 +647,38 @@
       "batch": "Batch 3"
     },
     {
-      "symbol": "VIYASH",
-      "ticker": "VIYASH.NS",
+      "symbol": "ZENTEC",
+      "ticker": "ZENTEC.NS",
       "batch": "Batch 3"
     },
     {
-      "symbol": "AMIRCHAND",
-      "ticker": "AMIRCHAND.NS",
+      "symbol": "ADSL",
+      "ticker": "ADSL.NS",
+      "batch": "Batch 4"
+    },
+    {
+      "symbol": "ARDEE",
+      "ticker": "ARDEE.NS",
+      "batch": "Batch 4"
+    },
+    {
+      "symbol": "ARROWGREEN",
+      "ticker": "ARROWGREEN.NS",
       "batch": "Batch 4"
     },
     {
       "symbol": "ASIANENE",
       "ticker": "ASIANENE.NS",
+      "batch": "Batch 4"
+    },
+    {
+      "symbol": "ASMS",
+      "ticker": "ASMS.NS",
+      "batch": "Batch 4"
+    },
+    {
+      "symbol": "AUGMONT",
+      "ticker": "AUGMONT.NS",
       "batch": "Batch 4"
     },
     {
@@ -779,8 +692,8 @@
       "batch": "Batch 4"
     },
     {
-      "symbol": "CEIGALL",
-      "ticker": "CEIGALL.NS",
+      "symbol": "CMPDI",
+      "ticker": "CMPDI.NS",
       "batch": "Batch 4"
     },
     {
@@ -794,13 +707,18 @@
       "batch": "Batch 4"
     },
     {
-      "symbol": "ELLEN",
-      "ticker": "ELLEN.BO",
+      "symbol": "DYNAMIC",
+      "ticker": "DYNAMIC.NS",
       "batch": "Batch 4"
     },
     {
       "symbol": "EMUDHRA",
       "ticker": "EMUDHRA.NS",
+      "batch": "Batch 4"
+    },
+    {
+      "symbol": "EPACK",
+      "ticker": "EPACK.NS",
       "batch": "Batch 4"
     },
     {
@@ -819,18 +737,18 @@
       "batch": "Batch 4"
     },
     {
-      "symbol": "INDNIPPON",
-      "ticker": "INDNIPPON.NS",
+      "symbol": "IGIL",
+      "ticker": "IGIL.NS",
       "batch": "Batch 4"
     },
     {
-      "symbol": "JINDRILL",
-      "ticker": "JINDRILL.NS",
+      "symbol": "IRIS",
+      "ticker": "IRIS.NS",
       "batch": "Batch 4"
     },
     {
-      "symbol": "NEPHROCARE",
-      "ticker": "NEPHROCARE.NS",
+      "symbol": "MASTERTR",
+      "ticker": "MASTERTR.BO",
       "batch": "Batch 4"
     },
     {
@@ -841,6 +759,11 @@
     {
       "symbol": "PARAS",
       "ticker": "PARAS.NS",
+      "batch": "Batch 4"
+    },
+    {
+      "symbol": "RAMBHAJO",
+      "ticker": "RAMBHAJO.NS",
       "batch": "Batch 4"
     },
     {
@@ -859,23 +782,23 @@
       "batch": "Batch 4"
     },
     {
-      "symbol": "SERVOTECH",
-      "ticker": "SERVOTECH.NS",
+      "symbol": "SSEGL-SM",
+      "ticker": "SSEGL-SM.NS",
       "batch": "Batch 4"
     },
     {
-      "symbol": "SURAKSHA",
-      "ticker": "SURAKSHA.NS",
-      "batch": "Batch 4"
-    },
-    {
-      "symbol": "VIKRAN",
-      "ticker": "VIKRAN.NS",
+      "symbol": "TECHNOE",
+      "ticker": "TECHNOE.NS",
       "batch": "Batch 4"
     },
     {
       "symbol": "WINDLAS",
       "ticker": "WINDLAS.NS",
+      "batch": "Batch 4"
+    },
+    {
+      "symbol": "XTRANET",
+      "ticker": "XTRANET.NS",
       "batch": "Batch 4"
     }
   ]
