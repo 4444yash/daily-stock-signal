@@ -1,4 +1,4 @@
-# Quarterly retrain report — 2026-08-01
+# Quarterly retrain report — 2026-10-01
 
 **Verdict: PROMOTE.** The candidate clears every promotion check.
 
@@ -16,13 +16,13 @@ The live model is never replaced by this workflow. Promotion happens only when a
 
 | config | OOS trades | gated | lift | avg P&L | profit factor | win rate |
 |---|---:|---:|---:|---:|---:|---:|
-| incumbent config: all data | 234 | 19.6 | 1.72 | 4.41% | 1.71 | 37.7% |
+| incumbent config: all data | 234 | 20.4 | 1.84 | 5.88% | 1.97 | 43.1% |
 
 The incumbent *model instance* cannot be scored fairly against historical out-of-sample data, because it was trained on those trades. So this table compares **configurations** under an identical walk-forward, not one saved model against another.
 
 ## Seed sensitivity
 
-Average gated P&L across seeds: `+1.68%, +2.17%, +4.88%, +5.78%, +7.57%`
+Average gated P&L across seeds: `+2.25%, +2.91%, +6.92%, +7.44%, +9.88%`
 
 Worst seed is profitable. On this little data the seed alone moves the result substantially, so any single run is unreliable and promotion requires every seed to hold up.
 
@@ -30,10 +30,10 @@ Worst seed is profitable. On this little data the seed alone moves the result su
 
 | metric | full period | recent |
 |---|---:|---:|
-| gated trades | 19.6 | 5.8 |
-| lift | 1.72 | 1.44 |
-| avg P&L | 4.41% | -0.28% |
-| profit factor | 1.71 | 1.13 |
+| gated trades | 20.4 | 5.2 |
+| lift | 1.84 | 1.71 |
+| avg P&L | 5.88% | 8.11% |
+| profit factor | 1.97 | 2.59 |
 
 A materially worse recent block is the earliest sign of edge decay.
 
@@ -43,12 +43,12 @@ Is 0.65 still the right gate?
 
 | gate | gated trades | 25%+ rate | lift | avg P&L | profit factor |
 |---:|---:|---:|---:|---:|---:|
-| 0.50 | 34.8 | 16.7% | 1.56 | 3.58% | 1.54 |
-| 0.55 | 29.6 | 17.6% | 1.64 | 4.05% | 1.61 |
-| 0.60 | 24.2 | 19.2% | 1.79 | 4.21% | 1.66 |
-| 0.65 **(live)** | 19.6 | 18.4% | 1.72 | 4.41% | 1.71 |
-| 0.70 | 14.6 | 12.4% | 1.16 | 1.72% | 1.26 |
-| 0.75 | 10.8 | 14.6% | 1.37 | 2.54% | 1.35 |
+| 0.50 | 37.8 | 16.6% | 1.55 | 3.86% | 1.58 |
+| 0.55 | 31.4 | 16.1% | 1.51 | 3.08% | 1.50 |
+| 0.60 | 25.0 | 16.9% | 1.59 | 3.69% | 1.58 |
+| 0.65 **(live)** | 20.4 | 19.6% | 1.84 | 5.88% | 1.97 |
+| 0.70 | 16.0 | 16.3% | 1.52 | 4.20% | 1.69 |
+| 0.75 | 11.8 | 15.1% | 1.41 | 3.51% | 1.57 |
 
 Raising the gate always looks better on fewer trades. Prefer the lowest gate that still clears the bar, and treat rows with very few gated trades as noise.
 
@@ -56,17 +56,17 @@ Raising the gate always looks better on fewer trades. Prefer the lowest gate tha
 
 | feature | gain % | recent shift (SD) |
 |---|---:|---:|
-| distance_from_50sma | 17.0% | -0.09 |
-| atr_pct | 15.0% | +0.05 |
-| close_high_ratio | 12.9% | +0.00 |
-| bbw_width_pct | 11.5% | +0.04 |
-| nifty_distance_from_50sma | 9.3% | -0.12 |
-| days_in_squeeze | 7.5% | -0.06 |
-| relative_strength_125 | 6.4% | -0.03 |
-| prior_runup_90 | 6.1% | -0.13 |
-| volume_multiple | 5.0% | -0.04 |
-| rsi_delta | 4.9% | -0.01 |
-| rsi_absolute | 4.3% | -0.04 |
+| atr_pct | 17.7% | +0.05 |
+| bbw_width_pct | 14.2% | +0.04 |
+| close_high_ratio | 14.1% | +0.00 |
+| distance_from_50sma | 10.8% | -0.09 |
+| prior_runup_90 | 6.8% | -0.13 |
+| relative_strength_125 | 6.7% | -0.03 |
+| days_in_squeeze | 6.6% | -0.06 |
+| rsi_absolute | 6.5% | -0.04 |
+| nifty_distance_from_50sma | 5.6% | -0.12 |
+| volume_multiple | 5.5% | -0.04 |
+| rsi_delta | 5.4% | -0.01 |
 | nifty_trend | 0.0% | -0.11 |
 
 **Dead features contributing nothing: `nifty_trend`.** Worth removing or reworking — they add dimensionality without signal.
@@ -77,11 +77,11 @@ Raising the gate always looks better on fewer trades. Prefer the lowest gate tha
 
 | check | value | required | result |
 |---|---:|---:|:--:|
-| lift above base rate | 1.72 | 1.1 | PASS |
-| gated trades profitable | 4.41 | 0.0 | PASS |
-| profit factor | 1.71 | 1.2 | PASS |
-| enough gated trades | 19.60 | 15 | PASS |
-| every seed profitable | 1.68% | > 0% | PASS |
+| lift above base rate | 1.84 | 1.1 | PASS |
+| gated trades profitable | 5.88 | 0.0 | PASS |
+| profit factor | 1.97 | 1.2 | PASS |
+| enough gated trades | 20.40 | 15 | PASS |
+| every seed profitable | 2.25% | > 0% | PASS |
 
 ## Caveats
 
