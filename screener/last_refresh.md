@@ -1,17 +1,12 @@
-# Watchlist refresh 2026-10-01
+# Watchlist refresh 2026-10-02
 
 Source: `screener/exports/screen_2026-10-01.csv`
 
 | | count |
 |---|---:|
-| previous | 166 |
+| previous | 158 |
 | new | 158 |
-| added | 28 |
-| removed | 36 |
-| retained | 130 |
+| added | 0 |
+| removed | 0 |
+| retained | 158 |
 
-**Added:** ADSL, ARDEE, ARROWGREEN, ASMS, AUGMONT, BHARATSE, CMPDI, CREATIVE, DEEPA, DYNAMIC, EPACK, IGIL, IRIS, JOJO, KNACK, KUSUMGAR, LASERPOWER, MASTERTR, NEPHROPLUS, OBSCP-SM, RAMBHAJO, SOBME, SSEGL-SM, SUNSHINE, TECHNOE, TINNARUBR, XTRANET, ZENTEC
-
-**Removed:** 523229, 530475, ACGL, AMIRCHAND, ASMTEC, CEIGALL, CFF, CNCRD, CNL, DANISH-SM, DYCL, ELLEN, INDNIPPON, INDOTHAI, JARO, JINDRILL, KPGEL, LTFOODS, MPSLTD, MWL, NEPHROCARE, OMNI, ORIANA, RAJESH, RAJOOENG, SERVOTECH, SIGMAADV, SOLEX, SRM, SUNSHIEL, SURAKSHA, VIKRAN, VIYASH, WEALTH, YASHHV, ZELIO
-
-> **Open positions in removed names:** ELLEN, RAJOOENG. Not closed automatically; the trailing stop still governs the exit.

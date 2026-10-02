@@ -1,5 +1,5 @@
 {
-  "watchlist_updated": "2026-10-02",
+  "watchlist_updated": "2026-10-01",
   "source": {
     "method": "Screener.in fundamental screen, exported manually",
     "query_file": "screener/query.txt",
@@ -10,7 +10,7 @@
   "criteria_summary": {},
   "refresh": {
     "cadence": "quarterly",
-    "last_run": "2026-10-02",
+    "last_run": "2026-10-01",
     "process": "screener/README.md"
   },
   "counts": {
@@ -23,12 +23,81 @@
     }
   },
   "diff_vs_previous": {
-    "previous_updated": "2026-10-01",
-    "added": [],
-    "removed": [],
-    "retained_count": 158,
+    "previous_updated": "2026-06-29",
+    "added": [
+      "ADSL",
+      "ARDEE",
+      "ARROWGREEN",
+      "ASMS",
+      "AUGMONT",
+      "BHARATSE",
+      "CMPDI",
+      "CREATIVE",
+      "DEEPA",
+      "DYNAMIC",
+      "EPACK",
+      "IGIL",
+      "IRIS",
+      "JOJO",
+      "KNACK",
+      "KUSUMGAR",
+      "LASERPOWER",
+      "MASTERTR",
+      "NEPHROPLUS",
+      "OBSCP-SM",
+      "RAMBHAJO",
+      "SOBME",
+      "SSEGL-SM",
+      "SUNSHINE",
+      "TECHNOE",
+      "TINNARUBR",
+      "XTRANET",
+      "ZENTEC"
+    ],
+    "removed": [
+      "523229",
+      "530475",
+      "ACGL",
+      "AMIRCHAND",
+      "ASMTEC",
+      "CEIGALL",
+      "CFF",
+      "CNCRD",
+      "CNL",
+      "DANISH-SM",
+      "DYCL",
+      "ELLEN",
+      "INDNIPPON",
+      "INDOTHAI",
+      "JARO",
+      "JINDRILL",
+      "KPGEL",
+      "LTFOODS",
+      "MPSLTD",
+      "MWL",
+      "NEPHROCARE",
+      "OMNI",
+      "ORIANA",
+      "RAJESH",
+      "RAJOOENG",
+      "SERVOTECH",
+      "SIGMAADV",
+      "SOLEX",
+      "SRM",
+      "SUNSHIEL",
+      "SURAKSHA",
+      "VIKRAN",
+      "VIYASH",
+      "WEALTH",
+      "YASHHV",
+      "ZELIO"
+    ],
+    "retained_count": 130,
     "excluded_no_price_data": [],
-    "open_positions_in_removed": []
+    "open_positions_in_removed": [
+      "ELLEN",
+      "RAJOOENG"
+    ]
   },
   "stocks": [
     {
