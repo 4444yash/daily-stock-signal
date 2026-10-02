@@ -1,19 +1,12 @@
-# Watchlist refresh 2026-10-01
+# Watchlist refresh 2026-10-02
 
 Source: `screener/exports/screen_2026-10-01.csv`
 
 | | count |
 |---|---:|
-| previous | 166 |
+| previous | 132 |
 | new | 132 |
-| added | 21 |
-| removed | 55 |
-| retained | 111 |
+| added | 0 |
+| removed | 0 |
+| retained | 132 |
 
-**Added:** ADSL, ARDEE, ARROWGREEN, ASMS, AUGMONT, CMPDI, DYNAMIC, EPACK, IGIL, IRIS, KNACK, MASTERTR, NEPHROPLUS, RAMBHAJO, SOBME, SSEGL-SM, SUNSHINE, TECHNOE, TINNARUBR, XTRANET, ZENTEC
-
-**Removed:** 523229, 530475, ACGL, ALLDIGI, AMIRCHAND, ANANDRATHI, ANTELOPUS, ARKADE, ASMTEC, BONDADA, CEIGALL, CFF, CNCRD, CNL, DANISH-SM, DYCL, EBGNG, EIEL, ELLEN, EPACKPEB, GULPOLY, INDNIPPON, INDOTHAI, JARO, JINDRILL, KPGEL, KPL, LTFOODS, MARINE, MCLOUD, MODINSU, MPSLTD, MWL, NEPHROCARE, NPST, OMNI, ORIANA, PACEDIGITK, PGIL, PICCADIL, RAJESH, RAJOOENG, SAMBHV, SEAMECLTD, SERVOTECH, SIGMAADV, SOLEX, SRM, SUNSHIEL, SURAKSHA, VIKRAN, VIYASH, WEALTH, YASHHV, ZELIO
-
-**Excluded, no price data:** DEEPEE.BO, KPHARMA.NS, PDL01.NS, ACIC.NS
-
-> **Open positions in removed names:** CNL. Not closed automatically; the trailing stop still governs the exit.
