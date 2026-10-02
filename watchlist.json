@@ -7,7 +7,32 @@
     "symbol_column": "Symbol",
     "generated_by": "build_watchlist.py"
   },
-  "criteria_summary": {},
+  "criteria_summary": {
+    "market_cap_cr": {
+      "min": 1000,
+      "max": 15000
+    },
+    "sales_growth_3y_pct_min": 15,
+    "profit_growth_3y_pct_min": 15,
+    "roce_pct_min": 15,
+    "promoter_holding_pct_min": 45,
+    "debt_to_equity_tiers": [
+      {
+        "roce_pct": "> 20",
+        "max_debt_to_equity": 1.5
+      },
+      {
+        "roce_pct": "15 to 20",
+        "max_debt_to_equity": 1.0
+      },
+      {
+        "roce_pct": "< 15",
+        "max_debt_to_equity": 0.5,
+        "unreachable": true,
+        "reason": "the global ROCE > 15 filter excludes this branch"
+      }
+    ]
+  },
   "refresh": {
     "cadence": "quarterly",
     "last_run": "2026-10-01",
