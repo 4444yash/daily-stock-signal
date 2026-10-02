@@ -1,11 +1,11 @@
 {
   "watchlist_updated": "2026-10-01",
   "source": {
-    "method": "Quarterly watchlist refresh with user tickers",
+    "method": "Screener.in fundamental screen, exported manually",
     "query_file": "screener/query.txt",
-    "export_file": null,
-    "generated_by": "manual_quarterly_refresh",
-    "note": "Normalized user provided tickers to verified Yahoo Finance tickers and balanced across 4 batches."
+    "export_file": "screener/exports/screen_2026-10-01.csv",
+    "symbol_column": "Symbol",
+    "generated_by": "build_watchlist.py"
   },
   "criteria_summary": {
     "market_cap_cr": {

@@ -36,6 +36,9 @@ __pycache__/
 # must be committed even though they contain csv.
 !/model_reports/**
 
+# Screener exports trigger the quarterly watchlist refresh workflow
+!/screener/exports/**
+
 # ------------------------------------------------------ editor / scratch
 .vscode/
 .uitest/

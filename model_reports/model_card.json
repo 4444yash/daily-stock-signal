@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-08-01T18:45:13Z",
-  "git_sha": "ea777b7",
+  "generated_at_utc": "2026-10-02T06:18:21Z",
+  "git_sha": "9f9a758",
   "verdict": "PROMOTE",
   "training_data": "results/xgboost_training_data.csv",
   "rows_total": 1206,

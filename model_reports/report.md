@@ -1,4 +1,4 @@
-# Quarterly retrain report — 2026-08-01
+# Quarterly retrain report — 2026-10-02
 
 **Verdict: PROMOTE.** The candidate clears every promotion check.
 
