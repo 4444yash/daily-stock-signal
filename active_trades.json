@@ -2,20 +2,6 @@
   "last_updated": "2026-10-01",
   "trades": [
     {
-      "symbol": "RAJOOENG",
-      "batch": "Batch 2",
-      "entry_date": "2026-09-08",
-      "signal_date": "2026-09-07",
-      "prob": 0.7040436863899231,
-      "entry_price": 54.15999984741211,
-      "current_stop": 47.23299865722656,
-      "initial_stop": 46.98099822998047,
-      "latest_price": 53.209999084472656,
-      "latest_date": "2026-10-01",
-      "peak_price": 57.0,
-      "prev_price": 53.43000030517578
-    },
-    {
       "symbol": "PGIL",
       "batch": "Batch 3",
       "entry_date": "2026-09-24",
@@ -28,20 +14,6 @@
       "latest_date": "2026-10-01",
       "peak_price": 1357.9000244140625,
       "prev_price": 1282.0999755859375
-    },
-    {
-      "symbol": "ELLEN",
-      "batch": "Batch 4",
-      "entry_date": "2026-09-10",
-      "signal_date": "2026-09-09",
-      "prob": 0.7673406600952148,
-      "entry_price": 356.75,
-      "current_stop": 322.9049987792969,
-      "initial_stop": 293.7599853515625,
-      "latest_price": 342.0,
-      "latest_date": "2026-10-01",
-      "peak_price": 395.0,
-      "prev_price": 356.70001220703125
     }
   ]
 }
