@@ -316,8 +316,11 @@ function positionRow(p) {
   const probPct = has(p.prob) ? Math.round(p.prob * 100) : null;
   const riskTone = p.risk_state === 'Profit locked' ? 'win'
     : p.risk_state === 'Break-even stop' ? 'info' : 'warn';
+  const tag = p.dropped_from_watchlist
+    ? ` <span class="pill mute" style="font-size:10px;padding:1px 6px;vertical-align:middle" title="Dropped from quarterly fundamental screen — holding until trailing stop exit">Trailing Exit</span>`
+    : '';
   return [
-    { html: `<span class="sym">${p.symbol}</span>`, cls: '' },
+    { html: `<span class="sym">${p.symbol}</span>${tag}`, cls: '' },
     { html: shortDate(p.entry_date), cls: 'dim' },
     { html: has(p.days_held) ? `${p.days_held}d` : '—', cls: 'dim' },
     { html: num(p.entry_price), cls: 'mono' },
@@ -375,6 +378,17 @@ function renderOpen(d) {
 
   renderOpenTable('open-table', ps, false);
 
+  const dropped = ps.filter(p => p.dropped_from_watchlist);
+  const hintEl = document.querySelector('#panel-open .card-head .hint');
+  if (hintEl) {
+    let baseHint = 'Stops ratchet up daily and never move down. "Locked" is the return guaranteed if the stop triggers at its current level.';
+    if (dropped.length > 0) {
+      const symList = dropped.map(p => p.symbol).join(', ');
+      baseHint += ` <span style="color:var(--text)">Note: <strong>${symList}</strong> dropped from the screening screener on quarterly refresh, but remain active here until their trailing stop exits.</span>`;
+    }
+    hintEl.innerHTML = baseHint;
+  }
+
   const cards = ps.map(p => {
     // Where price sits between the stop and the running peak.
     const lo = p.current_stop, hi = p.peak_price, cur = p.latest_price;
@@ -386,6 +400,7 @@ function renderOpen(d) {
         <span class="sym">${p.symbol}</span>
         <span class="pnl ${cls(p.unrealized_pct)}">${pct(p.unrealized_pct)}</span>
       </div>
+      ${p.dropped_from_watchlist ? '<div style="margin:-4px 0 9px"><span class="pill mute" style="font-size:10.5px;padding:2px 7px">Trailing Exit (Removed from Watchlist)</span></div>' : ''}
       <ul class="pos-rows">
         <li><span>Entry</span><b>${num(p.entry_price)} · ${shortDate(p.entry_date)}</b></li>
         <li><span>Last close</span><b>${num(p.latest_price)}</b></li>
@@ -784,12 +799,22 @@ function renderStrategy(d) {
     you see is exactly what the automation recorded, with no manual editing in between.</p>
   `);
 
-  set('universe-stats', statRows([
+  const uniRows = [
     ['Symbols tracked', d.universe.total],
     ['Watchlist updated', shortDate(d.universe.updated)],
     ...d.universe.batches.map(b => [b.batch, b.count]),
     ['Cost assumption', `${num(d.config.cost_pct, 2)}%`],
-  ]));
+  ];
+  if (d.universe.diff) {
+    uniRows.push(
+      ['Last refresh added', `+${d.universe.diff.added_count}`],
+      ['Last refresh removed', `-${d.universe.diff.removed_count}`],
+    );
+    if (d.universe.diff.open_positions_in_removed && d.universe.diff.open_positions_in_removed.length > 0) {
+      uniRows.push(['Trailing exits (removed)', d.universe.diff.open_positions_in_removed.join(', ')]);
+    }
+  }
+  set('universe-stats', statRows(uniRows));
 }
 
 /* ---------------- tabs ---------------- */

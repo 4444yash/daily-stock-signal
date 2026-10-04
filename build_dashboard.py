@@ -221,7 +221,12 @@ def compute_stats(trades, label):
     return stats
 
 
-def build_open_positions(active_trades):
+def build_open_positions(active_trades, watchlist=None):
+    watchlist = watchlist or {}
+    diff_vs_prev = watchlist.get("diff_vs_previous", {})
+    removed_held = set(diff_vs_prev.get("open_positions_in_removed", []))
+    current_symbols = {s["symbol"] for s in watchlist.get("stocks", [])}
+
     positions = []
     for t in active_trades:
         entry = t.get("entry_price")
@@ -231,6 +236,9 @@ def build_open_positions(active_trades):
         prev = t.get("prev_price")
         if not entry:
             continue
+
+        sym = t.get("symbol")
+        is_dropped = (sym in removed_held) or (bool(current_symbols) and sym not in current_symbols)
 
         unreal = (last - entry) / entry * 100.0
         # R is measured against the risk taken at entry. Fall back to the live stop
@@ -253,8 +261,10 @@ def build_open_positions(active_trades):
         days = (d_last - d_entry).days if d_entry and d_last else None
 
         positions.append({
-            "symbol": t.get("symbol"),
+            "symbol": sym,
             "batch": t.get("batch") or "",
+            "dropped_from_watchlist": is_dropped,
+            "watchlist_note": "Dropped in quarterly refresh — trailing stop active until exit" if is_dropped else None,
             "signal_date": t.get("signal_date"),
             "entry_date": t.get("entry_date"),
             "entry_price": _r(entry),
@@ -339,7 +349,7 @@ def build(workspace=None):
     closed_trades = history_data.get("trades", [])
 
     live = compute_stats(closed_trades, "Live (forward-tested)")
-    positions = build_open_positions(active_trades)
+    positions = build_open_positions(active_trades, watchlist)
     activity = build_activity(scan_log, closed_trades, active_trades)
 
     # Trades deliberately kept out of the statistics, shown for transparency.
@@ -365,6 +375,7 @@ def build(workspace=None):
     unrealized = sum((p["unrealized_pct"] or 0) for p in positions)
     universe = watchlist.get("stocks", [])
     batch_counts = Counter(s.get("batch", "Unclassified") for s in universe)
+    diff_vs_prev = watchlist.get("diff_vs_previous", {})
 
     payload = {
         "generated_at_utc": datetime.datetime.now(datetime.timezone.utc)
@@ -385,6 +396,13 @@ def build(workspace=None):
             "total": len(universe),
             "updated": watchlist.get("watchlist_updated"),
             "batches": [{"batch": k, "count": v} for k, v in sorted(batch_counts.items())],
+            "diff": {
+                "previous_updated": diff_vs_prev.get("previous_updated"),
+                "added_count": len(diff_vs_prev.get("added", [])),
+                "removed_count": len(diff_vs_prev.get("removed", [])),
+                "retained_count": diff_vs_prev.get("retained_count", 0),
+                "open_positions_in_removed": diff_vs_prev.get("open_positions_in_removed", []),
+            } if diff_vs_prev else None,
         },
         "headline": {
             "open_positions": len(positions),

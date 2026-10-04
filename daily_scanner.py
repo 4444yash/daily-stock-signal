@@ -280,11 +280,44 @@ def main():
     # Helper to check if a trade is already active
     active_symbols = {t["symbol"] for t in active_trades}
     
+    # Build complete scan universe: watchlist stocks + any currently open trades
+    # (even if they dropped out of the fundamental screener on quarterly refresh)
+    watchlist_symbols = {s["symbol"] for s in stocks}
+    known_tickers = {s["symbol"]: s["ticker"] for s in stocks}
+    
+    # Check watchlist history to recover original tickers for active trades if needed
+    hist_dir = os.path.join(workspace, "watchlist_history")
+    if os.path.exists(hist_dir):
+        for fname in sorted(os.listdir(hist_dir), reverse=True):
+            if fname.endswith(".json"):
+                try:
+                    with open(os.path.join(hist_dir, fname), "r", encoding="utf-8") as hf:
+                        hdata = json.load(hf)
+                        for hs in hdata.get("stocks", []):
+                            if hs.get("symbol") and hs["symbol"] not in known_tickers and "ticker" in hs:
+                                known_tickers[hs["symbol"]] = hs["ticker"]
+                except Exception:
+                    pass
+
+    scan_stocks = [dict(s) for s in stocks]
+    for t in active_trades:
+        sym = t.get("symbol")
+        if sym and sym not in watchlist_symbols:
+            tkr = t.get("ticker") or known_tickers.get(sym, f"{sym}.NS")
+            scan_stocks.append({
+                "symbol": sym,
+                "ticker": tkr,
+                "batch": t.get("batch", "Held"),
+                "held_only": True
+            })
+            print(f"Including held position dropped from screener: {sym} ({tkr})")
+
     # 6. Process each stock
-    for stock in stocks:
+    for stock in scan_stocks:
         symbol = stock["symbol"]
         ticker = stock["ticker"]
         batch = stock["batch"]
+        is_held_only = stock.get("held_only", False)
         
         print(f"Scanning {symbol} ({ticker})...")
         try:
@@ -293,6 +326,11 @@ def main():
             if df.empty or len(df) < 50:
                 print(f"  Skipping {symbol}: insufficient data.")
                 scan_stats["skipped"] += 1
+                if symbol in active_symbols:
+                    matching_trade = next((t for t in active_trades if t["symbol"] == symbol), None)
+                    if matching_trade and not any(t["symbol"] == symbol for t in updated_active_trades):
+                        print(f"  PRESERVING active position {symbol} despite insufficient fresh data.")
+                        updated_active_trades.append(matching_trade)
                 continue
             scan_stats["scanned"] += 1
                 
@@ -377,6 +415,7 @@ def main():
                     matching_trade["latest_date"] = latest_date_str
                     matching_trade["peak_price"] = max(float(matching_trade.get("peak_price", entry_price)), h_j)
                     matching_trade["prev_price"] = float(df.iloc[-2]['close']) if len(df) > 1 else c_j
+                    matching_trade["ticker"] = ticker
                     updated_active_trades.append(matching_trade)
                     active_positions_status.append({
                         "symbol": symbol,
@@ -385,9 +424,9 @@ def main():
                         "pnl_pct": pnl_pct
                     })
             
-            # Check for new signal today
+            # Check for new signal today (only for symbols in current watchlist, not held-only positions)
             latest_row = df.iloc[-1]
-            if latest_row['triple_signal'] == 1 and symbol not in active_symbols:
+            if not is_held_only and latest_row['triple_signal'] == 1 and symbol not in active_symbols:
                 idx = len(df) - 1
                 sig_date = latest_row['date_parsed']
                 sig_date_str = sig_date.strftime('%Y-%m-%d')
@@ -469,6 +508,11 @@ def main():
         except Exception as e:
             scan_stats["errors"] += 1
             print(f"  Error processing {symbol}: {e}")
+            if symbol in active_symbols:
+                matching_trade = next((t for t in active_trades if t["symbol"] == symbol), None)
+                if matching_trade and not any(t["symbol"] == symbol for t in updated_active_trades):
+                    print(f"  PRESERVING active position {symbol} despite scan failure.")
+                    updated_active_trades.append(matching_trade)
             
     # Add new signals to active positions if they exist (simulate entering on next open bar)
     # Since we can't fetch tomorrow's open yet, we queue them to enter tomorrow's open or add them directly to active trades.
@@ -479,6 +523,7 @@ def main():
     for sig in new_signals:
         updated_active_trades.append({
             "symbol": sig["symbol"],
+            "ticker": sig.get("ticker") or f"{sig['symbol']}.NS",
             "batch": sig["batch"],
             "entry_date": (latest_nifty_date + datetime.timedelta(days=1)).strftime('%Y-%m-%d'), # tomorrow's date
             "signal_date": sig["signal_date"],
@@ -492,6 +537,15 @@ def main():
             "prev_price": sig["close_price"]
         })
         
+    # Safety check: ensure no active trade is accidentally dropped
+    updated_symbols = {t["symbol"] for t in updated_active_trades}
+    exited_symbols = {t["symbol"] for t in exited_trades_today}
+    for t in active_trades:
+        sym = t.get("symbol")
+        if sym and sym not in updated_symbols and sym not in exited_symbols:
+            print(f"  WARNING: Active position {sym} was neither updated nor exited. Preserving.")
+            updated_active_trades.append(t)
+
     # 7. Save updated active trades
     run_date = latest_nifty_date.strftime('%Y-%m-%d')
     active_data["last_updated"] = run_date

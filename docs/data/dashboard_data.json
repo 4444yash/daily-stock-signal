@@ -1,5 +1,5 @@
 {
- "generated_at_utc": "2026-10-02T16:22:19Z",
+ "generated_at_utc": "2026-10-04T13:24:07Z",
  "as_of": "2026-10-01",
  "config": {
   "prob_threshold": 0.65,
@@ -30,16 +30,26 @@
     "batch": "Batch 4",
     "count": 38
    }
-  ]
+  ],
+  "diff": {
+   "previous_updated": "2026-06-29",
+   "added_count": 28,
+   "removed_count": 36,
+   "retained_count": 130,
+   "open_positions_in_removed": [
+    "ELLEN",
+    "RAJOOENG"
+   ]
+  }
  },
  "headline": {
-  "open_positions": 1,
+  "open_positions": 3,
   "closed_trades": 4,
   "win_rate": 75.0,
   "expectancy": 52.38,
   "profit_factor": 23.26,
   "realized_return_pct": 45.47,
-  "unrealized_pct": -2.91,
+  "unrealized_pct": -8.79,
   "max_drawdown_pct": -1.88,
   "best": 149.93,
   "worst": -9.41,
@@ -47,8 +57,32 @@
  },
  "open": [
   {
+   "symbol": "RAJOOENG",
+   "batch": "Batch 2",
+   "dropped_from_watchlist": true,
+   "watchlist_note": "Dropped in quarterly refresh \u2014 trailing stop active until exit",
+   "signal_date": "2026-09-07",
+   "entry_date": "2026-09-08",
+   "entry_price": 54.16,
+   "latest_price": 53.21,
+   "latest_date": "2026-10-01",
+   "current_stop": 47.23,
+   "peak_price": 57.0,
+   "prob": 0.704,
+   "unrealized_pct": -1.75,
+   "day_change_pct": -0.41,
+   "stop_distance_pct": 11.23,
+   "locked_pct": -12.79,
+   "risk_state": "At risk",
+   "drawdown_from_peak_pct": -6.65,
+   "r_multiple": -0.13,
+   "days_held": 23
+  },
+  {
    "symbol": "PGIL",
    "batch": "Batch 3",
+   "dropped_from_watchlist": false,
+   "watchlist_note": null,
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
@@ -65,6 +99,28 @@
    "drawdown_from_peak_pct": -6.99,
    "r_multiple": -0.15,
    "days_held": 7
+  },
+  {
+   "symbol": "ELLEN",
+   "batch": "Batch 4",
+   "dropped_from_watchlist": true,
+   "watchlist_note": "Dropped in quarterly refresh \u2014 trailing stop active until exit",
+   "signal_date": "2026-09-09",
+   "entry_date": "2026-09-10",
+   "entry_price": 356.75,
+   "latest_price": 342.0,
+   "latest_date": "2026-10-01",
+   "current_stop": 322.9,
+   "peak_price": 395.0,
+   "prob": 0.7673,
+   "unrealized_pct": -4.13,
+   "day_change_pct": -4.12,
+   "stop_distance_pct": 5.58,
+   "locked_pct": -9.49,
+   "risk_state": "At risk",
+   "drawdown_from_peak_pct": -13.42,
+   "r_multiple": -0.23,
+   "days_held": 21
   }
  ],
  "live": {
