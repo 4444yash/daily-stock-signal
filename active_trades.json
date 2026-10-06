@@ -11,10 +11,10 @@
       "entry_price": 1300.800048828125,
       "current_stop": 1118.8200317382812,
       "initial_stop": 1054.4800170898438,
-      "latest_price": 1245.300048828125,
+      "latest_price": 1266.699951171875,
       "latest_date": "2026-10-06",
       "peak_price": 1357.9000244140625,
-      "prev_price": 1263.0
+      "prev_price": 1266.5
     },
     {
       "symbol": "RAJOOENG",
@@ -24,11 +24,11 @@
       "signal_date": "2026-09-07",
       "prob": 0.7040436863899231,
       "entry_price": 54.15999984741211,
-      "current_stop": 48.917999267578125,
+      "current_stop": 49.21999893188477,
       "initial_stop": 46.98099822998047,
-      "latest_price": 55.099998474121094,
+      "latest_price": 56.95000076293945,
       "latest_date": "2026-10-06",
-      "peak_price": 57.0,
+      "peak_price": 57.5,
       "prev_price": 54.970001220703125
     },
     {
@@ -41,10 +41,10 @@
       "entry_price": 356.75,
       "current_stop": 322.9049987792969,
       "initial_stop": 293.7599853515625,
-      "latest_price": 338.3500061035156,
+      "latest_price": 348.6499938964844,
       "latest_date": "2026-10-06",
       "peak_price": 395.0,
-      "prev_price": 342.0
+      "prev_price": 332.75
     }
   ]
 }

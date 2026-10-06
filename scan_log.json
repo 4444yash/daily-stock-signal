@@ -1761,17 +1761,84 @@
     },
     {
       "date": "2026-10-06",
-      "run_at_utc": "2026-10-06T05:28:43Z",
+      "run_at_utc": "2026-10-06T16:56:26Z",
       "universe": 158,
       "scanned": 148,
       "skipped": 12,
       "errors": 0,
-      "triggers": 0,
+      "triggers": 3,
       "signals_taken": 0,
       "exits": 0,
       "open_positions": 3,
       "corporate_actions": [],
-      "triggers_detail": []
+      "triggers_detail": [
+        {
+          "symbol": "CEINSYS",
+          "batch": "Batch 2",
+          "signal_date": "2026-10-06",
+          "prob": 0.00694143446162343,
+          "close_price": 718.4500122070312,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 8.488401493453896,
+            "days_in_squeeze": 14,
+            "volume_multiple": 6.480162859081656,
+            "close_high_ratio": 0.7176641924656957,
+            "rsi_absolute": 55.385262486092884,
+            "rsi_delta": 22.482165365321535,
+            "atr_pct": 4.447807093891835,
+            "distance_from_50sma": -0.020996518011418965,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.04398479132988015,
+            "relative_strength_125": 0.6629366773289321,
+            "prior_runup_90": -24.072799539705557
+          }
+        },
+        {
+          "symbol": "KRISHANA",
+          "batch": "Batch 2",
+          "signal_date": "2026-10-06",
+          "prob": 0.024231629446148872,
+          "close_price": 193.66000366210938,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 6.216321041299547,
+            "days_in_squeeze": 9,
+            "volume_multiple": 2.1473310307609146,
+            "close_high_ratio": 0.7154311068436768,
+            "rsi_absolute": 60.82630517583047,
+            "rsi_delta": 9.001541694852051,
+            "atr_pct": 3.894528881941918,
+            "distance_from_50sma": 0.04164988096671116,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.04398479132988015,
+            "relative_strength_125": 1.7077715841269556,
+            "prior_runup_90": 42.554156013979
+          }
+        },
+        {
+          "symbol": "KNACK",
+          "batch": "Batch 4",
+          "signal_date": "2026-10-06",
+          "prob": 0.06886755675077438,
+          "close_price": 197.33999633789062,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 7.336990927244483,
+            "days_in_squeeze": 13,
+            "volume_multiple": 3.3055094531047833,
+            "close_high_ratio": 0.6977974997393148,
+            "rsi_absolute": 64.6756546661791,
+            "rsi_delta": 8.708023973966512,
+            "atr_pct": 3.4306279154524026,
+            "distance_from_50sma": 0.027021883207410686,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.04398479132988015,
+            "relative_strength_125": 1.0,
+            "prior_runup_90": 0.0
+          }
+        }
+      ]
     }
   ]
 }

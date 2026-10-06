@@ -1,5 +1,5 @@
 {
- "generated_at_utc": "2026-10-06T05:28:43Z",
+ "generated_at_utc": "2026-10-06T16:56:26Z",
  "as_of": "2026-10-06",
  "config": {
   "prob_threshold": 0.65,
@@ -49,7 +49,7 @@
   "expectancy": 52.38,
   "profit_factor": 23.26,
   "realized_return_pct": 45.47,
-  "unrealized_pct": -7.69,
+  "unrealized_pct": 0.26,
   "max_drawdown_pct": -1.88,
   "best": 149.93,
   "worst": -9.41,
@@ -64,41 +64,19 @@
    "signal_date": "2026-09-07",
    "entry_date": "2026-09-08",
    "entry_price": 54.16,
-   "latest_price": 55.1,
+   "latest_price": 56.95,
    "latest_date": "2026-10-06",
-   "current_stop": 48.92,
-   "peak_price": 57.0,
+   "current_stop": 49.22,
+   "peak_price": 57.5,
    "prob": 0.704,
-   "unrealized_pct": 1.74,
-   "day_change_pct": 0.24,
-   "stop_distance_pct": 11.22,
-   "locked_pct": -9.68,
+   "unrealized_pct": 5.15,
+   "day_change_pct": 3.6,
+   "stop_distance_pct": 13.57,
+   "locked_pct": -9.12,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -3.33,
-   "r_multiple": 0.13,
+   "drawdown_from_peak_pct": -0.96,
+   "r_multiple": 0.39,
    "days_held": 28
-  },
-  {
-   "symbol": "PGIL",
-   "batch": "Batch 3",
-   "dropped_from_watchlist": false,
-   "watchlist_note": null,
-   "signal_date": "2026-09-23",
-   "entry_date": "2026-09-24",
-   "entry_price": 1300.8,
-   "latest_price": 1245.3,
-   "latest_date": "2026-10-06",
-   "current_stop": 1118.82,
-   "peak_price": 1357.9,
-   "prob": 0.8423,
-   "unrealized_pct": -4.27,
-   "day_change_pct": -1.4,
-   "stop_distance_pct": 10.16,
-   "locked_pct": -13.99,
-   "risk_state": "At risk",
-   "drawdown_from_peak_pct": -8.29,
-   "r_multiple": -0.23,
-   "days_held": 12
   },
   {
    "symbol": "ELLEN",
@@ -108,19 +86,41 @@
    "signal_date": "2026-09-09",
    "entry_date": "2026-09-10",
    "entry_price": 356.75,
-   "latest_price": 338.35,
+   "latest_price": 348.65,
    "latest_date": "2026-10-06",
    "current_stop": 322.9,
    "peak_price": 395.0,
    "prob": 0.7673,
-   "unrealized_pct": -5.16,
-   "day_change_pct": -1.07,
-   "stop_distance_pct": 4.56,
+   "unrealized_pct": -2.27,
+   "day_change_pct": 4.78,
+   "stop_distance_pct": 7.38,
    "locked_pct": -9.49,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -14.34,
-   "r_multiple": -0.29,
+   "drawdown_from_peak_pct": -11.73,
+   "r_multiple": -0.13,
    "days_held": 26
+  },
+  {
+   "symbol": "PGIL",
+   "batch": "Batch 3",
+   "dropped_from_watchlist": false,
+   "watchlist_note": null,
+   "signal_date": "2026-09-23",
+   "entry_date": "2026-09-24",
+   "entry_price": 1300.8,
+   "latest_price": 1266.7,
+   "latest_date": "2026-10-06",
+   "current_stop": 1118.82,
+   "peak_price": 1357.9,
+   "prob": 0.8423,
+   "unrealized_pct": -2.62,
+   "day_change_pct": 0.02,
+   "stop_distance_pct": 11.67,
+   "locked_pct": -13.99,
+   "risk_state": "At risk",
+   "drawdown_from_peak_pct": -6.72,
+   "r_multiple": -0.14,
+   "days_held": 12
   }
  ],
  "live": {
@@ -718,7 +718,7 @@
     "date": "2026-10-06",
     "scanned": 148,
     "errors": 0,
-    "triggers": 0,
+    "triggers": 3,
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 3
@@ -727,10 +727,28 @@
   "total_runs": 68,
   "logged_runs": 46,
   "first_run": "2026-06-29",
-  "total_triggers": 45,
+  "total_triggers": 48,
   "total_taken": 4,
-  "gate_pass_rate": 8.9,
+  "gate_pass_rate": 8.3,
   "recent_rejected": [
+   {
+    "symbol": "CEINSYS",
+    "date": "2026-10-06",
+    "prob": 0.0069,
+    "close_price": 718.45
+   },
+   {
+    "symbol": "KRISHANA",
+    "date": "2026-10-06",
+    "prob": 0.0242,
+    "close_price": 193.66
+   },
+   {
+    "symbol": "KNACK",
+    "date": "2026-10-06",
+    "prob": 0.0689,
+    "close_price": 197.34
+   },
    {
     "symbol": "SHRINGARMS",
     "date": "2026-09-30",
@@ -862,28 +880,10 @@
     "date": "2026-08-20",
     "prob": 0.6231,
     "close_price": 131.38
-   },
-   {
-    "symbol": "JINDRILL",
-    "date": "2026-08-18",
-    "prob": 0.0387,
-    "close_price": 651.15
-   },
-   {
-    "symbol": "ATLANTAELE",
-    "date": "2026-08-17",
-    "prob": 0.0085,
-    "close_price": 1788.2
-   },
-   {
-    "symbol": "MANORAMA",
-    "date": "2026-08-14",
-    "prob": 0.0462,
-    "close_price": 1737.1
    }
   ],
   "last_run": "2026-10-06",
-  "last_run_utc": "2026-10-06T05:28:43Z"
+  "last_run_utc": "2026-10-06T16:56:26Z"
  },
  "integrity": [
   {
