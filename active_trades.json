@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-08",
+  "last_updated": "2026-10-09",
   "trades": [
     {
       "symbol": "PGIL",
@@ -11,10 +11,10 @@
       "entry_price": 1300.800048828125,
       "current_stop": 1140.2999633789063,
       "initial_stop": 1054.4800170898438,
-      "latest_price": 1272.300048828125,
-      "latest_date": "2026-10-08",
+      "latest_price": 1281.0999755859375,
+      "latest_date": "2026-10-09",
       "peak_price": 1357.9000244140625,
-      "prev_price": 1273.0999755859375
+      "prev_price": 1272.300048828125
     },
     {
       "symbol": "RAJOOENG",
@@ -26,10 +26,10 @@
       "entry_price": 54.15999984741211,
       "current_stop": 53.142996597290036,
       "initial_stop": 46.98099822998047,
-      "latest_price": 59.91999816894531,
-      "latest_date": "2026-10-08",
+      "latest_price": 59.45000076293945,
+      "latest_date": "2026-10-09",
       "peak_price": 66.5,
-      "prev_price": 62.369998931884766
+      "prev_price": 59.91999816894531
     },
     {
       "symbol": "ELLEN",
@@ -41,10 +41,25 @@
       "entry_price": 356.75,
       "current_stop": 322.9049987792969,
       "initial_stop": 293.7599853515625,
-      "latest_price": 350.54998779296875,
-      "latest_date": "2026-10-08",
+      "latest_price": 348.1000061035156,
+      "latest_date": "2026-10-09",
       "peak_price": 395.0,
-      "prev_price": 365.8999938964844
+      "prev_price": 350.54998779296875
+    },
+    {
+      "symbol": "KRISHANA",
+      "ticker": "KRISHANA.NS",
+      "batch": "Batch 2",
+      "entry_date": "2026-10-10",
+      "signal_date": "2026-10-09",
+      "prob": 0.7927069664001465,
+      "entry_price": 197.11000061035156,
+      "current_stop": 169.53900299072265,
+      "initial_stop": 169.53900299072265,
+      "latest_price": 197.11000061035156,
+      "latest_date": "2026-10-09",
+      "peak_price": 197.11000061035156,
+      "prev_price": 197.11000061035156
     }
   ]
 }
