@@ -2,6 +2,21 @@
   "last_updated": "2026-10-09",
   "trades": [
     {
+      "symbol": "KRISHANA",
+      "ticker": "KRISHANA.NS",
+      "batch": "Batch 2",
+      "entry_date": "2026-10-10",
+      "signal_date": "2026-10-09",
+      "prob": 0.7927069664001465,
+      "entry_price": 197.11000061035156,
+      "current_stop": 169.53900299072265,
+      "initial_stop": 169.53900299072265,
+      "latest_price": 197.11000061035156,
+      "latest_date": "2026-10-09",
+      "peak_price": 200.0,
+      "prev_price": 188.69000244140625
+    },
+    {
       "symbol": "PGIL",
       "ticker": "PGIL.NS",
       "batch": "Batch 3",
@@ -45,21 +60,6 @@
       "latest_date": "2026-10-09",
       "peak_price": 395.0,
       "prev_price": 350.54998779296875
-    },
-    {
-      "symbol": "KRISHANA",
-      "ticker": "KRISHANA.NS",
-      "batch": "Batch 2",
-      "entry_date": "2026-10-10",
-      "signal_date": "2026-10-09",
-      "prob": 0.7927069664001465,
-      "entry_price": 197.11000061035156,
-      "current_stop": 169.53900299072265,
-      "initial_stop": 169.53900299072265,
-      "latest_price": 197.11000061035156,
-      "latest_date": "2026-10-09",
-      "peak_price": 197.11000061035156,
-      "prev_price": 197.11000061035156
     }
   ]
 }
