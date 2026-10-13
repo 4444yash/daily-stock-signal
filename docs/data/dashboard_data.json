@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-10-12T20:00:21Z",
- "as_of": "2026-10-09",
+ "generated_at_utc": "2026-10-13T17:48:26Z",
+ "as_of": "2026-10-13",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -49,7 +49,7 @@
   "expectancy": 52.38,
   "profit_factor": 23.26,
   "realized_return_pct": 45.47,
-  "unrealized_pct": 5.84,
+  "unrealized_pct": 8.97,
   "max_drawdown_pct": -1.88,
   "best": 149.93,
   "worst": -9.41,
@@ -64,19 +64,19 @@
    "signal_date": "2026-09-07",
    "entry_date": "2026-09-08",
    "entry_price": 54.16,
-   "latest_price": 59.45,
-   "latest_date": "2026-10-09",
+   "latest_price": 61.14,
+   "latest_date": "2026-10-13",
    "current_stop": 53.14,
    "peak_price": 66.5,
    "prob": 0.704,
-   "unrealized_pct": 9.77,
-   "day_change_pct": -0.78,
-   "stop_distance_pct": 10.61,
+   "unrealized_pct": 12.89,
+   "day_change_pct": 2.84,
+   "stop_distance_pct": 13.08,
    "locked_pct": -1.88,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -10.6,
-   "r_multiple": 0.74,
-   "days_held": 31
+   "drawdown_from_peak_pct": -8.06,
+   "r_multiple": 0.97,
+   "days_held": 35
   },
   {
    "symbol": "KRISHANA",
@@ -86,19 +86,19 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 197.11,
-   "latest_date": "2026-10-09",
-   "current_stop": 169.54,
+   "latest_price": 197.42,
+   "latest_date": "2026-10-13",
+   "current_stop": 172.31,
    "peak_price": 200.0,
    "prob": 0.7927,
-   "unrealized_pct": 0.0,
-   "day_change_pct": 4.46,
-   "stop_distance_pct": 13.99,
-   "locked_pct": -13.99,
+   "unrealized_pct": 0.16,
+   "day_change_pct": 0.16,
+   "stop_distance_pct": 12.72,
+   "locked_pct": -12.58,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -1.44,
-   "r_multiple": 0.0,
-   "days_held": -1
+   "drawdown_from_peak_pct": -1.29,
+   "r_multiple": 0.01,
+   "days_held": 3
   },
   {
    "symbol": "PGIL",
@@ -108,19 +108,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1281.1,
-   "latest_date": "2026-10-09",
+   "latest_price": 1287.5,
+   "latest_date": "2026-10-13",
    "current_stop": 1140.3,
    "peak_price": 1357.9,
    "prob": 0.8423,
-   "unrealized_pct": -1.51,
-   "day_change_pct": 0.69,
-   "stop_distance_pct": 10.99,
+   "unrealized_pct": -1.02,
+   "day_change_pct": 0.5,
+   "stop_distance_pct": 11.43,
    "locked_pct": -12.34,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -5.66,
-   "r_multiple": -0.08,
-   "days_held": 15
+   "drawdown_from_peak_pct": -5.18,
+   "r_multiple": -0.05,
+   "days_held": 19
   },
   {
    "symbol": "ELLEN",
@@ -130,19 +130,19 @@
    "signal_date": "2026-09-09",
    "entry_date": "2026-09-10",
    "entry_price": 356.75,
-   "latest_price": 348.1,
-   "latest_date": "2026-10-09",
+   "latest_price": 345.85,
+   "latest_date": "2026-10-13",
    "current_stop": 322.9,
    "peak_price": 395.0,
    "prob": 0.7673,
-   "unrealized_pct": -2.42,
-   "day_change_pct": -0.7,
-   "stop_distance_pct": 7.24,
+   "unrealized_pct": -3.06,
+   "day_change_pct": -0.65,
+   "stop_distance_pct": 6.63,
    "locked_pct": -9.49,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -11.87,
-   "r_multiple": -0.14,
-   "days_held": 29
+   "drawdown_from_peak_pct": -12.44,
+   "r_multiple": -0.17,
+   "days_held": 33
   }
  ],
  "live": {
@@ -771,15 +771,30 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 4
+   },
+   {
+    "date": "2026-10-13",
+    "scanned": 149,
+    "errors": 0,
+    "triggers": 1,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 4
    }
   ],
-  "total_runs": 71,
-  "logged_runs": 49,
+  "total_runs": 72,
+  "logged_runs": 50,
   "first_run": "2026-06-29",
-  "total_triggers": 50,
+  "total_triggers": 51,
   "total_taken": 4,
-  "gate_pass_rate": 8.0,
+  "gate_pass_rate": 7.8,
   "recent_rejected": [
+   {
+    "symbol": "TIPSMUSIC",
+    "date": "2026-10-13",
+    "prob": 0.2039,
+    "close_price": 706.95
+   },
    {
     "symbol": "BONDADA",
     "date": "2026-10-07",
@@ -923,16 +938,10 @@
     "date": "2026-09-08",
     "prob": 0.0091,
     "close_price": 1753.5
-   },
-   {
-    "symbol": "SKIPPER",
-    "date": "2026-09-04",
-    "prob": 0.0368,
-    "close_price": 591.1
    }
   ],
-  "last_run": "2026-10-09",
-  "last_run_utc": "2026-10-12T20:00:21Z"
+  "last_run": "2026-10-13",
+  "last_run_utc": "2026-10-13T17:48:25Z"
  },
  "integrity": [
   {

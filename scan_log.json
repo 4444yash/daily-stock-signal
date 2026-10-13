@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-09",
+  "last_updated": "2026-10-13",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -1926,6 +1926,43 @@
       "open_positions": 4,
       "corporate_actions": [],
       "triggers_detail": []
+    },
+    {
+      "date": "2026-10-13",
+      "run_at_utc": "2026-10-13T17:48:25Z",
+      "universe": 158,
+      "scanned": 149,
+      "skipped": 11,
+      "errors": 0,
+      "triggers": 1,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 4,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "TIPSMUSIC",
+          "batch": "Batch 1",
+          "signal_date": "2026-10-13",
+          "prob": 0.20391681790351868,
+          "close_price": 706.9500122070312,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 7.722912627920706,
+            "days_in_squeeze": 43,
+            "volume_multiple": 2.368613354360067,
+            "close_high_ratio": 0.9294713619137668,
+            "rsi_absolute": 64.19680470372904,
+            "rsi_delta": 19.681233533327294,
+            "atr_pct": 3.487821206962624,
+            "distance_from_50sma": 0.07782379082753466,
+            "nifty_trend": 0,
+            "nifty_distance_from_50sma": -0.03941001418989302,
+            "relative_strength_125": 1.375138511317184,
+            "prior_runup_90": 7.137991719901116
+          }
+        }
+      ]
     }
   ]
 }
