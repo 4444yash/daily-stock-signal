@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-10-14T15:28:46Z",
- "as_of": "2026-10-14",
+ "generated_at_utc": "2026-10-15T15:20:40Z",
+ "as_of": "2026-10-15",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -49,7 +49,7 @@
   "expectancy": 52.38,
   "profit_factor": 23.26,
   "realized_return_pct": 45.47,
-  "unrealized_pct": 14.36,
+  "unrealized_pct": 5.91,
   "max_drawdown_pct": -1.88,
   "best": 149.93,
   "worst": -9.41,
@@ -64,19 +64,19 @@
    "signal_date": "2026-09-07",
    "entry_date": "2026-09-08",
    "entry_price": 54.16,
-   "latest_price": 60.88,
-   "latest_date": "2026-10-14",
+   "latest_price": 58.51,
+   "latest_date": "2026-10-15",
    "current_stop": 53.14,
    "peak_price": 66.5,
    "prob": 0.704,
-   "unrealized_pct": 12.41,
-   "day_change_pct": -0.43,
-   "stop_distance_pct": 12.71,
+   "unrealized_pct": 8.03,
+   "day_change_pct": -3.89,
+   "stop_distance_pct": 9.17,
    "locked_pct": -1.88,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -8.45,
-   "r_multiple": 0.94,
-   "days_held": 36
+   "drawdown_from_peak_pct": -12.02,
+   "r_multiple": 0.61,
+   "days_held": 37
   },
   {
    "symbol": "KRISHANA",
@@ -86,19 +86,19 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 206.47,
-   "latest_date": "2026-10-14",
-   "current_stop": 178.2,
-   "peak_price": 210.3,
+   "latest_price": 211.95,
+   "latest_date": "2026-10-15",
+   "current_stop": 184.03,
+   "peak_price": 213.99,
    "prob": 0.7927,
-   "unrealized_pct": 4.75,
-   "day_change_pct": 4.58,
-   "stop_distance_pct": 13.69,
-   "locked_pct": -9.59,
+   "unrealized_pct": 7.53,
+   "day_change_pct": 2.65,
+   "stop_distance_pct": 13.17,
+   "locked_pct": -6.64,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -1.82,
-   "r_multiple": 0.34,
-   "days_held": 4
+   "drawdown_from_peak_pct": -0.95,
+   "r_multiple": 0.54,
+   "days_held": 5
   },
   {
    "symbol": "PGIL",
@@ -108,19 +108,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1302.6,
-   "latest_date": "2026-10-14",
+   "latest_price": 1263.3,
+   "latest_date": "2026-10-15",
    "current_stop": 1140.3,
    "peak_price": 1357.9,
    "prob": 0.8423,
-   "unrealized_pct": 0.14,
-   "day_change_pct": 1.17,
-   "stop_distance_pct": 12.46,
+   "unrealized_pct": -2.88,
+   "day_change_pct": -3.02,
+   "stop_distance_pct": 9.74,
    "locked_pct": -12.34,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -4.07,
-   "r_multiple": 0.01,
-   "days_held": 20
+   "drawdown_from_peak_pct": -6.97,
+   "r_multiple": -0.15,
+   "days_held": 21
   },
   {
    "symbol": "ELLEN",
@@ -130,19 +130,19 @@
    "signal_date": "2026-09-09",
    "entry_date": "2026-09-10",
    "entry_price": 356.75,
-   "latest_price": 346.25,
-   "latest_date": "2026-10-14",
+   "latest_price": 332.6,
+   "latest_date": "2026-10-15",
    "current_stop": 322.9,
    "peak_price": 395.0,
    "prob": 0.7673,
-   "unrealized_pct": -2.94,
-   "day_change_pct": 0.12,
-   "stop_distance_pct": 6.74,
+   "unrealized_pct": -6.77,
+   "day_change_pct": -3.94,
+   "stop_distance_pct": 2.91,
    "locked_pct": -9.49,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -12.34,
-   "r_multiple": -0.17,
-   "days_held": 34
+   "drawdown_from_peak_pct": -15.8,
+   "r_multiple": -0.38,
+   "days_held": 35
   }
  ],
  "live": {
@@ -789,10 +789,19 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 4
+   },
+   {
+    "date": "2026-10-15",
+    "scanned": 149,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 4
    }
   ],
-  "total_runs": 73,
-  "logged_runs": 51,
+  "total_runs": 74,
+  "logged_runs": 52,
   "first_run": "2026-06-29",
   "total_triggers": 51,
   "total_taken": 4,
@@ -949,8 +958,8 @@
     "close_price": 1753.5
    }
   ],
-  "last_run": "2026-10-14",
-  "last_run_utc": "2026-10-14T15:28:45Z"
+  "last_run": "2026-10-15",
+  "last_run_utc": "2026-10-15T15:20:39Z"
  },
  "integrity": [
   {
