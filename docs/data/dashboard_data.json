@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-10-16T15:00:47Z",
- "as_of": "2026-10-16",
+ "generated_at_utc": "2026-10-19T17:10:15Z",
+ "as_of": "2026-10-19",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -49,7 +49,7 @@
   "expectancy": 52.38,
   "profit_factor": 23.26,
   "realized_return_pct": 45.47,
-  "unrealized_pct": 10.83,
+  "unrealized_pct": 8.61,
   "max_drawdown_pct": -1.88,
   "best": 149.93,
   "worst": -9.41,
@@ -64,19 +64,19 @@
    "signal_date": "2026-09-07",
    "entry_date": "2026-09-08",
    "entry_price": 54.16,
-   "latest_price": 60.06,
-   "latest_date": "2026-10-16",
+   "latest_price": 59.95,
+   "latest_date": "2026-10-19",
    "current_stop": 53.14,
    "peak_price": 66.5,
    "prob": 0.704,
-   "unrealized_pct": 10.89,
-   "day_change_pct": 2.65,
-   "stop_distance_pct": 11.52,
+   "unrealized_pct": 10.69,
+   "day_change_pct": -0.18,
+   "stop_distance_pct": 11.35,
    "locked_pct": -1.88,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -9.68,
-   "r_multiple": 0.82,
-   "days_held": 38
+   "drawdown_from_peak_pct": -9.85,
+   "r_multiple": 0.81,
+   "days_held": 41
   },
   {
    "symbol": "KRISHANA",
@@ -86,19 +86,19 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 208.71,
-   "latest_date": "2026-10-16",
+   "latest_price": 212.89,
+   "latest_date": "2026-10-19",
    "current_stop": 185.22,
    "peak_price": 215.92,
    "prob": 0.7927,
-   "unrealized_pct": 5.89,
-   "day_change_pct": -1.53,
-   "stop_distance_pct": 11.26,
+   "unrealized_pct": 8.01,
+   "day_change_pct": 2.0,
+   "stop_distance_pct": 13.0,
    "locked_pct": -6.03,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -3.34,
-   "r_multiple": 0.42,
-   "days_held": 6
+   "drawdown_from_peak_pct": -1.4,
+   "r_multiple": 0.57,
+   "days_held": 9
   },
   {
    "symbol": "PGIL",
@@ -108,19 +108,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1289.2,
-   "latest_date": "2026-10-16",
+   "latest_price": 1277.7,
+   "latest_date": "2026-10-19",
    "current_stop": 1140.3,
    "peak_price": 1357.9,
    "prob": 0.8423,
-   "unrealized_pct": -0.89,
-   "day_change_pct": 2.05,
-   "stop_distance_pct": 11.55,
+   "unrealized_pct": -1.78,
+   "day_change_pct": -0.89,
+   "stop_distance_pct": 10.75,
    "locked_pct": -12.34,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -5.06,
-   "r_multiple": -0.05,
-   "days_held": 22
+   "drawdown_from_peak_pct": -5.91,
+   "r_multiple": -0.09,
+   "days_held": 25
   },
   {
    "symbol": "ELLEN",
@@ -130,19 +130,19 @@
    "signal_date": "2026-09-09",
    "entry_date": "2026-09-10",
    "entry_price": 356.75,
-   "latest_price": 338.7,
-   "latest_date": "2026-10-16",
+   "latest_price": 327.1,
+   "latest_date": "2026-10-19",
    "current_stop": 322.9,
    "peak_price": 395.0,
    "prob": 0.7673,
-   "unrealized_pct": -5.06,
-   "day_change_pct": 1.83,
-   "stop_distance_pct": 4.66,
+   "unrealized_pct": -8.31,
+   "day_change_pct": -3.42,
+   "stop_distance_pct": 1.28,
    "locked_pct": -9.49,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -14.25,
-   "r_multiple": -0.29,
-   "days_held": 36
+   "drawdown_from_peak_pct": -17.19,
+   "r_multiple": -0.47,
+   "days_held": 39
   }
  ],
  "live": {
@@ -807,10 +807,19 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 4
+   },
+   {
+    "date": "2026-10-19",
+    "scanned": 149,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 4
    }
   ],
-  "total_runs": 75,
-  "logged_runs": 53,
+  "total_runs": 76,
+  "logged_runs": 54,
   "first_run": "2026-06-29",
   "total_triggers": 52,
   "total_taken": 4,
@@ -967,8 +976,8 @@
     "close_price": 248.14
    }
   ],
-  "last_run": "2026-10-16",
-  "last_run_utc": "2026-10-16T15:00:47Z"
+  "last_run": "2026-10-19",
+  "last_run_utc": "2026-10-19T17:10:14Z"
  },
  "integrity": [
   {
