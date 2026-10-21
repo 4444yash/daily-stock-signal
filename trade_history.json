@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-21",
   "note": "Backfilled from the git history of active_trades.json; later trades are logged directly by daily_scanner.py.",
   "trades": [
     {
@@ -75,6 +75,20 @@
       "pnl_pct": 150.07618929796547,
       "hold_days": 201,
       "prob": 0.9709178805351257,
+      "reason": "SL/TSL Hit"
+    },
+    {
+      "symbol": "ELLEN",
+      "batch": "Batch 4",
+      "signal_date": "2026-09-09",
+      "entry_date": "2026-09-10",
+      "exit_date": "2026-10-21",
+      "entry_price": 356.75,
+      "exit_price": 319.6000061035156,
+      "peak_price": 395.0,
+      "pnl_pct": -10.41345308941398,
+      "hold_days": 41,
+      "prob": 0.7673406600952148,
       "reason": "SL/TSL Hit"
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-21",
   "trades": [
     {
       "symbol": "KRISHANA",
@@ -9,12 +9,12 @@
       "signal_date": "2026-10-09",
       "prob": 0.7927069664001465,
       "entry_price": 197.11000061035156,
-      "current_stop": 185.21800689697267,
+      "current_stop": 186.32500610351562,
       "initial_stop": 169.53900299072265,
-      "latest_price": 212.88999938964844,
-      "latest_date": "2026-10-19",
-      "peak_price": 215.9199981689453,
-      "prev_price": 208.7100067138672
+      "latest_price": 209.5,
+      "latest_date": "2026-10-21",
+      "peak_price": 216.0,
+      "prev_price": 212.88999938964844
     },
     {
       "symbol": "PGIL",
@@ -26,10 +26,10 @@
       "entry_price": 1300.800048828125,
       "current_stop": 1140.2999633789063,
       "initial_stop": 1054.4800170898438,
-      "latest_price": 1277.699951171875,
-      "latest_date": "2026-10-19",
+      "latest_price": 1216.5999755859375,
+      "latest_date": "2026-10-21",
       "peak_price": 1357.9000244140625,
-      "prev_price": 1289.199951171875
+      "prev_price": 1277.699951171875
     },
     {
       "symbol": "RAJOOENG",
@@ -41,25 +41,10 @@
       "entry_price": 54.15999984741211,
       "current_stop": 53.142996597290036,
       "initial_stop": 46.98099822998047,
-      "latest_price": 59.95000076293945,
-      "latest_date": "2026-10-19",
+      "latest_price": 56.36000061035156,
+      "latest_date": "2026-10-21",
       "peak_price": 66.5,
-      "prev_price": 60.060001373291016
-    },
-    {
-      "symbol": "ELLEN",
-      "ticker": "ELLEN.BO",
-      "batch": "Batch 4",
-      "entry_date": "2026-09-10",
-      "signal_date": "2026-09-09",
-      "prob": 0.7673406600952148,
-      "entry_price": 356.75,
-      "current_stop": 322.9049987792969,
-      "initial_stop": 293.7599853515625,
-      "latest_price": 327.1000061035156,
-      "latest_date": "2026-10-19",
-      "peak_price": 395.0,
-      "prev_price": 338.70001220703125
+      "prev_price": 59.95000076293945
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-10-20T15:22:41Z",
- "as_of": "2026-10-19",
+ "generated_at_utc": "2026-10-21T15:36:34Z",
+ "as_of": "2026-10-21",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -43,41 +43,19 @@
   }
  },
  "headline": {
-  "open_positions": 4,
-  "closed_trades": 4,
-  "win_rate": 75.0,
-  "expectancy": 52.38,
-  "profit_factor": 23.26,
-  "realized_return_pct": 45.47,
-  "unrealized_pct": 8.61,
-  "max_drawdown_pct": -1.88,
+  "open_positions": 3,
+  "closed_trades": 5,
+  "win_rate": 60.0,
+  "expectancy": 39.79,
+  "profit_factor": 10.96,
+  "realized_return_pct": 42.39,
+  "unrealized_pct": 3.88,
+  "max_drawdown_pct": -2.11,
   "best": 149.93,
-  "worst": -9.41,
-  "avg_hold_days": 92.2
+  "worst": -10.56,
+  "avg_hold_days": 82.0
  },
  "open": [
-  {
-   "symbol": "RAJOOENG",
-   "batch": "Batch 2",
-   "dropped_from_watchlist": true,
-   "watchlist_note": "Dropped in quarterly refresh \u2014 trailing stop active until exit",
-   "signal_date": "2026-09-07",
-   "entry_date": "2026-09-08",
-   "entry_price": 54.16,
-   "latest_price": 59.95,
-   "latest_date": "2026-10-19",
-   "current_stop": 53.14,
-   "peak_price": 66.5,
-   "prob": 0.704,
-   "unrealized_pct": 10.69,
-   "day_change_pct": -0.18,
-   "stop_distance_pct": 11.35,
-   "locked_pct": -1.88,
-   "risk_state": "At risk",
-   "drawdown_from_peak_pct": -9.85,
-   "r_multiple": 0.81,
-   "days_held": 41
-  },
   {
    "symbol": "KRISHANA",
    "batch": "Batch 2",
@@ -86,19 +64,41 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 212.89,
-   "latest_date": "2026-10-19",
-   "current_stop": 185.22,
-   "peak_price": 215.92,
+   "latest_price": 209.5,
+   "latest_date": "2026-10-21",
+   "current_stop": 186.33,
+   "peak_price": 216.0,
    "prob": 0.7927,
-   "unrealized_pct": 8.01,
-   "day_change_pct": 2.0,
-   "stop_distance_pct": 13.0,
-   "locked_pct": -6.03,
+   "unrealized_pct": 6.29,
+   "day_change_pct": -1.59,
+   "stop_distance_pct": 11.06,
+   "locked_pct": -5.47,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -1.4,
-   "r_multiple": 0.57,
-   "days_held": 9
+   "drawdown_from_peak_pct": -3.01,
+   "r_multiple": 0.45,
+   "days_held": 11
+  },
+  {
+   "symbol": "RAJOOENG",
+   "batch": "Batch 2",
+   "dropped_from_watchlist": true,
+   "watchlist_note": "Dropped in quarterly refresh \u2014 trailing stop active until exit",
+   "signal_date": "2026-09-07",
+   "entry_date": "2026-09-08",
+   "entry_price": 54.16,
+   "latest_price": 56.36,
+   "latest_date": "2026-10-21",
+   "current_stop": 53.14,
+   "peak_price": 66.5,
+   "prob": 0.704,
+   "unrealized_pct": 4.06,
+   "day_change_pct": -5.99,
+   "stop_distance_pct": 5.71,
+   "locked_pct": -1.88,
+   "risk_state": "At risk",
+   "drawdown_from_peak_pct": -15.25,
+   "r_multiple": 0.31,
+   "days_held": 43
   },
   {
    "symbol": "PGIL",
@@ -108,41 +108,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1277.7,
-   "latest_date": "2026-10-19",
+   "latest_price": 1216.6,
+   "latest_date": "2026-10-21",
    "current_stop": 1140.3,
    "peak_price": 1357.9,
    "prob": 0.8423,
-   "unrealized_pct": -1.78,
-   "day_change_pct": -0.89,
-   "stop_distance_pct": 10.75,
+   "unrealized_pct": -6.47,
+   "day_change_pct": -4.78,
+   "stop_distance_pct": 6.27,
    "locked_pct": -12.34,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -5.91,
-   "r_multiple": -0.09,
-   "days_held": 25
-  },
-  {
-   "symbol": "ELLEN",
-   "batch": "Batch 4",
-   "dropped_from_watchlist": true,
-   "watchlist_note": "Dropped in quarterly refresh \u2014 trailing stop active until exit",
-   "signal_date": "2026-09-09",
-   "entry_date": "2026-09-10",
-   "entry_price": 356.75,
-   "latest_price": 327.1,
-   "latest_date": "2026-10-19",
-   "current_stop": 322.9,
-   "peak_price": 395.0,
-   "prob": 0.7673,
-   "unrealized_pct": -8.31,
-   "day_change_pct": -3.42,
-   "stop_distance_pct": 1.28,
-   "locked_pct": -9.49,
-   "risk_state": "At risk",
-   "drawdown_from_peak_pct": -17.19,
-   "r_multiple": -0.47,
-   "days_held": 39
+   "drawdown_from_peak_pct": -10.41,
+   "r_multiple": -0.34,
+   "days_held": 27
   }
  ],
  "live": {
@@ -203,23 +181,37 @@
     "hold_days": 201,
     "prob": 0.9709,
     "reason": "SL/TSL Hit"
+   },
+   {
+    "symbol": "ELLEN",
+    "batch": "Batch 4",
+    "signal_date": "2026-09-09",
+    "entry_date": "2026-09-10",
+    "exit_date": "2026-10-21",
+    "entry_price": 356.75,
+    "exit_price": 319.6,
+    "pnl_pct": -10.41,
+    "net_pnl_pct": -10.56,
+    "hold_days": 41,
+    "prob": 0.7673,
+    "reason": "SL/TSL Hit"
    }
   ],
-  "count": 4,
+  "count": 5,
   "wins": 3,
-  "losses": 1,
-  "win_rate": 75.0,
+  "losses": 2,
+  "win_rate": 60.0,
   "avg_win": 72.97,
-  "avg_loss": -9.41,
-  "expectancy": 52.38,
-  "profit_factor": 23.26,
-  "payoff_ratio": 7.75,
+  "avg_loss": -9.98,
+  "expectancy": 39.79,
+  "profit_factor": 10.96,
+  "payoff_ratio": 7.31,
   "best": 149.93,
-  "worst": -9.41,
-  "avg_hold_days": 92.2,
-  "total_return_pct": 45.47,
-  "cumulative_pnl_pct": 209.5,
-  "max_drawdown_pct": -1.88,
+  "worst": -10.56,
+  "avg_hold_days": 82.0,
+  "total_return_pct": 42.39,
+  "cumulative_pnl_pct": 198.94,
+  "max_drawdown_pct": -2.11,
   "equity_curve": [
    {
     "date": "2026-07-17",
@@ -244,6 +236,12 @@
     "symbol": "KSHINTL",
     "equity": 145.47,
     "pnl": 149.93
+   },
+   {
+    "date": "2026-10-21",
+    "symbol": "ELLEN",
+    "equity": 142.39,
+    "pnl": -10.56
    }
   ],
   "monthly": [
@@ -258,6 +256,12 @@
     "return_pct": 48.26,
     "trades": 3,
     "wins": 3
+   },
+   {
+    "month": "2026-10",
+    "return_pct": -2.11,
+    "trades": 1,
+    "wins": 0
    }
   ],
   "prob_buckets": [
@@ -270,10 +274,10 @@
    },
    {
     "range": "0.75-0.85",
-    "trades": 1,
+    "trades": 2,
     "win_rate": 0.0,
-    "avg_prob": 84.8,
-    "avg_pnl": -9.41
+    "avg_prob": 80.7,
+    "avg_pnl": -9.98
    },
    {
     "range": "0.85-0.95",
@@ -293,7 +297,7 @@
   "exit_reasons": [
    {
     "reason": "SL/TSL Hit",
-    "count": 3
+    "count": 4
    },
    {
     "reason": "SL Hit (intraday, legacy rule)",
@@ -321,13 +325,20 @@
     "win_rate": 100.0,
     "avg_pnl": 103.84,
     "total_pnl": 207.67
+   },
+   {
+    "batch": "Batch 4",
+    "trades": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -10.56,
+    "total_pnl": -10.56
    }
   ],
   "max_win_streak": 3,
   "max_loss_streak": 1,
-  "current_streak": 3,
+  "current_streak": -1,
   "first_exit": "2026-07-17",
-  "last_exit": "2026-09-28"
+  "last_exit": "2026-10-21"
  },
  "activity": {
   "runs": [
@@ -816,10 +827,19 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 4
+   },
+   {
+    "date": "2026-10-21",
+    "scanned": 149,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 1,
+    "open_positions": 3
    }
   ],
-  "total_runs": 76,
-  "logged_runs": 54,
+  "total_runs": 77,
+  "logged_runs": 55,
   "first_run": "2026-06-29",
   "total_triggers": 52,
   "total_taken": 4,
@@ -976,8 +996,8 @@
     "close_price": 248.14
    }
   ],
-  "last_run": "2026-10-19",
-  "last_run_utc": "2026-10-20T15:22:41Z"
+  "last_run": "2026-10-21",
+  "last_run_utc": "2026-10-21T15:36:34Z"
  },
  "integrity": [
   {
