@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-10-22T15:39:15Z",
- "as_of": "2026-10-22",
+ "generated_at_utc": "2026-10-23T15:27:46Z",
+ "as_of": "2026-10-23",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -49,7 +49,7 @@
   "expectancy": 39.79,
   "profit_factor": 10.96,
   "realized_return_pct": 42.39,
-  "unrealized_pct": -0.03,
+  "unrealized_pct": 1.43,
   "max_drawdown_pct": -2.11,
   "best": 149.93,
   "worst": -10.56,
@@ -64,19 +64,19 @@
    "signal_date": "2026-09-07",
    "entry_date": "2026-09-08",
    "entry_price": 54.16,
-   "latest_price": 57.37,
-   "latest_date": "2026-10-22",
+   "latest_price": 57.43,
+   "latest_date": "2026-10-23",
    "current_stop": 53.14,
    "peak_price": 66.5,
    "prob": 0.704,
-   "unrealized_pct": 5.93,
-   "day_change_pct": 1.79,
-   "stop_distance_pct": 7.37,
+   "unrealized_pct": 6.04,
+   "day_change_pct": 0.1,
+   "stop_distance_pct": 7.46,
    "locked_pct": -1.88,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -13.73,
-   "r_multiple": 0.45,
-   "days_held": 44
+   "drawdown_from_peak_pct": -13.64,
+   "r_multiple": 0.46,
+   "days_held": 45
   },
   {
    "symbol": "KRISHANA",
@@ -86,19 +86,19 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 198.87,
-   "latest_date": "2026-10-22",
+   "latest_price": 199.66,
+   "latest_date": "2026-10-23",
    "current_stop": 186.33,
    "peak_price": 216.0,
    "prob": 0.7927,
-   "unrealized_pct": 0.89,
-   "day_change_pct": -5.07,
-   "stop_distance_pct": 6.31,
+   "unrealized_pct": 1.29,
+   "day_change_pct": 0.4,
+   "stop_distance_pct": 6.68,
    "locked_pct": -5.47,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -7.93,
-   "r_multiple": 0.06,
-   "days_held": 12
+   "drawdown_from_peak_pct": -7.56,
+   "r_multiple": 0.09,
+   "days_held": 13
   },
   {
    "symbol": "PGIL",
@@ -108,19 +108,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1211.7,
-   "latest_date": "2026-10-22",
+   "latest_price": 1224.0,
+   "latest_date": "2026-10-23",
    "current_stop": 1140.3,
    "peak_price": 1357.9,
    "prob": 0.8423,
-   "unrealized_pct": -6.85,
-   "day_change_pct": -0.4,
-   "stop_distance_pct": 5.89,
+   "unrealized_pct": -5.9,
+   "day_change_pct": 1.02,
+   "stop_distance_pct": 6.84,
    "locked_pct": -12.34,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -10.77,
-   "r_multiple": -0.36,
-   "days_held": 28
+   "drawdown_from_peak_pct": -9.86,
+   "r_multiple": -0.31,
+   "days_held": 29
   }
  ],
  "live": {
@@ -845,10 +845,19 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 3
+   },
+   {
+    "date": "2026-10-23",
+    "scanned": 149,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 3
    }
   ],
-  "total_runs": 78,
-  "logged_runs": 56,
+  "total_runs": 79,
+  "logged_runs": 57,
   "first_run": "2026-06-29",
   "total_triggers": 53,
   "total_taken": 4,
@@ -1005,8 +1014,8 @@
     "close_price": 2197.2
    }
   ],
-  "last_run": "2026-10-22",
-  "last_run_utc": "2026-10-22T15:39:14Z"
+  "last_run": "2026-10-23",
+  "last_run_utc": "2026-10-23T15:27:46Z"
  },
  "integrity": [
   {
