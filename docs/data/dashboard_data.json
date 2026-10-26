@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-10-23T15:27:46Z",
- "as_of": "2026-10-23",
+ "generated_at_utc": "2026-10-26T16:59:36Z",
+ "as_of": "2026-10-26",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -43,41 +43,19 @@
   }
  },
  "headline": {
-  "open_positions": 3,
-  "closed_trades": 5,
-  "win_rate": 60.0,
-  "expectancy": 39.79,
-  "profit_factor": 10.96,
-  "realized_return_pct": 42.39,
-  "unrealized_pct": 1.43,
-  "max_drawdown_pct": -2.11,
+  "open_positions": 2,
+  "closed_trades": 6,
+  "win_rate": 50.0,
+  "expectancy": 32.28,
+  "profit_factor": 8.68,
+  "realized_return_pct": 40.9,
+  "unrealized_pct": -2.74,
+  "max_drawdown_pct": -3.14,
   "best": 149.93,
   "worst": -10.56,
-  "avg_hold_days": 82.0
+  "avg_hold_days": 76.3
  },
  "open": [
-  {
-   "symbol": "RAJOOENG",
-   "batch": "Batch 2",
-   "dropped_from_watchlist": true,
-   "watchlist_note": "Dropped in quarterly refresh \u2014 trailing stop active until exit",
-   "signal_date": "2026-09-07",
-   "entry_date": "2026-09-08",
-   "entry_price": 54.16,
-   "latest_price": 57.43,
-   "latest_date": "2026-10-23",
-   "current_stop": 53.14,
-   "peak_price": 66.5,
-   "prob": 0.704,
-   "unrealized_pct": 6.04,
-   "day_change_pct": 0.1,
-   "stop_distance_pct": 7.46,
-   "locked_pct": -1.88,
-   "risk_state": "At risk",
-   "drawdown_from_peak_pct": -13.64,
-   "r_multiple": 0.46,
-   "days_held": 45
-  },
   {
    "symbol": "KRISHANA",
    "batch": "Batch 2",
@@ -86,19 +64,19 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 199.66,
-   "latest_date": "2026-10-23",
+   "latest_price": 205.05,
+   "latest_date": "2026-10-26",
    "current_stop": 186.33,
    "peak_price": 216.0,
    "prob": 0.7927,
-   "unrealized_pct": 1.29,
-   "day_change_pct": 0.4,
-   "stop_distance_pct": 6.68,
+   "unrealized_pct": 4.03,
+   "day_change_pct": 2.7,
+   "stop_distance_pct": 9.13,
    "locked_pct": -5.47,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -7.56,
-   "r_multiple": 0.09,
-   "days_held": 13
+   "drawdown_from_peak_pct": -5.07,
+   "r_multiple": 0.29,
+   "days_held": 16
   },
   {
    "symbol": "PGIL",
@@ -108,19 +86,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1224.0,
-   "latest_date": "2026-10-23",
+   "latest_price": 1212.8,
+   "latest_date": "2026-10-26",
    "current_stop": 1140.3,
    "peak_price": 1357.9,
    "prob": 0.8423,
-   "unrealized_pct": -5.9,
-   "day_change_pct": 1.02,
-   "stop_distance_pct": 6.84,
+   "unrealized_pct": -6.77,
+   "day_change_pct": -0.92,
+   "stop_distance_pct": 5.98,
    "locked_pct": -12.34,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -9.86,
-   "r_multiple": -0.31,
-   "days_held": 29
+   "drawdown_from_peak_pct": -10.69,
+   "r_multiple": -0.36,
+   "days_held": 32
   }
  ],
  "live": {
@@ -195,23 +173,37 @@
     "hold_days": 41,
     "prob": 0.7673,
     "reason": "SL/TSL Hit"
+   },
+   {
+    "symbol": "RAJOOENG",
+    "batch": "Batch 2",
+    "signal_date": "2026-09-07",
+    "entry_date": "2026-09-08",
+    "exit_date": "2026-10-26",
+    "entry_price": 54.16,
+    "exit_price": 51.4,
+    "pnl_pct": -5.1,
+    "net_pnl_pct": -5.25,
+    "hold_days": 48,
+    "prob": 0.704,
+    "reason": "SL Hit (Open Gap)"
    }
   ],
-  "count": 5,
+  "count": 6,
   "wins": 3,
-  "losses": 2,
-  "win_rate": 60.0,
+  "losses": 3,
+  "win_rate": 50.0,
   "avg_win": 72.97,
-  "avg_loss": -9.98,
-  "expectancy": 39.79,
-  "profit_factor": 10.96,
-  "payoff_ratio": 7.31,
+  "avg_loss": -8.41,
+  "expectancy": 32.28,
+  "profit_factor": 8.68,
+  "payoff_ratio": 8.68,
   "best": 149.93,
   "worst": -10.56,
-  "avg_hold_days": 82.0,
-  "total_return_pct": 42.39,
-  "cumulative_pnl_pct": 198.94,
-  "max_drawdown_pct": -2.11,
+  "avg_hold_days": 76.3,
+  "total_return_pct": 40.9,
+  "cumulative_pnl_pct": 193.69,
+  "max_drawdown_pct": -3.14,
   "equity_curve": [
    {
     "date": "2026-07-17",
@@ -242,6 +234,12 @@
     "symbol": "ELLEN",
     "equity": 142.39,
     "pnl": -10.56
+   },
+   {
+    "date": "2026-10-26",
+    "symbol": "RAJOOENG",
+    "equity": 140.9,
+    "pnl": -5.25
    }
   ],
   "monthly": [
@@ -259,18 +257,18 @@
    },
    {
     "month": "2026-10",
-    "return_pct": -2.11,
-    "trades": 1,
+    "return_pct": -3.14,
+    "trades": 2,
     "wins": 0
    }
   ],
   "prob_buckets": [
    {
     "range": "0.65-0.75",
-    "trades": 1,
-    "win_rate": 100.0,
-    "avg_prob": 74.8,
-    "avg_pnl": 11.24
+    "trades": 2,
+    "win_rate": 50.0,
+    "avg_prob": 72.6,
+    "avg_pnl": 3.0
    },
    {
     "range": "0.75-0.85",
@@ -302,15 +300,19 @@
    {
     "reason": "SL Hit (intraday, legacy rule)",
     "count": 1
+   },
+   {
+    "reason": "SL Hit (Open Gap)",
+    "count": 1
    }
   ],
   "batches": [
    {
     "batch": "Batch 2",
-    "trades": 1,
-    "win_rate": 100.0,
-    "avg_pnl": 11.24,
-    "total_pnl": 11.24
+    "trades": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 3.0,
+    "total_pnl": 5.99
    },
    {
     "batch": "Batch 3",
@@ -335,10 +337,10 @@
    }
   ],
   "max_win_streak": 3,
-  "max_loss_streak": 1,
-  "current_streak": -1,
+  "max_loss_streak": 2,
+  "current_streak": -2,
   "first_exit": "2026-07-17",
-  "last_exit": "2026-10-21"
+  "last_exit": "2026-10-26"
  },
  "activity": {
   "runs": [
@@ -854,10 +856,19 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 3
+   },
+   {
+    "date": "2026-10-26",
+    "scanned": 149,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 1,
+    "open_positions": 2
    }
   ],
-  "total_runs": 79,
-  "logged_runs": 57,
+  "total_runs": 80,
+  "logged_runs": 58,
   "first_run": "2026-06-29",
   "total_triggers": 53,
   "total_taken": 4,
@@ -1014,8 +1025,8 @@
     "close_price": 2197.2
    }
   ],
-  "last_run": "2026-10-23",
-  "last_run_utc": "2026-10-23T15:27:46Z"
+  "last_run": "2026-10-26",
+  "last_run_utc": "2026-10-26T16:59:36Z"
  },
  "integrity": [
   {
