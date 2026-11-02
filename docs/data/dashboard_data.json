@@ -1,5 +1,5 @@
 {
- "generated_at_utc": "2026-10-30T16:50:09Z",
+ "generated_at_utc": "2026-11-02T20:31:01Z",
  "as_of": "2026-10-30",
  "config": {
   "prob_threshold": 0.65,
@@ -1062,7 +1062,7 @@
    }
   ],
   "last_run": "2026-10-30",
-  "last_run_utc": "2026-10-30T16:50:09Z"
+  "last_run_utc": "2026-11-02T20:31:01Z"
  },
  "integrity": [
   {
