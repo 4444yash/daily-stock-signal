@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-30",
+  "last_updated": "2026-11-03",
   "note": "Runs marked `seeded` were reconstructed from git history and carry only the date and open-position count.",
   "runs": [
     {
@@ -2177,6 +2177,43 @@
       "open_positions": 2,
       "corporate_actions": [],
       "triggers_detail": []
+    },
+    {
+      "date": "2026-11-03",
+      "run_at_utc": "2026-11-03T18:02:27Z",
+      "universe": 158,
+      "scanned": 153,
+      "skipped": 5,
+      "errors": 0,
+      "triggers": 1,
+      "signals_taken": 0,
+      "exits": 0,
+      "open_positions": 2,
+      "corporate_actions": [],
+      "triggers_detail": [
+        {
+          "symbol": "CORONA",
+          "batch": "Batch 1",
+          "signal_date": "2026-11-03",
+          "prob": 0.12558741867542267,
+          "close_price": 2271.60009765625,
+          "taken": false,
+          "features": {
+            "bbw_width_pct": 11.583717276676694,
+            "days_in_squeeze": 0,
+            "volume_multiple": 3.4699814863792646,
+            "close_high_ratio": 0.8223641158089161,
+            "rsi_absolute": 67.43473293385685,
+            "rsi_delta": 8.132547918431982,
+            "atr_pct": 3.3101272417057492,
+            "distance_from_50sma": 0.07962294056765334,
+            "nifty_trend": 1,
+            "nifty_distance_from_50sma": 0.024846396048338007,
+            "relative_strength_125": 1.3092519971569807,
+            "prior_runup_90": 16.576009756604222
+          }
+        }
+      ]
     }
   ]
 }

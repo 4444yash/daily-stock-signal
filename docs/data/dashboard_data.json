@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-11-02T20:31:01Z",
- "as_of": "2026-10-30",
+ "generated_at_utc": "2026-11-03T18:02:27Z",
+ "as_of": "2026-11-03",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -49,7 +49,7 @@
   "expectancy": 32.28,
   "profit_factor": 8.68,
   "realized_return_pct": 40.9,
-  "unrealized_pct": 7.63,
+  "unrealized_pct": 15.05,
   "max_drawdown_pct": -3.14,
   "best": 149.93,
   "worst": -10.56,
@@ -64,19 +64,19 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 228.55,
-   "latest_date": "2026-10-30",
-   "current_stop": 197.96,
-   "peak_price": 230.0,
+   "latest_price": 231.88,
+   "latest_date": "2026-11-03",
+   "current_stop": 204.82,
+   "peak_price": 240.24,
    "prob": 0.7927,
-   "unrealized_pct": 15.95,
-   "day_change_pct": 2.66,
-   "stop_distance_pct": 13.39,
-   "locked_pct": 0.43,
+   "unrealized_pct": 17.64,
+   "day_change_pct": -1.36,
+   "stop_distance_pct": 11.67,
+   "locked_pct": 3.91,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -0.63,
-   "r_multiple": 1.14,
-   "days_held": 20
+   "drawdown_from_peak_pct": -3.48,
+   "r_multiple": 1.26,
+   "days_held": 24
   },
   {
    "symbol": "PGIL",
@@ -86,19 +86,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1192.6,
-   "latest_date": "2026-10-30",
+   "latest_price": 1267.1,
+   "latest_date": "2026-11-03",
    "current_stop": 1140.3,
    "peak_price": 1357.9,
    "prob": 0.8423,
-   "unrealized_pct": -8.32,
-   "day_change_pct": 0.15,
-   "stop_distance_pct": 4.39,
+   "unrealized_pct": -2.59,
+   "day_change_pct": 1.03,
+   "stop_distance_pct": 10.01,
    "locked_pct": -12.34,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -12.17,
-   "r_multiple": -0.44,
-   "days_held": 36
+   "drawdown_from_peak_pct": -6.69,
+   "r_multiple": -0.14,
+   "days_held": 40
   }
  ],
  "live": {
@@ -901,15 +901,30 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 2
+   },
+   {
+    "date": "2026-11-03",
+    "scanned": 153,
+    "errors": 0,
+    "triggers": 1,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
    }
   ],
-  "total_runs": 84,
-  "logged_runs": 62,
+  "total_runs": 85,
+  "logged_runs": 63,
   "first_run": "2026-06-29",
-  "total_triggers": 53,
+  "total_triggers": 54,
   "total_taken": 4,
-  "gate_pass_rate": 7.5,
+  "gate_pass_rate": 7.4,
   "recent_rejected": [
+   {
+    "symbol": "CORONA",
+    "date": "2026-11-03",
+    "prob": 0.1256,
+    "close_price": 2271.6
+   },
    {
     "symbol": "IGIL",
     "date": "2026-10-22",
@@ -1053,16 +1068,10 @@
     "date": "2026-09-15",
     "prob": 0.1618,
     "close_price": 592.85
-   },
-   {
-    "symbol": "CORONA",
-    "date": "2026-09-09",
-    "prob": 0.0055,
-    "close_price": 2197.2
    }
   ],
-  "last_run": "2026-10-30",
-  "last_run_utc": "2026-11-02T20:31:01Z"
+  "last_run": "2026-11-03",
+  "last_run_utc": "2026-11-03T18:02:27Z"
  },
  "integrity": [
   {
