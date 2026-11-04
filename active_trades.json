@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-03",
+  "last_updated": "2026-11-04",
   "trades": [
     {
       "symbol": "KRISHANA",
@@ -9,12 +9,12 @@
       "signal_date": "2026-10-09",
       "prob": 0.7927069664001465,
       "entry_price": 197.11000061035156,
-      "current_stop": 204.81500244140625,
+      "current_stop": 205.47899932861327,
       "initial_stop": 169.53900299072265,
-      "latest_price": 231.8800048828125,
-      "latest_date": "2026-11-03",
-      "peak_price": 240.24000549316406,
-      "prev_price": 235.07000732421875
+      "latest_price": 240.2899932861328,
+      "latest_date": "2026-11-04",
+      "peak_price": 242.3300018310547,
+      "prev_price": 231.8800048828125
     },
     {
       "symbol": "PGIL",
@@ -26,10 +26,10 @@
       "entry_price": 1300.800048828125,
       "current_stop": 1140.2999633789063,
       "initial_stop": 1054.4800170898438,
-      "latest_price": 1267.0999755859375,
-      "latest_date": "2026-11-03",
+      "latest_price": 1319.9000244140625,
+      "latest_date": "2026-11-04",
       "peak_price": 1357.9000244140625,
-      "prev_price": 1254.199951171875
+      "prev_price": 1267.0999755859375
     }
   ]
 }
