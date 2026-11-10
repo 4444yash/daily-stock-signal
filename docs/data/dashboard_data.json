@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-11-09T21:03:53Z",
- "as_of": "2026-11-06",
+ "generated_at_utc": "2026-11-10T18:14:56Z",
+ "as_of": "2026-11-09",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -937,15 +937,30 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 2
+   },
+   {
+    "date": "2026-11-09",
+    "scanned": 154,
+    "errors": 0,
+    "triggers": 1,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
    }
   ],
-  "total_runs": 88,
-  "logged_runs": 66,
+  "total_runs": 89,
+  "logged_runs": 67,
   "first_run": "2026-06-29",
-  "total_triggers": 54,
+  "total_triggers": 55,
   "total_taken": 4,
-  "gate_pass_rate": 7.4,
+  "gate_pass_rate": 7.3,
   "recent_rejected": [
+   {
+    "symbol": "BANCOINDIA",
+    "date": "2026-11-09",
+    "prob": 0.0431,
+    "close_price": 659.15
+   },
    {
     "symbol": "CORONA",
     "date": "2026-11-03",
@@ -1089,16 +1104,10 @@
     "date": "2026-09-16",
     "prob": 0.0213,
     "close_price": 1834.6
-   },
-   {
-    "symbol": "EMUDHRA",
-    "date": "2026-09-15",
-    "prob": 0.1618,
-    "close_price": 592.85
    }
   ],
-  "last_run": "2026-11-06",
-  "last_run_utc": "2026-11-09T21:03:53Z"
+  "last_run": "2026-11-09",
+  "last_run_utc": "2026-11-10T18:14:56Z"
  },
  "integrity": [
   {
