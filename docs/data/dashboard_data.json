@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-11-10T18:14:56Z",
- "as_of": "2026-11-09",
+ "generated_at_utc": "2026-11-11T18:02:50Z",
+ "as_of": "2026-11-11",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -49,7 +49,7 @@
   "expectancy": 32.28,
   "profit_factor": 8.68,
   "realized_return_pct": 40.9,
-  "unrealized_pct": 27.69,
+  "unrealized_pct": 27.12,
   "max_drawdown_pct": -3.14,
   "best": 149.93,
   "worst": -10.56,
@@ -64,19 +64,19 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 245.21,
-   "latest_date": "2026-11-09",
+   "latest_price": 236.76,
+   "latest_date": "2026-11-11",
    "current_stop": 219.21,
    "peak_price": 254.0,
    "prob": 0.7927,
-   "unrealized_pct": 24.4,
-   "day_change_pct": 0.58,
-   "stop_distance_pct": 10.6,
+   "unrealized_pct": 20.12,
+   "day_change_pct": -3.45,
+   "stop_distance_pct": 7.41,
    "locked_pct": 11.21,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -3.46,
-   "r_multiple": 1.74,
-   "days_held": 30
+   "drawdown_from_peak_pct": -6.79,
+   "r_multiple": 1.44,
+   "days_held": 32
   },
   {
    "symbol": "PGIL",
@@ -86,19 +86,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1343.6,
-   "latest_date": "2026-11-09",
+   "latest_price": 1391.8,
+   "latest_date": "2026-11-11",
    "current_stop": 1190.76,
    "peak_price": 1413.3,
    "prob": 0.8423,
-   "unrealized_pct": 3.29,
-   "day_change_pct": 0.36,
-   "stop_distance_pct": 11.38,
+   "unrealized_pct": 7.0,
+   "day_change_pct": 3.59,
+   "stop_distance_pct": 14.44,
    "locked_pct": -8.46,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -4.93,
-   "r_multiple": 0.17,
-   "days_held": 46
+   "drawdown_from_peak_pct": -1.52,
+   "r_multiple": 0.37,
+   "days_held": 48
   }
  ],
  "live": {
@@ -946,15 +946,30 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 2
+   },
+   {
+    "date": "2026-11-11",
+    "scanned": 154,
+    "errors": 0,
+    "triggers": 1,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
    }
   ],
-  "total_runs": 89,
-  "logged_runs": 67,
+  "total_runs": 90,
+  "logged_runs": 68,
   "first_run": "2026-06-29",
-  "total_triggers": 55,
+  "total_triggers": 56,
   "total_taken": 4,
-  "gate_pass_rate": 7.3,
+  "gate_pass_rate": 7.1,
   "recent_rejected": [
+   {
+    "symbol": "DIFFNKG",
+    "date": "2026-11-11",
+    "prob": 0.0154,
+    "close_price": 438.25
+   },
    {
     "symbol": "BANCOINDIA",
     "date": "2026-11-09",
@@ -1098,16 +1113,10 @@
     "date": "2026-09-16",
     "prob": 0.0437,
     "close_price": 148.3
-   },
-   {
-    "symbol": "NPST",
-    "date": "2026-09-16",
-    "prob": 0.0213,
-    "close_price": 1834.6
    }
   ],
-  "last_run": "2026-11-09",
-  "last_run_utc": "2026-11-10T18:14:56Z"
+  "last_run": "2026-11-11",
+  "last_run_utc": "2026-11-11T18:02:50Z"
  },
  "integrity": [
   {
