@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-11-12T18:35:39Z",
- "as_of": "2026-11-11",
+ "generated_at_utc": "2026-11-13T18:02:46Z",
+ "as_of": "2026-11-13",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -49,7 +49,7 @@
   "expectancy": 32.28,
   "profit_factor": 8.68,
   "realized_return_pct": 40.9,
-  "unrealized_pct": 27.12,
+  "unrealized_pct": 28.15,
   "max_drawdown_pct": -3.14,
   "best": 149.93,
   "worst": -10.56,
@@ -64,19 +64,19 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 236.76,
-   "latest_date": "2026-11-11",
+   "latest_price": 247.71,
+   "latest_date": "2026-11-13",
    "current_stop": 219.21,
    "peak_price": 254.0,
    "prob": 0.7927,
-   "unrealized_pct": 20.12,
-   "day_change_pct": -3.45,
-   "stop_distance_pct": 7.41,
+   "unrealized_pct": 25.67,
+   "day_change_pct": 2.3,
+   "stop_distance_pct": 11.51,
    "locked_pct": 11.21,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -6.79,
-   "r_multiple": 1.44,
-   "days_held": 32
+   "drawdown_from_peak_pct": -2.48,
+   "r_multiple": 1.84,
+   "days_held": 34
   },
   {
    "symbol": "PGIL",
@@ -86,19 +86,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1391.8,
-   "latest_date": "2026-11-11",
+   "latest_price": 1333.1,
+   "latest_date": "2026-11-13",
    "current_stop": 1190.76,
    "peak_price": 1413.3,
    "prob": 0.8423,
-   "unrealized_pct": 7.0,
-   "day_change_pct": 3.59,
-   "stop_distance_pct": 14.44,
+   "unrealized_pct": 2.48,
+   "day_change_pct": -2.71,
+   "stop_distance_pct": 10.68,
    "locked_pct": -8.46,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -1.52,
-   "r_multiple": 0.37,
-   "days_held": 48
+   "drawdown_from_peak_pct": -5.67,
+   "r_multiple": 0.13,
+   "days_held": 50
   }
  ],
  "live": {
@@ -955,15 +955,36 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 2
+   },
+   {
+    "date": "2026-11-13",
+    "scanned": 155,
+    "errors": 0,
+    "triggers": 2,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 2
    }
   ],
-  "total_runs": 90,
-  "logged_runs": 68,
+  "total_runs": 91,
+  "logged_runs": 69,
   "first_run": "2026-06-29",
-  "total_triggers": 56,
+  "total_triggers": 58,
   "total_taken": 4,
-  "gate_pass_rate": 7.1,
+  "gate_pass_rate": 6.9,
   "recent_rejected": [
+   {
+    "symbol": "DISAQ",
+    "date": "2026-11-13",
+    "prob": 0.0546,
+    "close_price": 12271.0
+   },
+   {
+    "symbol": "SILVERTUC",
+    "date": "2026-11-13",
+    "prob": 0.0049,
+    "close_price": 138.67
+   },
    {
     "symbol": "DIFFNKG",
     "date": "2026-11-11",
@@ -1101,22 +1122,10 @@
     "date": "2026-09-18",
     "prob": 0.0128,
     "close_price": 118.96
-   },
-   {
-    "symbol": "CFF",
-    "date": "2026-09-17",
-    "prob": 0.2609,
-    "close_price": 1109.2
-   },
-   {
-    "symbol": "KMCSHIL",
-    "date": "2026-09-16",
-    "prob": 0.0437,
-    "close_price": 148.3
    }
   ],
-  "last_run": "2026-11-11",
-  "last_run_utc": "2026-11-12T18:35:38Z"
+  "last_run": "2026-11-13",
+  "last_run_utc": "2026-11-13T18:02:45Z"
  },
  "integrity": [
   {
