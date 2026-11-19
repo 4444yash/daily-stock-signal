@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-17",
+  "last_updated": "2026-11-18",
   "trades": [
     {
       "symbol": "KRISHANA",
@@ -11,10 +11,10 @@
       "entry_price": 197.11000061035156,
       "current_stop": 219.20899963378906,
       "initial_stop": 169.53900299072265,
-      "latest_price": 242.9199981689453,
-      "latest_date": "2026-11-17",
+      "latest_price": 241.82000732421875,
+      "latest_date": "2026-11-18",
       "peak_price": 254.99000549316406,
-      "prev_price": 243.02999877929688
+      "prev_price": 242.9199981689453
     },
     {
       "symbol": "PGIL",
@@ -26,10 +26,25 @@
       "entry_price": 1300.800048828125,
       "current_stop": 1190.759912109375,
       "initial_stop": 1054.4800170898438,
-      "latest_price": 1368.199951171875,
-      "latest_date": "2026-11-17",
-      "peak_price": 1413.300048828125,
-      "prev_price": 1314.699951171875
+      "latest_price": 1414.699951171875,
+      "latest_date": "2026-11-18",
+      "peak_price": 1450.0,
+      "prev_price": 1368.199951171875
+    },
+    {
+      "symbol": "VIJAYA",
+      "ticker": "VIJAYA.NS",
+      "batch": "Batch 3",
+      "entry_date": "2026-11-19",
+      "signal_date": "2026-11-18",
+      "prob": 0.6625136733055115,
+      "entry_price": 1533.5999755859375,
+      "current_stop": 1301.5199829101562,
+      "initial_stop": 1301.5199829101562,
+      "latest_price": 1533.5999755859375,
+      "latest_date": "2026-11-18",
+      "peak_price": 1533.5999755859375,
+      "prev_price": 1533.5999755859375
     }
   ]
 }
