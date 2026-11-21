@@ -268,6 +268,14 @@ def main():
     latest_nifty_date = nifty_df.iloc[-1]['date_parsed']
     print(f"Latest Nifty 50 price date: {latest_nifty_date}")
     
+    # Check data freshness against current IST date/time
+    now_ist = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5, minutes=30)))
+    today_ist = now_ist.date()
+    if now_ist.weekday() < 5 and now_ist.hour >= 16:
+        if latest_nifty_date < today_ist:
+            print(f"⚠️  WARNING: It is past 4:00 PM IST on a weekday ({today_ist}), but latest Nifty date is {latest_nifty_date}.")
+            print("   Yahoo Finance may not have published today's finalized daily bar yet.")
+    
     # We will fetch data for all stocks
     new_signals = []
     exited_trades_today = []
@@ -521,11 +529,12 @@ def main():
     # 2. Add to active trades using today's close as estimated entry price, or we can update active trades on the next day's run.
     # Let's add them to active trades now so they are monitored on tomorrow's run.
     for sig in new_signals:
+        next_trading_day = (pd.Timestamp(latest_nifty_date) + pd.tseries.offsets.BDay(1)).strftime('%Y-%m-%d')
         updated_active_trades.append({
             "symbol": sig["symbol"],
             "ticker": sig.get("ticker") or f"{sig['symbol']}.NS",
             "batch": sig["batch"],
-            "entry_date": (latest_nifty_date + datetime.timedelta(days=1)).strftime('%Y-%m-%d'), # tomorrow's date
+            "entry_date": next_trading_day, # next trading day (skips weekends)
             "signal_date": sig["signal_date"],
             "prob": sig["prob"],
             "entry_price": sig["close_price"], # estimated entry price
