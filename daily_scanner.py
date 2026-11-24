@@ -162,6 +162,37 @@ def drop_incomplete_bars(df):
     return df.dropna(subset=cols).reset_index(drop=True)
 
 
+def fetch_and_clean_ticker(ticker, period="1y"):
+    """
+    Fetch OHLCV data from Yahoo Finance and ensure the latest bar is repaired
+    if Yahoo returns a partial bar with NaN close (common on Indian equities
+    even after market close).
+    """
+    df = yf.download(ticker, period=period, progress=False)
+    df = clean_multiindex(df)
+    if not df.empty:
+        last_idx = df.index[-1]
+        cols_to_check = [c for c in ("open", "high", "low", "close") if c in df.columns]
+        if any(pd.isna(df.loc[last_idx, col]) for col in cols_to_check):
+            try:
+                tkr = yf.Ticker(ticker)
+                fi = tkr.fast_info
+                if fi.last_price is not None and not pd.isna(fi.last_price):
+                    if pd.isna(df.loc[last_idx, "close"]):
+                        df.loc[last_idx, "close"] = fi.last_price
+                    if pd.isna(df.loc[last_idx, "open"]) and fi.open is not None:
+                        df.loc[last_idx, "open"] = fi.open
+                    if pd.isna(df.loc[last_idx, "high"]) and fi.day_high is not None:
+                        df.loc[last_idx, "high"] = fi.day_high
+                    if pd.isna(df.loc[last_idx, "low"]) and fi.day_low is not None:
+                        df.loc[last_idx, "low"] = fi.day_low
+                    if (pd.isna(df.loc[last_idx, "volume"]) or df.loc[last_idx, "volume"] == 0) and fi.last_volume is not None:
+                        df.loc[last_idx, "volume"] = fi.last_volume
+            except Exception:
+                pass
+    return drop_incomplete_bars(df)
+
+
 def json_safe(obj):
     """
     Replace non-finite floats with None so the state files stay valid strict JSON.
@@ -252,8 +283,7 @@ def main():
     # 5. Fetch Nifty 50 data (1 year history)
     print("Downloading Nifty 50 (^NSEI) data...")
     try:
-        nifty_df = yf.download("^NSEI", period="1y", progress=False)
-        nifty_df = drop_incomplete_bars(clean_multiindex(nifty_df))
+        nifty_df = fetch_and_clean_ticker("^NSEI", period="1y")
         nifty_df['date_parsed'] = pd.to_datetime(nifty_df['date']).dt.date
         nifty_df = nifty_df.sort_values('date_parsed').reset_index(drop=True)
         nifty_df['sma50'] = nifty_df['close'].rolling(window=50).mean()
@@ -329,8 +359,7 @@ def main():
         
         print(f"Scanning {symbol} ({ticker})...")
         try:
-            df = yf.download(ticker, period="1y", progress=False)
-            df = drop_incomplete_bars(clean_multiindex(df))
+            df = fetch_and_clean_ticker(ticker, period="1y")
             if df.empty or len(df) < 50:
                 print(f"  Skipping {symbol}: insufficient data.")
                 scan_stats["skipped"] += 1
@@ -557,6 +586,14 @@ def main():
 
     # 7. Save updated active trades
     run_date = latest_nifty_date.strftime('%Y-%m-%d')
+    existing_last_updated = active_data.get("last_updated")
+    if existing_last_updated:
+        existing_date = datetime.date.fromisoformat(existing_last_updated)
+        if latest_nifty_date < existing_date:
+            print(f"🛑 CRITICAL SAFETY ABORT: Existing data is as of {existing_date}, but newly scanned date is older ({latest_nifty_date}).")
+            print("   Refusing to overwrite active trades and dashboard with stale data.")
+            sys.exit(0)
+
     active_data["last_updated"] = run_date
     active_data["trades"] = updated_active_trades
     with open(active_path, 'w') as f:

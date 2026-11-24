@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-20",
+  "last_updated": "2026-11-23",
   "trades": [
     {
       "symbol": "KRISHANA",
@@ -11,10 +11,10 @@
       "entry_price": 197.11000061035156,
       "current_stop": 219.20899963378906,
       "initial_stop": 169.53900299072265,
-      "latest_price": 246.1699981689453,
-      "latest_date": "2026-11-20",
+      "latest_price": 241.26,
+      "latest_date": "2026-11-23",
       "peak_price": 254.99000549316406,
-      "prev_price": 242.11000061035156
+      "prev_price": 246.1699981689453
     },
     {
       "symbol": "PGIL",
@@ -24,12 +24,12 @@
       "signal_date": "2026-09-23",
       "prob": 0.8423338532447815,
       "entry_price": 1300.800048828125,
-      "current_stop": 1190.759912109375,
+      "current_stop": 1241.7261969636206,
       "initial_stop": 1054.4800170898438,
-      "latest_price": 1435.5,
-      "latest_date": "2026-11-20",
-      "peak_price": 1470.0,
-      "prev_price": 1404.0999755859375
+      "latest_price": 1479.4,
+      "latest_date": "2026-11-23",
+      "peak_price": 1535.0,
+      "prev_price": 1435.5
     },
     {
       "symbol": "VIJAYA",
@@ -39,12 +39,12 @@
       "signal_date": "2026-11-18",
       "prob": 0.6625136733055115,
       "entry_price": 1533.5999755859375,
-      "current_stop": 1352.7900024414062,
+      "current_stop": 1389.0599853515625,
       "initial_stop": 1301.5199829101562,
-      "latest_price": 1572.300048828125,
-      "latest_date": "2026-11-20",
-      "peak_price": 1587.0,
-      "prev_price": 1510.5999755859375
+      "latest_price": 1572.6,
+      "latest_date": "2026-11-23",
+      "peak_price": 1637.0,
+      "prev_price": 1572.300048828125
     }
   ]
 }
