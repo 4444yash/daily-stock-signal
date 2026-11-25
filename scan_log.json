@@ -2486,40 +2486,17 @@
     },
     {
       "date": "2026-11-23",
-      "run_at_utc": "2026-11-24T22:57:38Z",
+      "run_at_utc": "2026-11-25T22:13:44Z",
       "universe": 158,
       "scanned": 156,
       "skipped": 2,
       "errors": 0,
-      "triggers": 1,
+      "triggers": 0,
       "signals_taken": 0,
       "exits": 0,
       "open_positions": 3,
       "corporate_actions": [],
-      "triggers_detail": [
-        {
-          "symbol": "SAMBHV",
-          "batch": "Batch 3",
-          "signal_date": "2026-11-23",
-          "prob": 0.5376766920089722,
-          "close_price": 176.89999389648438,
-          "taken": false,
-          "features": {
-            "bbw_width_pct": 9.101277303809308,
-            "days_in_squeeze": 24,
-            "volume_multiple": 7.3686655949792135,
-            "close_high_ratio": 0.8370781652766598,
-            "rsi_absolute": 62.496175224592534,
-            "rsi_delta": 15.904240672859409,
-            "atr_pct": 4.616813384596688,
-            "distance_from_50sma": 0.12035340758101065,
-            "nifty_trend": 1,
-            "nifty_distance_from_50sma": 0.07778672579853955,
-            "relative_strength_125": 1.5540583914517825,
-            "prior_runup_90": 44.75083481034109
-          }
-        }
-      ]
+      "triggers_detail": []
     }
   ]
 }

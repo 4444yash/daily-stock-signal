@@ -11,10 +11,10 @@
       "entry_price": 197.11000061035156,
       "current_stop": 219.20899963378906,
       "initial_stop": 169.53900299072265,
-      "latest_price": 241.25999450683594,
-      "latest_date": "2026-11-23",
+      "latest_price": 245.39,
+      "latest_date": "2026-11-25",
       "peak_price": 254.99000549316406,
-      "prev_price": 246.1699981689453
+      "prev_price": 241.25999450683594
     },
     {
       "symbol": "PGIL",
@@ -26,10 +26,10 @@
       "entry_price": 1300.800048828125,
       "current_stop": 1241.7261969636206,
       "initial_stop": 1054.4800170898438,
-      "latest_price": 1479.4000244140625,
-      "latest_date": "2026-11-23",
+      "latest_price": 1442.5,
+      "latest_date": "2026-11-25",
       "peak_price": 1535.0,
-      "prev_price": 1435.5
+      "prev_price": 1479.4000244140625
     },
     {
       "symbol": "VIJAYA",
@@ -41,10 +41,10 @@
       "entry_price": 1533.5999755859375,
       "current_stop": 1389.0599853515625,
       "initial_stop": 1301.5199829101562,
-      "latest_price": 1572.5999755859375,
-      "latest_date": "2026-11-23",
-      "peak_price": 1637.0,
-      "prev_price": 1572.300048828125
+      "latest_price": 1627.7,
+      "latest_date": "2026-11-25",
+      "peak_price": 1659.199951171875,
+      "prev_price": 1572.5999755859375
     }
   ]
 }
