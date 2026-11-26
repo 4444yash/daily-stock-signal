@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-11-25T22:13:45Z",
- "as_of": "2026-11-23",
+ "generated_at_utc": "2026-11-26T22:12:01Z",
+ "as_of": "2026-11-25",
  "config": {
   "prob_threshold": 0.65,
   "cost_pct": 0.15,
@@ -49,7 +49,7 @@
   "expectancy": 32.28,
   "profit_factor": 8.68,
   "realized_return_pct": 40.9,
-  "unrealized_pct": 41.52,
+  "unrealized_pct": 36.31,
   "max_drawdown_pct": -3.14,
   "best": 149.93,
   "worst": -10.56,
@@ -64,19 +64,19 @@
    "signal_date": "2026-10-09",
    "entry_date": "2026-10-10",
    "entry_price": 197.11,
-   "latest_price": 245.39,
-   "latest_date": "2026-11-25",
+   "latest_price": 243.04,
+   "latest_date": "2026-11-26",
    "current_stop": 219.21,
    "peak_price": 254.99,
    "prob": 0.7927,
-   "unrealized_pct": 24.49,
-   "day_change_pct": 1.71,
-   "stop_distance_pct": 10.67,
+   "unrealized_pct": 23.3,
+   "day_change_pct": -0.96,
+   "stop_distance_pct": 9.81,
    "locked_pct": 11.21,
    "risk_state": "Profit locked",
-   "drawdown_from_peak_pct": -3.76,
-   "r_multiple": 1.75,
-   "days_held": 46
+   "drawdown_from_peak_pct": -4.69,
+   "r_multiple": 1.67,
+   "days_held": 47
   },
   {
    "symbol": "PGIL",
@@ -86,19 +86,19 @@
    "signal_date": "2026-09-23",
    "entry_date": "2026-09-24",
    "entry_price": 1300.8,
-   "latest_price": 1442.5,
-   "latest_date": "2026-11-25",
+   "latest_price": 1424.7,
+   "latest_date": "2026-11-26",
    "current_stop": 1241.73,
    "peak_price": 1535.0,
    "prob": 0.8423,
-   "unrealized_pct": 10.89,
-   "day_change_pct": -2.49,
-   "stop_distance_pct": 13.92,
+   "unrealized_pct": 9.52,
+   "day_change_pct": -1.23,
+   "stop_distance_pct": 12.84,
    "locked_pct": -4.54,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -6.03,
-   "r_multiple": 0.58,
-   "days_held": 62
+   "drawdown_from_peak_pct": -7.19,
+   "r_multiple": 0.5,
+   "days_held": 63
   },
   {
    "symbol": "VIJAYA",
@@ -108,19 +108,19 @@
    "signal_date": "2026-11-18",
    "entry_date": "2026-11-19",
    "entry_price": 1533.6,
-   "latest_price": 1627.7,
-   "latest_date": "2026-11-25",
+   "latest_price": 1587.1,
+   "latest_date": "2026-11-26",
    "current_stop": 1389.06,
    "peak_price": 1659.2,
    "prob": 0.6625,
-   "unrealized_pct": 6.14,
-   "day_change_pct": 3.5,
-   "stop_distance_pct": 14.66,
+   "unrealized_pct": 3.49,
+   "day_change_pct": -2.49,
+   "stop_distance_pct": 12.48,
    "locked_pct": -9.42,
    "risk_state": "At risk",
-   "drawdown_from_peak_pct": -1.9,
-   "r_multiple": 0.41,
-   "days_held": 6
+   "drawdown_from_peak_pct": -4.35,
+   "r_multiple": 0.23,
+   "days_held": 7
   }
  ],
  "live": {
@@ -1040,10 +1040,19 @@
     "signals_taken": 0,
     "exits": 0,
     "open_positions": 3
+   },
+   {
+    "date": "2026-11-25",
+    "scanned": 156,
+    "errors": 0,
+    "triggers": 0,
+    "signals_taken": 0,
+    "exits": 0,
+    "open_positions": 3
    }
   ],
-  "total_runs": 97,
-  "logged_runs": 75,
+  "total_runs": 98,
+  "logged_runs": 76,
   "first_run": "2026-06-29",
   "total_triggers": 59,
   "total_taken": 5,
@@ -1200,8 +1209,8 @@
     "close_price": 118.96
    }
   ],
-  "last_run": "2026-11-23",
-  "last_run_utc": "2026-11-25T22:13:44Z"
+  "last_run": "2026-11-25",
+  "last_run_utc": "2026-11-26T22:12:00Z"
  },
  "integrity": [
   {
